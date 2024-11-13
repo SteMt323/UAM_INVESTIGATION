@@ -65,7 +65,7 @@
     </Reference>
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.VisualBasic.PowerPacks\9.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualBasic.PowerPacks.dll</HintPath>
+      <HintPath>Packs\Microsoft.VisualBasic.PowerPacks.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -162,7 +162,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Packs\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo-uam-1png.png" />
     <None Include="Resources\logo-uam-2.png" />
