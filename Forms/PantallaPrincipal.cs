@@ -11,24 +11,36 @@ using UAM_INVESTIGATION.Forms;
 
 namespace UAM_INVESTIGATION
 {
-    public partial class Inicio : Form
+    public partial class pantalla_Principal : Form
     {
-        public Inicio()
+        public pantalla_Principal()
         {
             InitializeComponent();
         }
 
-        private void Btn_UserRegis_Click(object sender, EventArgs e)
+        private void Btn_UserRegis_Click_1(object sender, EventArgs e)
         {
             //Mostrar Formulario Inicio Sesion Estudiantes
             InicioSesionUserEst inicioSesionUserEst = new InicioSesionUserEst();
-            inicioSesionUserEst.ShowDialog();
+            inicioSesionUserEst.Show();
+            this.Hide();
         }
 
-        private void btn_AdminRegis_Click(object sender, EventArgs e)
+        private void Btn_AdminRegis_Click_1(object sender, EventArgs e)
         {
             InicioSesionUserAdmin inicioSesionUserAdmin = new InicioSesionUserAdmin();
-            inicioSesionUserAdmin.ShowDialog();
+            inicioSesionUserAdmin.Show();
+            this.Hide();
+        }
+
+        private void Btn_Salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btn_minisize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

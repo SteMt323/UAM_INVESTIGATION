@@ -83,6 +83,16 @@ namespace UAM_INVESTIGATION.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap U_I_Logo {
+            get {
+                object obj = ResourceManager.GetObject("U_I_Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap uam_internacional_portada {
             get {
                 object obj = ResourceManager.GetObject("uam_internacional_portada", resourceCulture);

@@ -1,6 +1,6 @@
 ﻿namespace UAM_INVESTIGATION
 {
-    partial class Inicio
+    partial class pantalla_Principal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,164 +28,272 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_AdminRegis = new FontAwesome.Sharp.IconButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pantalla_Principal));
+            this.PanelMenu = new System.Windows.Forms.Panel();
+            this.Btn_Us = new FontAwesome.Sharp.IconButton();
+            this.Btn_Help = new FontAwesome.Sharp.IconButton();
+            this.Btn_AdminRegis = new FontAwesome.Sharp.IconButton();
             this.Btn_UserRegis = new FontAwesome.Sharp.IconButton();
+            this.PanelLogo = new System.Windows.Forms.Panel();
+            this.img_Home = new System.Windows.Forms.PictureBox();
+            this.btn_minisize = new FontAwesome.Sharp.IconButton();
+            this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.icon_form_home = new FontAwesome.Sharp.IconPictureBox();
+            this.lbl_form_tittle = new System.Windows.Forms.Label();
+            this.Panel_Tittle = new System.Windows.Forms.Panel();
+            this.PanelMenu.SuspendLayout();
+            this.PanelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Home)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_form_home)).BeginInit();
+            this.Panel_Tittle.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // PanelMenu
             // 
-            this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btn_AdminRegis);
-            this.panel1.Controls.Add(this.Btn_UserRegis);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(197, 450);
-            this.panel1.TabIndex = 0;
+            this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.PanelMenu.Controls.Add(this.Btn_Us);
+            this.PanelMenu.Controls.Add(this.Btn_Help);
+            this.PanelMenu.Controls.Add(this.Btn_AdminRegis);
+            this.PanelMenu.Controls.Add(this.Btn_UserRegis);
+            this.PanelMenu.Controls.Add(this.PanelLogo);
+            this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PanelMenu.Location = new System.Drawing.Point(0, 0);
+            this.PanelMenu.Name = "PanelMenu";
+            this.PanelMenu.Size = new System.Drawing.Size(220, 550);
+            this.PanelMenu.TabIndex = 3;
             // 
-            // btn_AdminRegis
+            // Btn_Us
             // 
-            this.btn_AdminRegis.AutoSize = true;
-            this.btn_AdminRegis.BackColor = System.Drawing.Color.Teal;
-            this.btn_AdminRegis.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_AdminRegis.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AdminRegis.IconChar = FontAwesome.Sharp.IconChar.Sitemap;
-            this.btn_AdminRegis.IconColor = System.Drawing.Color.Black;
-            this.btn_AdminRegis.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btn_AdminRegis.IconSize = 38;
-            this.btn_AdminRegis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_AdminRegis.Location = new System.Drawing.Point(3, 245);
-            this.btn_AdminRegis.Name = "btn_AdminRegis";
-            this.btn_AdminRegis.Size = new System.Drawing.Size(185, 54);
-            this.btn_AdminRegis.TabIndex = 2;
-            this.btn_AdminRegis.Text = "Admin";
-            this.btn_AdminRegis.UseVisualStyleBackColor = false;
-            this.btn_AdminRegis.Click += new System.EventHandler(this.btn_AdminRegis_Click);
+            this.Btn_Us.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Btn_Us.FlatAppearance.BorderSize = 0;
+            this.Btn_Us.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Us.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Us.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Btn_Us.IconChar = FontAwesome.Sharp.IconChar.UsersRectangle;
+            this.Btn_Us.IconColor = System.Drawing.Color.Gainsboro;
+            this.Btn_Us.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_Us.IconSize = 20;
+            this.Btn_Us.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_Us.Location = new System.Drawing.Point(0, 490);
+            this.Btn_Us.Name = "Btn_Us";
+            this.Btn_Us.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.Btn_Us.Size = new System.Drawing.Size(220, 30);
+            this.Btn_Us.TabIndex = 4;
+            this.Btn_Us.Text = "Sobre Nosotros";
+            this.Btn_Us.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_Us.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_Us.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Help
+            // 
+            this.Btn_Help.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Btn_Help.FlatAppearance.BorderSize = 0;
+            this.Btn_Help.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Help.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Help.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Btn_Help.IconChar = FontAwesome.Sharp.IconChar.Info;
+            this.Btn_Help.IconColor = System.Drawing.Color.Gainsboro;
+            this.Btn_Help.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_Help.IconSize = 20;
+            this.Btn_Help.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_Help.Location = new System.Drawing.Point(0, 520);
+            this.Btn_Help.Name = "Btn_Help";
+            this.Btn_Help.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.Btn_Help.Size = new System.Drawing.Size(220, 30);
+            this.Btn_Help.TabIndex = 3;
+            this.Btn_Help.Text = "Ayuda";
+            this.Btn_Help.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_Help.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_Help.UseVisualStyleBackColor = true;
+            // 
+            // Btn_AdminRegis
+            // 
+            this.Btn_AdminRegis.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_AdminRegis.FlatAppearance.BorderSize = 0;
+            this.Btn_AdminRegis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_AdminRegis.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_AdminRegis.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Btn_AdminRegis.IconChar = FontAwesome.Sharp.IconChar.UsersGear;
+            this.Btn_AdminRegis.IconColor = System.Drawing.Color.Gainsboro;
+            this.Btn_AdminRegis.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_AdminRegis.IconSize = 30;
+            this.Btn_AdminRegis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_AdminRegis.Location = new System.Drawing.Point(0, 280);
+            this.Btn_AdminRegis.Name = "Btn_AdminRegis";
+            this.Btn_AdminRegis.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.Btn_AdminRegis.Size = new System.Drawing.Size(220, 60);
+            this.Btn_AdminRegis.TabIndex = 2;
+            this.Btn_AdminRegis.Text = "ADMIN";
+            this.Btn_AdminRegis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_AdminRegis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_AdminRegis.UseVisualStyleBackColor = true;
+            this.Btn_AdminRegis.Click += new System.EventHandler(this.Btn_AdminRegis_Click_1);
             // 
             // Btn_UserRegis
             // 
-            this.Btn_UserRegis.AutoSize = true;
-            this.Btn_UserRegis.BackColor = System.Drawing.Color.Teal;
-            this.Btn_UserRegis.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Btn_UserRegis.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_UserRegis.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_UserRegis.FlatAppearance.BorderSize = 0;
+            this.Btn_UserRegis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_UserRegis.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_UserRegis.ForeColor = System.Drawing.Color.Gainsboro;
             this.Btn_UserRegis.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.Btn_UserRegis.IconColor = System.Drawing.Color.Black;
-            this.Btn_UserRegis.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.Btn_UserRegis.IconColor = System.Drawing.Color.Gainsboro;
+            this.Btn_UserRegis.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btn_UserRegis.IconSize = 30;
             this.Btn_UserRegis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_UserRegis.Location = new System.Drawing.Point(3, 185);
+            this.Btn_UserRegis.Location = new System.Drawing.Point(0, 220);
             this.Btn_UserRegis.Name = "Btn_UserRegis";
-            this.Btn_UserRegis.Size = new System.Drawing.Size(185, 54);
+            this.Btn_UserRegis.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.Btn_UserRegis.Size = new System.Drawing.Size(220, 60);
             this.Btn_UserRegis.TabIndex = 1;
-            this.Btn_UserRegis.Text = "Usuario";
-            this.Btn_UserRegis.UseVisualStyleBackColor = false;
-            this.Btn_UserRegis.Click += new System.EventHandler(this.Btn_UserRegis_Click);
+            this.Btn_UserRegis.Text = "ESTUDIANTE";
+            this.Btn_UserRegis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_UserRegis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_UserRegis.UseVisualStyleBackColor = true;
+            this.Btn_UserRegis.Click += new System.EventHandler(this.Btn_UserRegis_Click_1);
+            // 
+            // PanelLogo
+            // 
+            this.PanelLogo.Controls.Add(this.img_Home);
+            this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelLogo.Location = new System.Drawing.Point(0, 0);
+            this.PanelLogo.Name = "PanelLogo";
+            this.PanelLogo.Size = new System.Drawing.Size(220, 220);
+            this.PanelLogo.TabIndex = 0;
+            // 
+            // img_Home
+            // 
+            this.img_Home.Image = ((System.Drawing.Image)(resources.GetObject("img_Home.Image")));
+            this.img_Home.Location = new System.Drawing.Point(0, 0);
+            this.img_Home.Name = "img_Home";
+            this.img_Home.Size = new System.Drawing.Size(220, 220);
+            this.img_Home.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.img_Home.TabIndex = 0;
+            this.img_Home.TabStop = false;
+            // 
+            // btn_minisize
+            // 
+            this.btn_minisize.BackColor = System.Drawing.Color.Transparent;
+            this.btn_minisize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_minisize.FlatAppearance.BorderSize = 0;
+            this.btn_minisize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_minisize.IconChar = FontAwesome.Sharp.IconChar.Compress;
+            this.btn_minisize.IconColor = System.Drawing.Color.DimGray;
+            this.btn_minisize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_minisize.IconSize = 20;
+            this.btn_minisize.Location = new System.Drawing.Point(662, 3);
+            this.btn_minisize.Name = "btn_minisize";
+            this.btn_minisize.Size = new System.Drawing.Size(15, 15);
+            this.btn_minisize.TabIndex = 19;
+            this.btn_minisize.UseVisualStyleBackColor = false;
+            this.btn_minisize.Click += new System.EventHandler(this.btn_minisize_Click);
+            // 
+            // Btn_Salir
+            // 
+            this.Btn_Salir.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_Salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_Salir.FlatAppearance.BorderSize = 0;
+            this.Btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Salir.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.Btn_Salir.IconColor = System.Drawing.Color.DimGray;
+            this.Btn_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_Salir.IconSize = 15;
+            this.Btn_Salir.Location = new System.Drawing.Point(683, 3);
+            this.Btn_Salir.Name = "Btn_Salir";
+            this.Btn_Salir.Size = new System.Drawing.Size(15, 15);
+            this.Btn_Salir.TabIndex = 18;
+            this.Btn_Salir.UseVisualStyleBackColor = false;
+            this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::UAM_INVESTIGATION.Properties.Resources.logo_uam_1png;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 19);
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(62)))));
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::UAM_INVESTIGATION.Properties.Resources.uam_internacional_portada;
+            this.pictureBox1.Location = new System.Drawing.Point(220, 75);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(167, 124);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.Size = new System.Drawing.Size(701, 475);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
-            // metroLabel1
+            // icon_form_home
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.metroLabel1.Location = new System.Drawing.Point(147, 131);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(209, 25);
-            this.metroLabel1.TabIndex = 1;
-            this.metroLabel1.Text = "UAM INVESTIGATIONS";
-            this.metroLabel1.UseCustomBackColor = true;
+            this.icon_form_home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.icon_form_home.ForeColor = System.Drawing.Color.MediumPurple;
+            this.icon_form_home.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
+            this.icon_form_home.IconColor = System.Drawing.Color.MediumPurple;
+            this.icon_form_home.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icon_form_home.Location = new System.Drawing.Point(15, 22);
+            this.icon_form_home.Name = "icon_form_home";
+            this.icon_form_home.Size = new System.Drawing.Size(32, 32);
+            this.icon_form_home.TabIndex = 0;
+            this.icon_form_home.TabStop = false;
             // 
-            // pictureBox2
+            // lbl_form_tittle
             // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Enabled = false;
-            this.pictureBox2.Image = global::UAM_INVESTIGATION.Properties.Resources.uam_internacional_portada;
-            this.pictureBox2.Location = new System.Drawing.Point(195, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(688, 459);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.lbl_form_tittle.AutoSize = true;
+            this.lbl_form_tittle.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_form_tittle.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lbl_form_tittle.Location = new System.Drawing.Point(53, 31);
+            this.lbl_form_tittle.Name = "lbl_form_tittle";
+            this.lbl_form_tittle.Size = new System.Drawing.Size(39, 16);
+            this.lbl_form_tittle.TabIndex = 1;
+            this.lbl_form_tittle.Text = "Home";
             // 
-            // pictureBox3
+            // Panel_Tittle
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Image = global::UAM_INVESTIGATION.Properties.Resources.logo_uam_2;
-            this.pictureBox3.Location = new System.Drawing.Point(147, 29);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(216, 69);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
+            this.Panel_Tittle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.Panel_Tittle.Controls.Add(this.btn_minisize);
+            this.Panel_Tittle.Controls.Add(this.lbl_form_tittle);
+            this.Panel_Tittle.Controls.Add(this.Btn_Salir);
+            this.Panel_Tittle.Controls.Add(this.icon_form_home);
+            this.Panel_Tittle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Panel_Tittle.Location = new System.Drawing.Point(220, 0);
+            this.Panel_Tittle.Name = "Panel_Tittle";
+            this.Panel_Tittle.Size = new System.Drawing.Size(701, 75);
+            this.Panel_Tittle.TabIndex = 20;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Controls.Add(this.metroLabel1);
-            this.panel2.Location = new System.Drawing.Point(247, 125);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(498, 175);
-            this.panel2.TabIndex = 3;
-            // 
-            // Inicio
+            // pantalla_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "Inicio";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ClientSize = new System.Drawing.Size(921, 550);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Panel_Tittle);
+            this.Controls.Add(this.PanelMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "pantalla_Principal";
+            this.Opacity = 0.95D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.PanelMenu.ResumeLayout(false);
+            this.PanelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.img_Home)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_form_home)).EndInit();
+            this.Panel_Tittle.ResumeLayout(false);
+            this.Panel_Tittle.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private System.Windows.Forms.Panel PanelMenu;
+        private System.Windows.Forms.Panel PanelLogo;
         private FontAwesome.Sharp.IconButton Btn_UserRegis;
+        private System.Windows.Forms.PictureBox img_Home;
+        private FontAwesome.Sharp.IconButton Btn_Us;
+        private FontAwesome.Sharp.IconButton Btn_Help;
+        private FontAwesome.Sharp.IconButton Btn_AdminRegis;
+        private FontAwesome.Sharp.IconButton btn_minisize;
+        private FontAwesome.Sharp.IconButton Btn_Salir;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private FontAwesome.Sharp.IconButton btn_AdminRegis;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel panel2;
+        private FontAwesome.Sharp.IconPictureBox icon_form_home;
+        private System.Windows.Forms.Label lbl_form_tittle;
+        private System.Windows.Forms.Panel Panel_Tittle;
     }
 }
 

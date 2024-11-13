@@ -81,13 +81,70 @@ namespace UAM_INVESTIGATION.Forms
 
         private void InicioSesionUserEst_Load(object sender, EventArgs e)
         {
-            txt_Contrasenia.UseSystemPasswordChar = true;
         }
 
         private void Lnk_Registro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             RegistroUserEst registroUserEst = new RegistroUserEst();
-            registroUserEst.ShowDialog();
+            registroUserEst.Show();
+            this.Hide();
+        }
+
+        //PLACEHOLDERS
+        private void txt_CorreoCif_Enter(object sender, EventArgs e)
+        {
+            if(txt_CorreoCif.Text == "CORREO")
+            {
+                txt_CorreoCif.Text = "";
+                txt_CorreoCif.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void txt_CorreoCif_Leave(object sender, EventArgs e)
+        {
+            if (txt_CorreoCif.Text == "")
+            {
+                txt_CorreoCif.Text = "CORREO";
+                txt_CorreoCif.ForeColor = Color.DimGray;
+            }
+
+        }
+
+        private void txt_Contrasenia_Enter(object sender, EventArgs e)
+        {
+            if (txt_Contrasenia.Text == "CONTRASEÑA")
+            {
+                txt_Contrasenia.Text = "";
+                txt_Contrasenia.ForeColor = Color.LightGray;
+                txt_Contrasenia.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void txt_Contrasenia_Leave(object sender, EventArgs e)
+        {
+            if (txt_Contrasenia.Text == "")
+            {
+                txt_Contrasenia.Text = "CONTRASEÑA";
+                txt_Contrasenia.ForeColor = Color.DimGray;
+                txt_Contrasenia.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void Btn_Salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btn_minisize_Click(object sender, EventArgs e)
+        {
+            this.WindowState=FormWindowState.Minimized;
+        }
+
+        private void btn_regresar_Click(object sender, EventArgs e)
+        {
+            pantalla_Principal pantalla_Principal = new pantalla_Principal();
+            pantalla_Principal.Show();
+            this.Hide();
         }
     }
 }

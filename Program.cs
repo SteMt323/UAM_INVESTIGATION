@@ -16,7 +16,7 @@ namespace UAM_INVESTIGATION
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Inicio());
+            Application.Run(new pantalla_Principal());
         }
     }
 }

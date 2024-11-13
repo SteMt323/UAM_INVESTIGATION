@@ -18,7 +18,87 @@ namespace UAM_INVESTIGATION.Forms
             InitializeComponent();
         }
 
-        private void btn_InicioSesion_Click(object sender, EventArgs e)
+        private void cb_MostrarContrasenia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_MostrarContrasenia.Checked)
+            {
+                txt_Contrasenia.UseSystemPasswordChar = false; //Mostrar la contraseña
+            }
+            else
+            {
+                txt_Contrasenia.UseSystemPasswordChar = true; //Ocultar Contraseña
+            }
+        }
+
+        private void InicioSesionUserAdmin_Load(object sender, EventArgs e)
+        {
+        } 
+
+        private void btn_minisize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Btn_Salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        //PLACEHOLDERS
+
+        private void txt_Correo_Enter_1(object sender, EventArgs e)
+        {
+            if (txt_Correo.Text == "CORREO")
+            {
+                txt_Correo.Text = "";
+                txt_Correo.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void txt_Correo_Leave_1(object sender, EventArgs e)
+        {
+            if (txt_Correo.Text == "")
+            {
+                txt_Correo.Text = "CORREO";
+                txt_Correo.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txt_Contrasenia_Enter_1(object sender, EventArgs e)
+        {
+            if (txt_Contrasenia.Text == "CONTRASEÑA")
+            {
+                txt_Contrasenia.Text = "";
+                txt_Contrasenia.ForeColor = Color.LightGray;
+                txt_Contrasenia.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void txt_Contrasenia_Leave_1(object sender, EventArgs e)
+        {
+            if (txt_Contrasenia.Text == "")
+            {
+                txt_Contrasenia.Text = "CONTRASEÑA";
+                txt_Contrasenia.ForeColor = Color.DimGray;
+                txt_Contrasenia.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void Lnk_Registro_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RegistroUserAdmin registroUserAdmin = new RegistroUserAdmin();
+            registroUserAdmin.Show();
+            this.Hide();
+        }
+
+        private void btn_regresar_Click(object sender, EventArgs e)
+        {
+            pantalla_Principal pantalla_Principal = new pantalla_Principal();
+            pantalla_Principal.Show();
+            this.Hide();
+        }
+
+        private void btn_InicioSesion_Click_1(object sender, EventArgs e)
         {
             string entrada = txt_Correo.Text;
             string contrasenia = txt_Contrasenia.Text;
@@ -41,29 +121,6 @@ namespace UAM_INVESTIGATION.Forms
             {
                 MessageBox.Show("Correo o contraseña son inválidas", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        private void cb_MostrarContrasenia_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_MostrarContrasenia.Checked)
-            {
-                txt_Contrasenia.UseSystemPasswordChar = false; //Mostrar la contraseña
-            }
-            else
-            {
-                txt_Contrasenia.UseSystemPasswordChar = true; //Ocultar Contraseña
-            }
-        }
-
-        private void InicioSesionUserAdmin_Load(object sender, EventArgs e)
-        {
-            txt_Contrasenia.UseSystemPasswordChar = true;
-        }
-
-        private void Lnk_Registro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            RegistroUserAdmin registroUserAdmin = new RegistroUserAdmin();
-            registroUserAdmin.ShowDialog();
         }
     }
 }

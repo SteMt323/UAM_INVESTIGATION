@@ -19,7 +19,11 @@ namespace UAM_INVESTIGATION.Forms
             InitializeComponent();
         }
 
-        private void btn_Registrarse_Click(object sender, EventArgs e)
+        private void RegistroUserEst_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void btn_Registrarse_Click_1(object sender, EventArgs e)
         {
             string correo = txt_Correo.Text;
             string cif = txt_Cif.Text;
@@ -27,7 +31,7 @@ namespace UAM_INVESTIGATION.Forms
             string nombre = txt_Nombre.Text;
             string carrera = txt_Carrera.Text;
 
-            if(string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(cif) || string.IsNullOrEmpty(contrasenia) || string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(carrera))
+            if (string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(cif) || string.IsNullOrEmpty(contrasenia) || string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(carrera))
             {
                 MessageBox.Show("Todos los campos deben de llenarse, por favor vuelva a intentarlo.",
                         "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -52,7 +56,7 @@ namespace UAM_INVESTIGATION.Forms
                         "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            foreach(char c in nombre)
+            foreach (char c in nombre)
             {
                 if (char.IsDigit(c))
                 {
@@ -82,7 +86,31 @@ namespace UAM_INVESTIGATION.Forms
             this.Hide();
         }
 
-        private void show_Password_CheckedChanged(object sender, EventArgs e)
+        private void Lnk_Sesion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            InicioSesionUserEst inicioSesionUserEst = new InicioSesionUserEst();
+            inicioSesionUserEst.Show();
+            this.Hide();
+        }
+
+        private void Btn_Salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btn_minisize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btn_regresar_Click(object sender, EventArgs e)
+        {
+            InicioSesionUserEst inicioSesionUserEst = new InicioSesionUserEst();
+            inicioSesionUserEst.Show();
+            this.Hide();
+        }
+
+        private void show_Password_CheckedChanged_1(object sender, EventArgs e)
         {
             if (show_Password.Checked)
             {
@@ -94,16 +122,96 @@ namespace UAM_INVESTIGATION.Forms
             }
         }
 
-        private void RegistroUserEst_Load(object sender, EventArgs e)
+        private void txt_Correo_Enter(object sender, EventArgs e)
         {
-            txt_Contrasenia.UseSystemPasswordChar = true;
+            if (txt_Correo.Text == "CORREO")
+            {
+                txt_Correo.Text = "";
+                txt_Correo.ForeColor = Color.LightGray;
+            }
         }
 
-        private void Lnk_SesionEst_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void txt_Correo_Leave(object sender, EventArgs e)
         {
-            InicioSesionUserEst inicioSesionUserEst = new InicioSesionUserEst();
-            inicioSesionUserEst.ShowDialog();
-            this.Hide();
+            if (txt_Correo.Text == "")
+            {
+                txt_Correo.Text = "CORREO";
+                txt_Correo.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txt_Cif_Enter(object sender, EventArgs e)
+        {
+            if (txt_Cif.Text == "CIF")
+            {
+                txt_Cif.Text = "";
+                txt_Cif.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void txt_Cif_Leave(object sender, EventArgs e)
+        {
+            if (txt_Cif.Text == "")
+            {
+                txt_Cif.Text = "CIF";
+                txt_Cif.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txt_Contrasenia_Enter(object sender, EventArgs e)
+        {
+            if (txt_Contrasenia.Text == "CONTRASEÑA")
+            {
+                txt_Contrasenia.Text = "";
+                txt_Contrasenia.ForeColor = Color.LightGray;
+                txt_Contrasenia.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void txt_Contrasenia_Leave(object sender, EventArgs e)
+        {
+            if (txt_Contrasenia.Text == "")
+            {
+                txt_Contrasenia.Text = "CONTRASEÑA";
+                txt_Contrasenia.ForeColor = Color.DimGray;
+                txt_Contrasenia.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void txt_Nombre_Enter(object sender, EventArgs e)
+        {
+            if (txt_Nombre.Text == "NOMBRE COMPLETO")
+            {
+                txt_Nombre.Text = "";
+                txt_Nombre.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void txt_Nombre_Leave(object sender, EventArgs e)
+        {
+            if (txt_Nombre.Text == "")
+            {
+                txt_Nombre.Text = "NOMBRE COMPLETO";
+                txt_Nombre.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txt_Carrera_Enter(object sender, EventArgs e)
+        {
+            if (txt_Carrera.Text == "CARRERA")
+            {
+                txt_Carrera.Text = "";
+                txt_Carrera.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void txt_Carrera_Leave(object sender, EventArgs e)
+        {
+            if (txt_Carrera.Text == "")
+            {
+                txt_Carrera.Text = "CARRERA";
+                txt_Carrera.ForeColor = Color.DimGray;
+            }
         }
     }
 }
