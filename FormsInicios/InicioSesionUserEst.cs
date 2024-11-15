@@ -18,6 +18,26 @@ namespace UAM_INVESTIGATION.Forms
             InitializeComponent();
         }
 
+        private string ObtenerNombreUsuarioEst(string entrada)
+        {
+            InitRegis initRegis = new InitRegis();
+            var estudiantes = initRegis.LeerUsuariosEst();
+            foreach(var est in estudiantes)
+            {
+                if (est.Correo == entrada || est.Cif == entrada)
+                {
+                    return est.Nombre;
+                }
+            }
+            return "";
+        }
+
+        private void msgError(string message)
+        {
+            lblErrorMessage.Text = message;
+            lblErrorMessage.Visible = true;
+            iconPictureBox1.Visible = true;
+        }
         private void btn_InicioSesion_Click(object sender, EventArgs e)
         {
             string entrada = txt_CorreoCif.Text;
@@ -26,45 +46,60 @@ namespace UAM_INVESTIGATION.Forms
             string cif = null;
             int type = 0;
 
-            //Validación si es correo
-            if (entrada.Contains("@") && (entrada.EndsWith(".com") || entrada.EndsWith(".ni")))
+            if (txt_CorreoCif.Text != "CORREO O CIF")
             {
-                correo = entrada; //Si es correo se guarda como correo
-                type = 1;
-            }
-            else if (entrada.Length == 8 && entrada.All(char.IsDigit))
-            {
-                cif = entrada; //Si son 8 carácteres alfanuméricos, se guarda como cif
-                type = 2;
-            }
-
-            InitRegis initRegis = new InitRegis();
-            bool inicioValido = false;
-            if(type == 1)
-            {
-                if (!inicioValido && !string.IsNullOrEmpty(correo))
+                if(txt_Contrasenia.Text != "CONTRASEÑA")
                 {
-                    inicioValido = initRegis.IniciarSesionEstCorreo(correo, contrasenia);
-                }
-            }
-            if(type == 2)
-            {
-                if (!inicioValido && !string.IsNullOrEmpty(cif))
-                {
-                    inicioValido = initRegis.IniciarSesionEstCif(cif, contrasenia);
-                }
-            }
+                    //Validación si es correo
+                    if (entrada.Contains("@") && (entrada.EndsWith(".com") || entrada.EndsWith(".ni")))
+                    {
+                        correo = entrada; //Si es correo se guarda como correo
+                        type = 1;
+                    }
+                    else if (entrada.Length == 8 && entrada.All(char.IsDigit))
+                    {
+                        cif = entrada; //Si son 8 carácteres alfanuméricos, se guarda como cif
+                        type = 2;
+                    }
 
-            if (inicioValido)
-            {
-                MessageBox.Show("Inicio de sesión exitoso", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //Redirigir a la pantalla principal de Estudiantes
+                    InitRegis initRegis = new InitRegis();
+                    bool inicioValido = false;
+                    if (type == 1)
+                    {
+                        if (!inicioValido && !string.IsNullOrEmpty(correo))
+                        {
+                            inicioValido = initRegis.IniciarSesionEstCorreo(correo, contrasenia);
+                        }
+                    }
+                    if (type == 2)
+                    {
+                        if (!inicioValido && !string.IsNullOrEmpty(cif))
+                        {
+                            inicioValido = initRegis.IniciarSesionEstCif(cif, contrasenia);
+                        }
+                    }
 
+                    if (inicioValido)
+                    {
+                        string nombreUsuario = ObtenerNombreUsuarioEst(correo ?? cif);
+
+                        //Redirigir a la pantalla principal de Estudiantes
+                        this.Hide();
+                        Bienvenida bienvenida = new Bienvenida(nombreUsuario);
+                        bienvenida.ShowDialog();
+                    }
+                    else
+                    {
+                        msgError("El Correo/Cif o la Contraseña son incorrectos.");
+                        txt_Contrasenia.Clear();
+                        txt_CorreoCif.Focus();
+                    }
+                }
+                else msgError("Porfavor ingrese la contraseña");
             }
-            else
-            {
-                MessageBox.Show("Correo/cif o contraseña son inválidas", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            else msgError("Porfavor ingrese su correo");
+
+            
         }
 
         private void cb_MostrarContrasenia_CheckedChanged(object sender, EventArgs e)
@@ -93,7 +128,7 @@ namespace UAM_INVESTIGATION.Forms
         //PLACEHOLDERS
         private void txt_CorreoCif_Enter(object sender, EventArgs e)
         {
-            if(txt_CorreoCif.Text == "CORREO")
+            if(txt_CorreoCif.Text == "CORREO O CIF")
             {
                 txt_CorreoCif.Text = "";
                 txt_CorreoCif.ForeColor = Color.LightGray;
@@ -104,7 +139,7 @@ namespace UAM_INVESTIGATION.Forms
         {
             if (txt_CorreoCif.Text == "")
             {
-                txt_CorreoCif.Text = "CORREO";
+                txt_CorreoCif.Text = "CORREO O CIF";
                 txt_CorreoCif.ForeColor = Color.DimGray;
             }
 

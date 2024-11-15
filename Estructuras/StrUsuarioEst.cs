@@ -15,10 +15,9 @@ namespace UAM_INVESTIGATION.Estructuras
         public string Contrasenia { get; set; }
         public string Carrera { get; set; }
 
-        public UsuarioEst(string nombre, string correo, string cif, string contrasenia, string carrera)
+        public UsuarioEst(int id, string nombre, string correo, string cif, string contrasenia, string carrera)
         {
-            Random random = new Random();
-            Id = random.Next(1000, 9999); //Generara un id al azar
+            Id = id;
             Nombre = nombre;
             Correo = correo;
             Cif = cif;

@@ -75,15 +75,29 @@ namespace UAM_INVESTIGATION.Forms
                     return;
                 }
             }
-            //Crear nuevo Usuario
-            UsuarioEst nuevoUsuarioEst = new UsuarioEst(nombre, correo, cif, contrasenia, carrera);
-
-            //Registrarlo
             InitRegis regis = new InitRegis();
-            regis.RegistrarUsuarioEst(nuevoUsuarioEst);
 
-            MessageBox.Show("Usuario registrado exitosamente!", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Hide();
+            if (regis.CorreoExistenteEnEstudiantes(correo))
+            {
+                MessageBox.Show("El correo ya está registrado, por favor ingrese otro correo.",
+                "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                int id = new Random().Next(1000, 9999);
+                //Crear nuevo Usuario
+                UsuarioEst nuevoUsuarioEst = new UsuarioEst(id, nombre, correo, cif, contrasenia, carrera);
+
+                //Registrarlo
+                regis.RegistrarUsuarioEst(nuevoUsuarioEst);
+
+                MessageBox.Show("Usuario registrado exitosamente!", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                InicioSesionUserEst inicioSesionUserEst = new InicioSesionUserEst();
+                inicioSesionUserEst.Show();
+                this.Hide();
+            }
+            
         }
 
         private void Lnk_Sesion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

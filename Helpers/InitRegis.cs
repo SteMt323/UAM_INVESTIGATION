@@ -21,6 +21,7 @@ namespace UAM_INVESTIGATION.Helpers
         //Registrar UsuarioEst
         public void RegistrarUsuarioEst(UsuarioEst nuevoUsuario)
         {
+            UsuarioEst usuarioConId = new UsuarioEst(nuevoUsuario.Id, nuevoUsuario.Nombre, nuevoUsuario.Correo, nuevoUsuario.Cif, nuevoUsuario.Contrasenia, nuevoUsuario.Carrera);
             //Verificamos si existe el archivo
             if (!File.Exists(usuarioEstFile))
             {
@@ -31,7 +32,7 @@ namespace UAM_INVESTIGATION.Helpers
             {
                 using (StreamWriter sw = new StreamWriter(usuarioEstFile, true))
                 {
-                    sw.WriteLine($"{nuevoUsuario.Id}|{nuevoUsuario.Nombre}|{nuevoUsuario.Correo}|{nuevoUsuario.Cif}|{nuevoUsuario.Contrasenia}|{nuevoUsuario.Carrera}");
+                    sw.WriteLine($"{usuarioConId.Id}|{usuarioConId.Nombre}|{usuarioConId.Correo}|{usuarioConId.Cif}|{usuarioConId.Contrasenia}|{usuarioConId.Carrera}");
                 }
             }
             catch (IOException ex)
@@ -44,23 +45,31 @@ namespace UAM_INVESTIGATION.Helpers
         //Registrar UsuarioAdmin
         public void RegistrarUsuarioAdmin(UsuarioAdmin nuevoAdmin)
         {
+
+            // Crear un nuevo objeto UsuarioAdmin con el Id generado
+            UsuarioAdmin adminConId = new UsuarioAdmin(nuevoAdmin.Id, nuevoAdmin.Nombre, nuevoAdmin.Correo, nuevoAdmin.Contrasenia);
+
+            // Verificamos si existe el archivo
             if (!File.Exists(usuarioAdminFile))
             {
                 File.Create(usuarioAdminFile).Close();
             }
+
+            // Guardamos el usuario en el archivo
             try
             {
                 using (StreamWriter sw = new StreamWriter(usuarioAdminFile, true))
                 {
-                    sw.WriteLine($"{nuevoAdmin.Id}|{nuevoAdmin.Nombre}|{nuevoAdmin.Correo}|{nuevoAdmin.Contrasenia}");
+                    sw.WriteLine($"{adminConId.Id}|{adminConId.Nombre}|{adminConId.Correo}|{adminConId.Contrasenia}");
                 }
             }
             catch (IOException ex)
             {
                 Console.WriteLine($"Error al acceder al archivo: {ex.Message}");
             }
-
         }
+
+
 
         //Inicio de Sesión Estudiantes
         public bool IniciarSesionEstCorreo(string correo, string contrasenia)
@@ -91,6 +100,7 @@ namespace UAM_INVESTIGATION.Helpers
             }
             return false;
         }
+
 
         public bool IniciarSesionEstCif(string cif, string contrasenia)
         {
@@ -150,7 +160,7 @@ namespace UAM_INVESTIGATION.Helpers
         }
 
         //Método para leer usuarios de estudiantes
-        private List<UsuarioEst> LeerUsuariosEst()
+        public List<UsuarioEst> LeerUsuariosEst()
         {
             var usuarios = new List<UsuarioEst>();
             try
@@ -160,7 +170,8 @@ namespace UAM_INVESTIGATION.Helpers
                     foreach (var linea in File.ReadLines(usuarioEstFile))
                     {
                         var datos = linea.Split('|');
-                        usuarios.Add(new UsuarioEst(datos[1], datos[2], datos[3], datos[4], datos[5]));
+                        int id = int.Parse(datos[0]);
+                        usuarios.Add(new UsuarioEst(id, datos[1], datos[2], datos[3], datos[4], datos[5]));
                     }
 
                 }
@@ -174,7 +185,7 @@ namespace UAM_INVESTIGATION.Helpers
         }
 
         //Método para leer usuarios Administradores
-        private List<UsuarioAdmin> LeerUsuariosAdmin()
+        public List<UsuarioAdmin> LeerUsuariosAdmin()
         {
             var admins = new List<UsuarioAdmin>();
             try
@@ -184,7 +195,12 @@ namespace UAM_INVESTIGATION.Helpers
                     foreach (var linea in File.ReadLines(usuarioAdminFile))
                     {
                         var datos = linea.Split('|');
-                        admins.Add(new UsuarioAdmin(datos[1], datos[2], datos[3]));
+
+                        // Asumimos que el primer dato es el Id, y el resto los demás campos
+                        int id = int.Parse(datos[0]);  // Leer el Id
+
+                        // Crear el objeto UsuarioAdmin con el Id
+                        admins.Add(new UsuarioAdmin(id, datos[1], datos[2], datos[3]));
                     }
                 }
             }
@@ -195,5 +211,64 @@ namespace UAM_INVESTIGATION.Helpers
 
             return admins;
         }
+
+
+        public bool CorreoExistenteEnEstudiantes(string correo)
+        {
+            foreach(var usuario in LeerUsuariosEst())
+            {
+                if (usuario.Correo == correo)
+                {
+                    return true; // El correo ya está registrado
+                }
+            }
+            return false;
+        }
+
+        public bool CorreoExisteEnAdmins(string correo)
+        {
+            foreach (var admin in LeerUsuariosAdmin())
+            {
+                if (admin.Correo == correo)
+                {
+                    return true;  // El correo ya está registrado
+                }
+            }
+            return false;
+        }
+
+        public void ActualizarUsuarioAdmin(int id, string nuevoNombre, string nuevoCorreo, string nuevaContrasenia)
+        {
+            var admins = LeerUsuariosAdmin(); // Leer todos los administradores
+
+            // Buscar el administrador que queremos actualizar
+            for (int i = 0; i < admins.Count; i++)
+            {
+                if (admins[i].Id == id) // Encontramos el administrador por ID
+                {
+                    // Crear un nuevo objeto con los datos actualizados
+                    admins[i] = new UsuarioAdmin(id, nuevoNombre, nuevoCorreo, nuevaContrasenia);
+                    break; // Salimos del bucle una vez hecho el cambio
+                }
+            }
+
+            // Sobreescribir el archivo con los datos actualizados
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(usuarioAdminFile))
+                {
+                    foreach (var admin in admins)
+                    {
+                        sw.WriteLine($"{admin.Id}|{admin.Nombre}|{admin.Correo}|{admin.Contrasenia}");
+                    }
+                }
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine($"Error al escribir en el archivo: {ex.Message}");
+            }
+        }
+
+
     }
 }

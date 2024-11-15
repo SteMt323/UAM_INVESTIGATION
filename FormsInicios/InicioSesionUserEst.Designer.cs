@@ -47,9 +47,12 @@
             this.btn_minisize = new FontAwesome.Sharp.IconButton();
             this.cb_MostrarContrasenia = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.lblErrorMessage = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_CorreoCif
@@ -62,7 +65,7 @@
             this.txt_CorreoCif.Name = "txt_CorreoCif";
             this.txt_CorreoCif.Size = new System.Drawing.Size(401, 20);
             this.txt_CorreoCif.TabIndex = 1;
-            this.txt_CorreoCif.Text = "CORREO";
+            this.txt_CorreoCif.Text = "CORREO O CIF";
             this.txt_CorreoCif.Enter += new System.EventHandler(this.txt_CorreoCif_Enter);
             this.txt_CorreoCif.Leave += new System.EventHandler(this.txt_CorreoCif_Leave);
             // 
@@ -130,7 +133,7 @@
             this.btn_regresar.FlatAppearance.BorderSize = 0;
             this.btn_regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_regresar.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
-            this.btn_regresar.IconColor = System.Drawing.Color.DimGray;
+            this.btn_regresar.IconColor = System.Drawing.Color.Gainsboro;
             this.btn_regresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_regresar.IconSize = 20;
             this.btn_regresar.Location = new System.Drawing.Point(3, 3);
@@ -239,7 +242,7 @@
             this.Btn_Salir.FlatAppearance.BorderSize = 0;
             this.Btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Salir.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.Btn_Salir.IconColor = System.Drawing.Color.DimGray;
+            this.Btn_Salir.IconColor = System.Drawing.Color.Gainsboro;
             this.Btn_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btn_Salir.IconSize = 15;
             this.Btn_Salir.Location = new System.Drawing.Point(512, 3);
@@ -256,7 +259,7 @@
             this.btn_minisize.FlatAppearance.BorderSize = 0;
             this.btn_minisize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_minisize.IconChar = FontAwesome.Sharp.IconChar.Compress;
-            this.btn_minisize.IconColor = System.Drawing.Color.DimGray;
+            this.btn_minisize.IconColor = System.Drawing.Color.Gainsboro;
             this.btn_minisize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_minisize.IconSize = 20;
             this.btn_minisize.Location = new System.Drawing.Point(491, 3);
@@ -289,12 +292,43 @@
             this.panel2.Size = new System.Drawing.Size(530, 50);
             this.panel2.TabIndex = 16;
             // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.Red;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ExclamationTriangle;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.Red;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 26;
+            this.iconPictureBox1.Location = new System.Drawing.Point(314, 179);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(29, 26);
+            this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconPictureBox1.TabIndex = 26;
+            this.iconPictureBox1.TabStop = false;
+            this.iconPictureBox1.Visible = false;
+            // 
+            // lblErrorMessage
+            // 
+            this.lblErrorMessage.AutoSize = true;
+            this.lblErrorMessage.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorMessage.Font = new System.Drawing.Font("Century Gothic", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorMessage.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblErrorMessage.Location = new System.Drawing.Point(340, 182);
+            this.lblErrorMessage.Name = "lblErrorMessage";
+            this.lblErrorMessage.Size = new System.Drawing.Size(102, 19);
+            this.lblErrorMessage.TabIndex = 25;
+            this.lblErrorMessage.Text = "Error Message";
+            this.lblErrorMessage.Visible = false;
+            // 
             // InicioSesionUserEst
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(780, 330);
+            this.Controls.Add(this.iconPictureBox1);
+            this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.cb_MostrarContrasenia);
             this.Controls.Add(this.Lnk_LostPassword);
@@ -313,6 +347,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,5 +372,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btn_regresar;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.Label lblErrorMessage;
     }
 }

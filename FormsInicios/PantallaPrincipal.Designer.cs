@@ -180,7 +180,7 @@
             this.btn_minisize.FlatAppearance.BorderSize = 0;
             this.btn_minisize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_minisize.IconChar = FontAwesome.Sharp.IconChar.Compress;
-            this.btn_minisize.IconColor = System.Drawing.Color.DimGray;
+            this.btn_minisize.IconColor = System.Drawing.Color.Gainsboro;
             this.btn_minisize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_minisize.IconSize = 20;
             this.btn_minisize.Location = new System.Drawing.Point(662, 3);
@@ -197,7 +197,7 @@
             this.Btn_Salir.FlatAppearance.BorderSize = 0;
             this.Btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Salir.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.Btn_Salir.IconColor = System.Drawing.Color.DimGray;
+            this.Btn_Salir.IconColor = System.Drawing.Color.Gainsboro;
             this.Btn_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btn_Salir.IconSize = 15;
             this.Btn_Salir.Location = new System.Drawing.Point(683, 3);

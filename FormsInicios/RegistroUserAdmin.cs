@@ -97,13 +97,27 @@ namespace UAM_INVESTIGATION.Forms
                     return;
                 }
             }
-            //Crear Nuevo Usuario
-            UsuarioAdmin admin = new UsuarioAdmin(nombre, correo, contrasenia);
-            //Registrarlo
             InitRegis initRegis = new InitRegis();
-            initRegis.RegistrarUsuarioAdmin(admin);
-            MessageBox.Show("Usuario registrado exitosamente!", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Hide();
+
+            if (initRegis.CorreoExisteEnAdmins(correo))
+            {
+                MessageBox.Show("El correo ya está registrado, por favor ingrese otro correo.",
+                "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                int id = new Random().Next(1000, 9999);
+                //Crear Nuevo Usuario
+                UsuarioAdmin admin = new UsuarioAdmin(id, nombre, correo, contrasenia);
+                //Registrarlo
+                initRegis.RegistrarUsuarioAdmin(admin);
+                MessageBox.Show("Usuario registrado exitosamente!", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                InicioSesionUserAdmin inicioSesionUserAdmin = new InicioSesionUserAdmin();
+                inicioSesionUserAdmin.Show();
+                this.Hide();
+            }
+            
         }
 
         private void txt_Contrasenia_Enter(object sender, EventArgs e)

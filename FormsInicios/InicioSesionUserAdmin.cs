@@ -6,8 +6,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 using UAM_INVESTIGATION.Helpers;
+using UAM_INVESTIGATION.FormAdmin;
+
 
 namespace UAM_INVESTIGATION.Forms
 {
@@ -97,30 +100,64 @@ namespace UAM_INVESTIGATION.Forms
             pantalla_Principal.Show();
             this.Hide();
         }
+        private string ObtenerNombreUsuarioAdmin(string correo)
+        {
+            InitRegis initRegis = new InitRegis();
+            var admins = initRegis.LeerUsuariosAdmin();
 
+            foreach (var admin in admins)
+            {
+                if(admin.Correo == correo)
+                {
+                    return admin.Nombre;
+                }
+            }
+            return "";
+        }
+        private void msgError(string message)
+        {
+            lblErrorMessage.Text = message;
+            lblErrorMessage.Visible = true;
+            iconPictureBox1.Visible = true;
+        }
         private void btn_InicioSesion_Click_1(object sender, EventArgs e)
         {
+            
             string entrada = txt_Correo.Text;
             string contrasenia = txt_Contrasenia.Text;
             string correo = entrada;
 
             InitRegis initRegis = new InitRegis();
             bool inicioValido = false;
-            if (!inicioValido && !string.IsNullOrEmpty(correo))
+            if (txt_Correo.Text != "CORREO")
             {
-                inicioValido = initRegis.IniciarSesionAdmin(correo, contrasenia);
-            }
+                if (txt_Contrasenia.Text != "CONTRASEÑA") {
+                    if (!inicioValido && !string.IsNullOrEmpty(correo))
+                    {
+                        inicioValido = initRegis.IniciarSesionAdmin(correo, contrasenia);
+                    }
 
-            if (inicioValido)
-            {
-                MessageBox.Show("Inicio de sesión exitoso", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //Redirigir a la pantalla principal de Admins
+                    if (inicioValido)
+                    {
+                        string nombreUsuario = ObtenerNombreUsuarioAdmin(correo);
 
+                        //Redirigir a la pantalla principal de Admins
+                        this.Hide();
+                        Bienvenida bienvenida = new Bienvenida(nombreUsuario);
+                        bienvenida.ShowDialog();
+                        PrincipalAdmin principalAdmin = new PrincipalAdmin(nombreUsuario, correo);
+                        principalAdmin.Show();
+                    }
+                    else
+                    {
+                        msgError("El Correo/Cif o la Contraseña son incorrectos.");
+                        txt_Contrasenia.Clear();
+                        txt_Correo.Focus();
+                    }
+                }
+                else msgError("Porfavor ingrese la contraseña");
             }
-            else
-            {
-                MessageBox.Show("Correo o contraseña son inválidas", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            else msgError("Porfavor ingrese su correo"); 
         }
     }
 }

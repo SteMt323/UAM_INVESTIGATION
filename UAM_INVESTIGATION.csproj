@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>packages\FontAwesome.Sharp.6.6.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
@@ -88,56 +91,86 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Estructuras\StrUsuarioAdmin.cs" />
     <Compile Include="Estructuras\StrUsuarioEst.cs" />
-    <Compile Include="Forms\InicioSesionUserAdmin.cs">
+    <Compile Include="FormAdmin\EditarPerfil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormAdmin\EditarPerfil.Designer.cs">
+      <DependentUpon>EditarPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdmin\PrincipalAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\InicioSesionUserAdmin.Designer.cs">
+    <Compile Include="FormAdmin\PrincipalAdmin.Designer.cs">
+      <DependentUpon>PrincipalAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsInicios\Bienvenida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsInicios\Bienvenida.Designer.cs">
+      <DependentUpon>Bienvenida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsInicios\InicioSesionUserAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsInicios\InicioSesionUserAdmin.Designer.cs">
       <DependentUpon>InicioSesionUserAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\InicioSesionUserEst.cs">
+    <Compile Include="FormsInicios\InicioSesionUserEst.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\InicioSesionUserEst.Designer.cs">
+    <Compile Include="FormsInicios\InicioSesionUserEst.Designer.cs">
       <DependentUpon>InicioSesionUserEst.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PantallaPrincipal.cs">
+    <Compile Include="FormsInicios\PantallaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PantallaPrincipal.Designer.cs">
+    <Compile Include="FormsInicios\PantallaPrincipal.Designer.cs">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RegistroUserAdmin.cs">
+    <Compile Include="FormsInicios\RegistroUserAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RegistroUserAdmin.Designer.cs">
+    <Compile Include="FormsInicios\RegistroUserAdmin.Designer.cs">
       <DependentUpon>RegistroUserAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RegistroUserEst.cs">
+    <Compile Include="FormsInicios\RegistroUserEst.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RegistroUserEst.Designer.cs">
+    <Compile Include="FormsInicios\RegistroUserEst.Designer.cs">
       <DependentUpon>RegistroUserEst.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\InitRegis.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\InicioSesionUserAdmin.resx">
+    <EmbeddedResource Include="FormAdmin\EditarPerfil.resx">
+      <DependentUpon>EditarPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin\PrincipalAdmin.resx">
+      <DependentUpon>PrincipalAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsInicios\Bienvenida.resx">
+      <DependentUpon>Bienvenida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsInicios\InicioSesionUserAdmin.resx">
       <DependentUpon>InicioSesionUserAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InicioSesionUserEst.resx">
+    <EmbeddedResource Include="FormsInicios\InicioSesionUserEst.resx">
       <DependentUpon>InicioSesionUserEst.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PantallaPrincipal.resx">
+    <EmbeddedResource Include="FormsInicios\PantallaPrincipal.resx">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RegistroUserAdmin.resx">
+    <EmbeddedResource Include="FormsInicios\RegistroUserAdmin.resx">
       <DependentUpon>RegistroUserAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RegistroUserEst.resx">
+    <EmbeddedResource Include="FormsInicios\RegistroUserEst.resx">
       <DependentUpon>RegistroUserEst.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
