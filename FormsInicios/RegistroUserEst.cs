@@ -86,8 +86,9 @@ namespace UAM_INVESTIGATION.Forms
             else
             {
                 int id = new Random().Next(1000, 9999);
+                bool estado = true;
                 //Crear nuevo Usuario
-                UsuarioEst nuevoUsuarioEst = new UsuarioEst(id, nombre, correo, cif, contrasenia, carrera);
+                UsuarioEst nuevoUsuarioEst = new UsuarioEst(id, nombre, correo, cif, contrasenia, carrera, estado);
 
                 //Registrarlo
                 regis.RegistrarUsuarioEst(nuevoUsuarioEst);

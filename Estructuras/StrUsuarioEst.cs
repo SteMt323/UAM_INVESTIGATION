@@ -14,8 +14,9 @@ namespace UAM_INVESTIGATION.Estructuras
         public string Cif { get; set; }
         public string Contrasenia { get; set; }
         public string Carrera { get; set; }
+        public bool Estado { get; set; }
 
-        public UsuarioEst(int id, string nombre, string correo, string cif, string contrasenia, string carrera)
+        public UsuarioEst(int id, string nombre, string correo, string cif, string contrasenia, string carrera, bool estado)
         {
             Id = id;
             Nombre = nombre;
@@ -23,6 +24,7 @@ namespace UAM_INVESTIGATION.Estructuras
             Cif = cif;
             Contrasenia = contrasenia;
             Carrera = carrera;
+            Estado = estado;
         }
     }
 }

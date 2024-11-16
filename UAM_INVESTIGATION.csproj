@@ -104,6 +104,12 @@
     <Compile Include="FormAdmin\EditarPerfil.Designer.cs">
       <DependentUpon>EditarPerfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdmin\MonitoreoUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormAdmin\MonitoreoUsers.Designer.cs">
+      <DependentUpon>MonitoreoUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAdmin\PrincipalAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAdmin\EditarPerfil.resx">
       <DependentUpon>EditarPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin\MonitoreoUsers.resx">
+      <DependentUpon>MonitoreoUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdmin\PrincipalAdmin.resx">
       <DependentUpon>PrincipalAdmin.cs</DependentUpon>

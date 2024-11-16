@@ -56,5 +56,20 @@ namespace UAM_INVESTIGATION.FormAdmin
             editarPerfil.Dock = DockStyle.Fill;
             pnl_Content.Controls.Add(editarPerfil);
         }
+
+        private void Btn_Reportes_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+
+        private void btn_GestionarUsuarios(object sender, EventArgs e)
+        {
+            MonitoreoUsers users = new MonitoreoUsers();
+            pnl_Content.Controls.Clear();
+
+            users.Dock = DockStyle.Fill;
+            pnl_Content.Controls.Add(users);
+        }
     }
 }

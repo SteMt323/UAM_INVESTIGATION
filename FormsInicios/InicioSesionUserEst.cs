@@ -66,14 +66,26 @@ namespace UAM_INVESTIGATION.Forms
                     bool inicioValido = false;
                     if (type == 1)
                     {
-                        if (!inicioValido && !string.IsNullOrEmpty(correo))
+                        var estudiante = initRegis.LeerUsuariosEst().FirstOrDefault(est => est.Correo == correo);
+                        if (!estudiante.Estado)
+                        {
+                            msgError("El usuario está dado de baja y no puede iniciar sesión.");
+                            return;
+                        }
+                        else if (!inicioValido && !string.IsNullOrEmpty(correo))
                         {
                             inicioValido = initRegis.IniciarSesionEstCorreo(correo, contrasenia);
                         }
                     }
                     if (type == 2)
                     {
-                        if (!inicioValido && !string.IsNullOrEmpty(cif))
+                        var estudiante = initRegis.LeerUsuariosEst().FirstOrDefault(est => est.Cif == cif);
+                        if (!estudiante.Estado)
+                        {
+                            msgError("El usuario está dado de baja y no puede iniciar sesión.");
+                            return;
+                        }
+                        else if (!inicioValido && !string.IsNullOrEmpty(cif))
                         {
                             inicioValido = initRegis.IniciarSesionEstCif(cif, contrasenia);
                         }

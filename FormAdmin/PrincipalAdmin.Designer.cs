@@ -58,7 +58,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(984, 34);
+            this.panel1.Size = new System.Drawing.Size(1090, 34);
             this.panel1.TabIndex = 0;
             // 
             // btn_minisize
@@ -71,7 +71,7 @@
             this.btn_minisize.IconColor = System.Drawing.Color.Gainsboro;
             this.btn_minisize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_minisize.IconSize = 20;
-            this.btn_minisize.Location = new System.Drawing.Point(945, 3);
+            this.btn_minisize.Location = new System.Drawing.Point(1050, 3);
             this.btn_minisize.Name = "btn_minisize";
             this.btn_minisize.Size = new System.Drawing.Size(15, 15);
             this.btn_minisize.TabIndex = 18;
@@ -88,7 +88,7 @@
             this.Btn_Salir.IconColor = System.Drawing.Color.Gainsboro;
             this.Btn_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btn_Salir.IconSize = 15;
-            this.Btn_Salir.Location = new System.Drawing.Point(966, 3);
+            this.Btn_Salir.Location = new System.Drawing.Point(1071, 3);
             this.Btn_Salir.Name = "Btn_Salir";
             this.Btn_Salir.Size = new System.Drawing.Size(15, 15);
             this.Btn_Salir.TabIndex = 17;
@@ -141,6 +141,7 @@
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.btn_GestionarUsuarios);
             // 
             // Btn_Reportes
             // 
@@ -163,6 +164,7 @@
             this.Btn_Reportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_Reportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_Reportes.UseVisualStyleBackColor = true;
+            this.Btn_Reportes.Click += new System.EventHandler(this.Btn_Reportes_Click);
             // 
             // Btn_Perfil
             // 
@@ -274,10 +276,13 @@
             // 
             // pnl_Content
             // 
+            this.pnl_Content.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.pnl_Content.BackgroundImage = global::UAM_INVESTIGATION.Properties.Resources.U_I_Logo;
+            this.pnl_Content.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pnl_Content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Content.Location = new System.Drawing.Point(200, 34);
             this.pnl_Content.Name = "pnl_Content";
-            this.pnl_Content.Size = new System.Drawing.Size(784, 427);
+            this.pnl_Content.Size = new System.Drawing.Size(890, 427);
             this.pnl_Content.TabIndex = 2;
             // 
             // PrincipalAdmin
@@ -285,7 +290,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(984, 461);
+            this.ClientSize = new System.Drawing.Size(1090, 461);
             this.Controls.Add(this.pnl_Content);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

@@ -21,7 +21,7 @@ namespace UAM_INVESTIGATION.Helpers
         //Registrar UsuarioEst
         public void RegistrarUsuarioEst(UsuarioEst nuevoUsuario)
         {
-            UsuarioEst usuarioConId = new UsuarioEst(nuevoUsuario.Id, nuevoUsuario.Nombre, nuevoUsuario.Correo, nuevoUsuario.Cif, nuevoUsuario.Contrasenia, nuevoUsuario.Carrera);
+            UsuarioEst usuarioConId = new UsuarioEst(nuevoUsuario.Id, nuevoUsuario.Nombre, nuevoUsuario.Correo, nuevoUsuario.Cif, nuevoUsuario.Contrasenia, nuevoUsuario.Carrera, nuevoUsuario.Estado);
             //Verificamos si existe el archivo
             if (!File.Exists(usuarioEstFile))
             {
@@ -32,7 +32,7 @@ namespace UAM_INVESTIGATION.Helpers
             {
                 using (StreamWriter sw = new StreamWriter(usuarioEstFile, true))
                 {
-                    sw.WriteLine($"{usuarioConId.Id}|{usuarioConId.Nombre}|{usuarioConId.Correo}|{usuarioConId.Cif}|{usuarioConId.Contrasenia}|{usuarioConId.Carrera}");
+                    sw.WriteLine($"{usuarioConId.Id}|{usuarioConId.Nombre}|{usuarioConId.Correo}|{usuarioConId.Cif}|{usuarioConId.Contrasenia}|{usuarioConId.Carrera}|{usuarioConId.Estado}");
                 }
             }
             catch (IOException ex)
@@ -171,7 +171,8 @@ namespace UAM_INVESTIGATION.Helpers
                     {
                         var datos = linea.Split('|');
                         int id = int.Parse(datos[0]);
-                        usuarios.Add(new UsuarioEst(id, datos[1], datos[2], datos[3], datos[4], datos[5]));
+                        bool estado = bool.Parse(datos[6]);
+                        usuarios.Add(new UsuarioEst(id, datos[1], datos[2], datos[3], datos[4], datos[5], estado));
                     }
 
                 }
@@ -269,6 +270,38 @@ namespace UAM_INVESTIGATION.Helpers
             }
         }
 
+        //Dar baja Usuarios Estudiantes
+        public void DarDeBajaUsuario(int id)
+        {
+            var estudiantes = LeerUsuariosEst();
+
+            for (int i = 0; i < estudiantes.Count; i++)
+            {
+                if (estudiantes[i].Id == id)
+                {
+                    estudiantes[i] = new UsuarioEst
+                    {
+                        Id = estudiantes[i].Id,
+                        Nombre = estudiantes[i].Nombre,
+                        Correo = estudiantes[i].Correo,
+                        Cif = estudiantes[i].Cif,
+                        Contrasenia = estudiantes[i].Contrasenia,
+                        Carrera = estudiantes[i].Carrera,
+                        Estado = false // Cambiamos el estado a "dado de baja"
+                    };
+                    break;
+                }
+            }
+
+            // Sobreescribir el archivo
+            using (StreamWriter sw = new StreamWriter(usuarioEstFile))
+            {
+                foreach (var est in estudiantes)
+                {
+                    sw.WriteLine($"{est.Id}|{est.Nombre}|{est.Correo}|{est.Cif}|{est.Contrasenia}|{est.Carrera}|{est.Estado}");
+                }
+            }
+        }
 
     }
 }
