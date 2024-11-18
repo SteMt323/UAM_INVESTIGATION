@@ -111,7 +111,7 @@ namespace UAM_INVESTIGATION.FormAdmin
                         }
                         else
                         {
-                            msgError("Las contraseñas no coinciden, ingrese nuevamente");
+                            msgError("Las contraseñas no coinciden.");
                         }
                     }
                     else

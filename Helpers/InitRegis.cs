@@ -12,22 +12,38 @@ namespace UAM_INVESTIGATION.Helpers
 {
     internal class InitRegis
     {
-        private readonly string usuarioEstFile = "usuariosEst.txt";
-        private readonly string usuarioAdminFile = "usuariosAdmin.txt";
+        // Ruta de la carpeta "Archivos" dentro de la carpeta principal del proyecto
+        private readonly string folderPath;
+        private readonly string usuarioEstFile;
+        private readonly string usuarioAdminFile;
 
-        //Constructor
-        public InitRegis() { }
+        // Constructor
+        public InitRegis()
+        {
+            // Obtener la ruta de la carpeta principal del proyecto
+            folderPath = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName, "Archivos");
 
-        //Registrar UsuarioEst
+            // Crear la carpeta "Archivos" si no existe
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+
+            // Inicializar las rutas de archivo
+            usuarioEstFile = Path.Combine(folderPath, "usuariosEst.txt");
+            usuarioAdminFile = Path.Combine(folderPath, "usuariosAdmin.txt");
+        }
+
+        // Registrar UsuarioEst
         public void RegistrarUsuarioEst(UsuarioEst nuevoUsuario)
         {
             UsuarioEst usuarioConId = new UsuarioEst(nuevoUsuario.Id, nuevoUsuario.Nombre, nuevoUsuario.Correo, nuevoUsuario.Cif, nuevoUsuario.Contrasenia, nuevoUsuario.Carrera, nuevoUsuario.Estado);
-            //Verificamos si existe el archivo
+
             if (!File.Exists(usuarioEstFile))
             {
                 File.Create(usuarioEstFile).Close();
             }
-            //Guardaremos el usuario en el archivo
+
             try
             {
                 using (StreamWriter sw = new StreamWriter(usuarioEstFile, true))
@@ -39,23 +55,18 @@ namespace UAM_INVESTIGATION.Helpers
             {
                 Console.WriteLine($"Error al acceder al archivo: {ex.Message}");
             }
-
         }
 
-        //Registrar UsuarioAdmin
+        // Registrar UsuarioAdmin
         public void RegistrarUsuarioAdmin(UsuarioAdmin nuevoAdmin)
         {
-
-            // Crear un nuevo objeto UsuarioAdmin con el Id generado
             UsuarioAdmin adminConId = new UsuarioAdmin(nuevoAdmin.Id, nuevoAdmin.Nombre, nuevoAdmin.Correo, nuevoAdmin.Contrasenia);
 
-            // Verificamos si existe el archivo
             if (!File.Exists(usuarioAdminFile))
             {
                 File.Create(usuarioAdminFile).Close();
             }
 
-            // Guardamos el usuario en el archivo
             try
             {
                 using (StreamWriter sw = new StreamWriter(usuarioAdminFile, true))
@@ -69,97 +80,52 @@ namespace UAM_INVESTIGATION.Helpers
             }
         }
 
-
-
-        //Inicio de Sesión Estudiantes
+        // Iniciar Sesión Estudiantes (Correo y Contraseña)
         public bool IniciarSesionEstCorreo(string correo, string contrasenia)
         {
-            //Verificar en los usuarios estudiantes
             foreach (var usuario in LeerUsuariosEst())
             {
                 if (usuario.Correo == correo && usuario.Contrasenia == contrasenia)
                 {
                     return true;
                 }
-                if (usuario.Correo != correo && usuario.Contrasenia != contrasenia)
-                {
-                    Console.WriteLine("Las credenciales son incorrectas, por favor intente denuevo...");
-                    return false;
-                }
-                if (usuario.Correo != correo)
-                {
-                    Console.WriteLine("El correo es inválido, por favor intente denuevo...");
-                    return false;
-                }
-
-                if (usuario.Contrasenia != contrasenia)
-                {
-                    Console.WriteLine("La contraseña es inválida, por favor intente denuevo...");
-                    return false;
-                }
+                Console.WriteLine("Las credenciales son incorrectas, por favor intente de nuevo...");
+                return false;
             }
             return false;
         }
 
-
+        // Iniciar Sesión Estudiantes (CIF y Contraseña)
         public bool IniciarSesionEstCif(string cif, string contrasenia)
         {
-            //Verificar en los usuarios estudiantes
             foreach (var usuario in LeerUsuariosEst())
             {
                 if (usuario.Cif == cif && usuario.Contrasenia == contrasenia)
                 {
                     return true;
                 }
-                if (usuario.Cif != cif && usuario.Contrasenia != contrasenia)
-                {
-                    Console.WriteLine("Las credenciales son incorrectas, por favor intente denuevo...");
-                    return false;
-                }
-                if (usuario.Cif != cif)
-                {
-                    Console.WriteLine("El correo es inválido, por favor intente denuevo...");
-                    return false;
-                }
-                if (usuario.Contrasenia != contrasenia)
-                {
-                    Console.WriteLine("La contraseña es inválida, por favor intente denuevo...");
-                    return false;
-                }
+                Console.WriteLine("Las credenciales son incorrectas, por favor intente de nuevo...");
+                return false;
             }
             return false;
         }
 
-        //Inicio dee Sesión Admin
+        // Iniciar Sesión Administradores
         public bool IniciarSesionAdmin(string correo, string contrasenia)
         {
-            //Verificar en los usuarios estudiantes
             foreach (var usuario in LeerUsuariosAdmin())
             {
                 if (usuario.Correo == correo && usuario.Contrasenia == contrasenia)
                 {
                     return true;
                 }
-                if (usuario.Correo != correo && usuario.Contrasenia != contrasenia)
-                {
-                    Console.WriteLine("Las credenciales son incorrectas, por favor intente denuevo...");
-                    return false;
-                }
-                if (usuario.Correo != correo)
-                {
-                    Console.WriteLine("El correo es inválido, por favor intente denuevo...");
-                    return false;
-                }
-                if (usuario.Contrasenia != contrasenia)
-                {
-                    Console.WriteLine("La contraseña es inválida, por favor intente denuevo...");
-                    return false;
-                }
+                Console.WriteLine("Las credenciales son incorrectas, por favor intente de nuevo...");
+                return false;
             }
             return false;
         }
 
-        //Método para leer usuarios de estudiantes
+        // Leer Usuarios Estudiantes
         public List<UsuarioEst> LeerUsuariosEst()
         {
             var usuarios = new List<UsuarioEst>();
@@ -174,18 +140,16 @@ namespace UAM_INVESTIGATION.Helpers
                         bool estado = bool.Parse(datos[6]);
                         usuarios.Add(new UsuarioEst(id, datos[1], datos[2], datos[3], datos[4], datos[5], estado));
                     }
-
                 }
             }
             catch (IOException ex)
             {
                 Console.WriteLine($"Error al acceder al archivo: {ex.Message}");
             }
-
             return usuarios;
         }
 
-        //Método para leer usuarios Administradores
+        // Leer Usuarios Administradores
         public List<UsuarioAdmin> LeerUsuariosAdmin()
         {
             var admins = new List<UsuarioAdmin>();
@@ -196,11 +160,7 @@ namespace UAM_INVESTIGATION.Helpers
                     foreach (var linea in File.ReadLines(usuarioAdminFile))
                     {
                         var datos = linea.Split('|');
-
-                        // Asumimos que el primer dato es el Id, y el resto los demás campos
-                        int id = int.Parse(datos[0]);  // Leer el Id
-
-                        // Crear el objeto UsuarioAdmin con el Id
+                        int id = int.Parse(datos[0]);
                         admins.Add(new UsuarioAdmin(id, datos[1], datos[2], datos[3]));
                     }
                 }
@@ -209,51 +169,47 @@ namespace UAM_INVESTIGATION.Helpers
             {
                 Console.WriteLine($"Error al acceder al archivo: {ex.Message}");
             }
-
             return admins;
         }
 
-
+        // Verificar si un correo existe en Estudiantes
         public bool CorreoExistenteEnEstudiantes(string correo)
         {
-            foreach(var usuario in LeerUsuariosEst())
+            foreach (var usuario in LeerUsuariosEst())
             {
                 if (usuario.Correo == correo)
                 {
-                    return true; // El correo ya está registrado
+                    return true;
                 }
             }
             return false;
         }
 
+        // Verificar si un correo existe en Administradores
         public bool CorreoExisteEnAdmins(string correo)
         {
             foreach (var admin in LeerUsuariosAdmin())
             {
                 if (admin.Correo == correo)
                 {
-                    return true;  // El correo ya está registrado
+                    return true;
                 }
             }
             return false;
         }
 
+        // Actualizar Usuario Administrador
         public void ActualizarUsuarioAdmin(int id, string nuevoNombre, string nuevoCorreo, string nuevaContrasenia)
         {
-            var admins = LeerUsuariosAdmin(); // Leer todos los administradores
-
-            // Buscar el administrador que queremos actualizar
+            var admins = LeerUsuariosAdmin();
             for (int i = 0; i < admins.Count; i++)
             {
-                if (admins[i].Id == id) // Encontramos el administrador por ID
+                if (admins[i].Id == id)
                 {
-                    // Crear un nuevo objeto con los datos actualizados
                     admins[i] = new UsuarioAdmin(id, nuevoNombre, nuevoCorreo, nuevaContrasenia);
-                    break; // Salimos del bucle una vez hecho el cambio
+                    break;
                 }
             }
-
-            // Sobreescribir el archivo con los datos actualizados
             try
             {
                 using (StreamWriter sw = new StreamWriter(usuarioAdminFile))
@@ -270,11 +226,10 @@ namespace UAM_INVESTIGATION.Helpers
             }
         }
 
-        //Dar baja Usuarios Estudiantes
+        // Dar de baja a un usuario estudiante
         public void DarDeBajaUsuario(int id)
         {
             var estudiantes = LeerUsuariosEst();
-
             for (int i = 0; i < estudiantes.Count; i++)
             {
                 if (estudiantes[i].Id == id)
@@ -287,21 +242,25 @@ namespace UAM_INVESTIGATION.Helpers
                         Cif = estudiantes[i].Cif,
                         Contrasenia = estudiantes[i].Contrasenia,
                         Carrera = estudiantes[i].Carrera,
-                        Estado = false // Cambiamos el estado a "dado de baja"
+                        Estado = false
                     };
                     break;
                 }
             }
-
-            // Sobreescribir el archivo
-            using (StreamWriter sw = new StreamWriter(usuarioEstFile))
+            try
             {
-                foreach (var est in estudiantes)
+                using (StreamWriter sw = new StreamWriter(usuarioEstFile))
                 {
-                    sw.WriteLine($"{est.Id}|{est.Nombre}|{est.Correo}|{est.Cif}|{est.Contrasenia}|{est.Carrera}|{est.Estado}");
+                    foreach (var est in estudiantes)
+                    {
+                        sw.WriteLine($"{est.Id}|{est.Nombre}|{est.Correo}|{est.Cif}|{est.Contrasenia}|{est.Carrera}|{est.Estado}");
+                    }
                 }
             }
+            catch (IOException ex)
+            {
+                Console.WriteLine($"Error al escribir en el archivo: {ex.Message}");
+            }
         }
-
     }
 }

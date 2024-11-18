@@ -1,0 +1,2 @@
+5155|Fernando Aburto|fjimenez@uamv.edu.ni|19011094|123456789|Sistemas|True
+3306|Yubelkis Rodriguez|yrodriguez@uamv.edu.ni|24011095|123456789|Sistemas|True
