@@ -107,7 +107,7 @@
             this.Lnk_Registro.Location = new System.Drawing.Point(156, 282);
             this.Lnk_Registro.Name = "Lnk_Registro";
             this.Lnk_Registro.Size = new System.Drawing.Size(63, 16);
-            this.Lnk_Registro.TabIndex = 4;
+            this.Lnk_Registro.TabIndex = 5;
             this.Lnk_Registro.TabStop = true;
             this.Lnk_Registro.Text = "Regístrarse";
             this.Lnk_Registro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Lnk_Registro_LinkClicked);
@@ -140,6 +140,7 @@
             this.btn_regresar.Name = "btn_regresar";
             this.btn_regresar.Size = new System.Drawing.Size(15, 15);
             this.btn_regresar.TabIndex = 25;
+            this.btn_regresar.TabStop = false;
             this.btn_regresar.UseVisualStyleBackColor = false;
             this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
             // 
@@ -231,7 +232,7 @@
             this.Lnk_LostPassword.Location = new System.Drawing.Point(429, 263);
             this.Lnk_LostPassword.Name = "Lnk_LostPassword";
             this.Lnk_LostPassword.Size = new System.Drawing.Size(168, 16);
-            this.Lnk_LostPassword.TabIndex = 0;
+            this.Lnk_LostPassword.TabIndex = 4;
             this.Lnk_LostPassword.TabStop = true;
             this.Lnk_LostPassword.Text = "¿Ha olvidado la contraseña?";
             // 
@@ -249,6 +250,7 @@
             this.Btn_Salir.Name = "Btn_Salir";
             this.Btn_Salir.Size = new System.Drawing.Size(15, 15);
             this.Btn_Salir.TabIndex = 14;
+            this.Btn_Salir.TabStop = false;
             this.Btn_Salir.UseVisualStyleBackColor = false;
             this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
             // 
@@ -266,6 +268,7 @@
             this.btn_minisize.Name = "btn_minisize";
             this.btn_minisize.Size = new System.Drawing.Size(15, 15);
             this.btn_minisize.TabIndex = 15;
+            this.btn_minisize.TabStop = false;
             this.btn_minisize.UseVisualStyleBackColor = false;
             this.btn_minisize.Click += new System.EventHandler(this.btn_minisize_Click);
             // 
@@ -277,6 +280,7 @@
             this.cb_MostrarContrasenia.Name = "cb_MostrarContrasenia";
             this.cb_MostrarContrasenia.Size = new System.Drawing.Size(15, 14);
             this.cb_MostrarContrasenia.TabIndex = 6;
+            this.cb_MostrarContrasenia.TabStop = false;
             this.cb_MostrarContrasenia.UseVisualStyleBackColor = false;
             this.cb_MostrarContrasenia.CheckedChanged += new System.EventHandler(this.cb_MostrarContrasenia_CheckedChanged);
             // 
@@ -317,7 +321,7 @@
             this.lblErrorMessage.Location = new System.Drawing.Point(340, 182);
             this.lblErrorMessage.Name = "lblErrorMessage";
             this.lblErrorMessage.Size = new System.Drawing.Size(102, 19);
-            this.lblErrorMessage.TabIndex = 25;
+            this.lblErrorMessage.TabIndex = 0;
             this.lblErrorMessage.Text = "Error Message";
             this.lblErrorMessage.Visible = false;
             // 

@@ -150,7 +150,7 @@ namespace UAM_INVESTIGATION.Forms
                     }
                     else
                     {
-                        msgError("El Correo/Cif o la Contraseña son incorrectos.");
+                        msgError("El Correo o la Contraseña son incorrectos.");
                         txt_Contrasenia.Clear();
                         txt_Correo.Focus();
                     }

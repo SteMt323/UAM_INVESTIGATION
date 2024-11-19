@@ -85,6 +85,7 @@
             this.btn_regresar.Name = "btn_regresar";
             this.btn_regresar.Size = new System.Drawing.Size(15, 15);
             this.btn_regresar.TabIndex = 25;
+            this.btn_regresar.TabStop = false;
             this.btn_regresar.UseVisualStyleBackColor = false;
             this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
             // 
@@ -121,7 +122,7 @@
             this.Lnk_Sesion.Location = new System.Drawing.Point(156, 396);
             this.Lnk_Sesion.Name = "Lnk_Sesion";
             this.Lnk_Sesion.Size = new System.Drawing.Size(72, 16);
-            this.Lnk_Sesion.TabIndex = 4;
+            this.Lnk_Sesion.TabIndex = 7;
             this.Lnk_Sesion.TabStop = true;
             this.Lnk_Sesion.Text = "Inicia Sesión";
             this.Lnk_Sesion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Lnk_Sesion_LinkClicked);
@@ -173,6 +174,7 @@
             this.Btn_Salir.Name = "Btn_Salir";
             this.Btn_Salir.Size = new System.Drawing.Size(15, 15);
             this.Btn_Salir.TabIndex = 14;
+            this.Btn_Salir.TabStop = false;
             this.Btn_Salir.UseVisualStyleBackColor = false;
             this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
             // 
@@ -190,6 +192,7 @@
             this.btn_minisize.Name = "btn_minisize";
             this.btn_minisize.Size = new System.Drawing.Size(15, 15);
             this.btn_minisize.TabIndex = 15;
+            this.btn_minisize.TabStop = false;
             this.btn_minisize.UseVisualStyleBackColor = false;
             this.btn_minisize.Click += new System.EventHandler(this.btn_minisize_Click);
             // 
@@ -202,7 +205,7 @@
             this.txt_Correo.Location = new System.Drawing.Point(306, 88);
             this.txt_Correo.Name = "txt_Correo";
             this.txt_Correo.Size = new System.Drawing.Size(401, 20);
-            this.txt_Correo.TabIndex = 23;
+            this.txt_Correo.TabIndex = 1;
             this.txt_Correo.Text = "CORREO";
             this.txt_Correo.Enter += new System.EventHandler(this.txt_Correo_Enter);
             this.txt_Correo.Leave += new System.EventHandler(this.txt_Correo_Leave);
@@ -281,7 +284,7 @@
             this.txt_Cif.Location = new System.Drawing.Point(306, 137);
             this.txt_Cif.Name = "txt_Cif";
             this.txt_Cif.Size = new System.Drawing.Size(401, 20);
-            this.txt_Cif.TabIndex = 25;
+            this.txt_Cif.TabIndex = 2;
             this.txt_Cif.Text = "CIF";
             this.txt_Cif.Enter += new System.EventHandler(this.txt_Cif_Enter);
             this.txt_Cif.Leave += new System.EventHandler(this.txt_Cif_Leave);
@@ -295,7 +298,7 @@
             this.txt_Contrasenia.Location = new System.Drawing.Point(306, 188);
             this.txt_Contrasenia.Name = "txt_Contrasenia";
             this.txt_Contrasenia.Size = new System.Drawing.Size(401, 20);
-            this.txt_Contrasenia.TabIndex = 26;
+            this.txt_Contrasenia.TabIndex = 3;
             this.txt_Contrasenia.Text = "CONTRASEÑA";
             this.txt_Contrasenia.Enter += new System.EventHandler(this.txt_Contrasenia_Enter);
             this.txt_Contrasenia.Leave += new System.EventHandler(this.txt_Contrasenia_Leave);
@@ -309,7 +312,7 @@
             this.txt_Nombre.Location = new System.Drawing.Point(306, 245);
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(401, 20);
-            this.txt_Nombre.TabIndex = 27;
+            this.txt_Nombre.TabIndex = 4;
             this.txt_Nombre.Text = "NOMBRE COMPLETO";
             this.txt_Nombre.Enter += new System.EventHandler(this.txt_Nombre_Enter);
             this.txt_Nombre.Leave += new System.EventHandler(this.txt_Nombre_Leave);
@@ -323,7 +326,7 @@
             this.txt_Carrera.Location = new System.Drawing.Point(306, 296);
             this.txt_Carrera.Name = "txt_Carrera";
             this.txt_Carrera.Size = new System.Drawing.Size(401, 20);
-            this.txt_Carrera.TabIndex = 28;
+            this.txt_Carrera.TabIndex = 5;
             this.txt_Carrera.Text = "CARRERA";
             this.txt_Carrera.Enter += new System.EventHandler(this.txt_Carrera_Enter);
             this.txt_Carrera.Leave += new System.EventHandler(this.txt_Carrera_Leave);
@@ -340,7 +343,7 @@
             this.btn_Registrarse.Location = new System.Drawing.Point(301, 352);
             this.btn_Registrarse.Name = "btn_Registrarse";
             this.btn_Registrarse.Size = new System.Drawing.Size(409, 40);
-            this.btn_Registrarse.TabIndex = 29;
+            this.btn_Registrarse.TabIndex = 6;
             this.btn_Registrarse.Text = "REGISTRARSE";
             this.btn_Registrarse.UseVisualStyleBackColor = false;
             this.btn_Registrarse.Click += new System.EventHandler(this.btn_Registrarse_Click_1);
@@ -353,6 +356,7 @@
             this.show_Password.Name = "show_Password";
             this.show_Password.Size = new System.Drawing.Size(15, 14);
             this.show_Password.TabIndex = 30;
+            this.show_Password.TabStop = false;
             this.show_Password.UseVisualStyleBackColor = false;
             this.show_Password.CheckedChanged += new System.EventHandler(this.show_Password_CheckedChanged_1);
             // 

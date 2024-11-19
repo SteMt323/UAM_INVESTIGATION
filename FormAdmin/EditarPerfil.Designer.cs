@@ -131,7 +131,7 @@
             this.btn_Guardar.Location = new System.Drawing.Point(191, 374);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(98, 40);
-            this.btn_Guardar.TabIndex = 25;
+            this.btn_Guardar.TabIndex = 6;
             this.btn_Guardar.Text = "Guardar";
             this.btn_Guardar.UseVisualStyleBackColor = false;
             this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
@@ -148,7 +148,7 @@
             this.btn_Cancelar.Location = new System.Drawing.Point(51, 374);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(98, 40);
-            this.btn_Cancelar.TabIndex = 24;
+            this.btn_Cancelar.TabIndex = 7;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = false;
             this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
@@ -161,6 +161,7 @@
             this.cb_ShowCurrentCont.Name = "cb_ShowCurrentCont";
             this.cb_ShowCurrentCont.Size = new System.Drawing.Size(15, 14);
             this.cb_ShowCurrentCont.TabIndex = 23;
+            this.cb_ShowCurrentCont.TabStop = false;
             this.cb_ShowCurrentCont.UseVisualStyleBackColor = false;
             this.cb_ShowCurrentCont.CheckedChanged += new System.EventHandler(this.cb_ShowCurrentCont_CheckedChanged);
             // 
@@ -172,6 +173,7 @@
             this.cb_ShowContConfirm.Name = "cb_ShowContConfirm";
             this.cb_ShowContConfirm.Size = new System.Drawing.Size(15, 14);
             this.cb_ShowContConfirm.TabIndex = 22;
+            this.cb_ShowContConfirm.TabStop = false;
             this.cb_ShowContConfirm.UseVisualStyleBackColor = false;
             this.cb_ShowContConfirm.CheckedChanged += new System.EventHandler(this.cb_ShowContConfirm_CheckedChanged);
             // 
@@ -183,6 +185,7 @@
             this.cb_ShowCont.Name = "cb_ShowCont";
             this.cb_ShowCont.Size = new System.Drawing.Size(15, 14);
             this.cb_ShowCont.TabIndex = 21;
+            this.cb_ShowCont.TabStop = false;
             this.cb_ShowCont.UseVisualStyleBackColor = false;
             this.cb_ShowCont.CheckedChanged += new System.EventHandler(this.cb_ShowCont_CheckedChanged);
             // 
@@ -195,7 +198,7 @@
             this.txt_CurrentContrasenia.Location = new System.Drawing.Point(41, 318);
             this.txt_CurrentContrasenia.Name = "txt_CurrentContrasenia";
             this.txt_CurrentContrasenia.Size = new System.Drawing.Size(270, 20);
-            this.txt_CurrentContrasenia.TabIndex = 20;
+            this.txt_CurrentContrasenia.TabIndex = 5;
             // 
             // label12
             // 
@@ -218,7 +221,7 @@
             this.txt_ContraseniaConfirm.Location = new System.Drawing.Point(41, 260);
             this.txt_ContraseniaConfirm.Name = "txt_ContraseniaConfirm";
             this.txt_ContraseniaConfirm.Size = new System.Drawing.Size(270, 20);
-            this.txt_ContraseniaConfirm.TabIndex = 18;
+            this.txt_ContraseniaConfirm.TabIndex = 4;
             // 
             // label11
             // 
@@ -241,7 +244,7 @@
             this.txt_Contrasenia.Location = new System.Drawing.Point(41, 196);
             this.txt_Contrasenia.Name = "txt_Contrasenia";
             this.txt_Contrasenia.Size = new System.Drawing.Size(270, 20);
-            this.txt_Contrasenia.TabIndex = 16;
+            this.txt_Contrasenia.TabIndex = 3;
             // 
             // label10
             // 
@@ -264,7 +267,7 @@
             this.txt_Correo.Location = new System.Drawing.Point(41, 137);
             this.txt_Correo.Name = "txt_Correo";
             this.txt_Correo.Size = new System.Drawing.Size(270, 20);
-            this.txt_Correo.TabIndex = 14;
+            this.txt_Correo.TabIndex = 2;
             // 
             // label9
             // 
@@ -287,7 +290,7 @@
             this.txt_Nombre.Location = new System.Drawing.Point(41, 82);
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(270, 20);
-            this.txt_Nombre.TabIndex = 12;
+            this.txt_Nombre.TabIndex = 1;
             // 
             // label5
             // 
@@ -450,6 +453,7 @@
             this.Btn_Salir.Name = "Btn_Salir";
             this.Btn_Salir.Size = new System.Drawing.Size(15, 15);
             this.Btn_Salir.TabIndex = 17;
+            this.Btn_Salir.TabStop = false;
             this.Btn_Salir.UseVisualStyleBackColor = false;
             this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
             // 

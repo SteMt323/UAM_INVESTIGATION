@@ -226,6 +226,36 @@ namespace UAM_INVESTIGATION.Helpers
             }
         }
 
+        public void ActualizarUsuarioEst(int id, string nuevoNombre, string nuevoCorreo, string nuevoCif, string nuevaContrasenia, string nuevaCarrera, bool estado)
+        {
+            var estudiantes = LeerUsuariosEst();
+            for (int i = 0; i < estudiantes.Count; i++)
+            {
+                if (estudiantes[i].Id == id)
+                {
+                    // Reemplazar el estudiante encontrado con los nuevos datos
+                    estudiantes[i] = new UsuarioEst(id, nuevoNombre, nuevoCorreo, nuevoCif, nuevaContrasenia, nuevaCarrera, estado);
+                    break;
+                }
+            }
+
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(usuarioEstFile)) // Archivo donde se almacenan los estudiantes
+                {
+                    foreach (var estudiante in estudiantes)
+                    {
+                        sw.WriteLine($"{estudiante.Id}|{estudiante.Nombre}|{estudiante.Correo}|{estudiante.Cif}|{estudiante.Contrasenia}|{estudiante.Carrera}|{estudiante.Estado}");
+                    }
+                }
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine($"Error al escribir en el archivo: {ex.Message}");
+            }
+        }
+
+
         // Dar de baja a un usuario estudiante
         public void DarDeBajaUsuario(int id)
         {

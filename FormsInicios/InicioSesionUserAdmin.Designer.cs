@@ -42,7 +42,6 @@
             this.txt_Correo = new System.Windows.Forms.TextBox();
             this.txt_Contrasenia = new System.Windows.Forms.TextBox();
             this.btn_InicioSesion = new System.Windows.Forms.Button();
-            this.Lnk_LostPassword = new System.Windows.Forms.LinkLabel();
             this.btn_minisize = new FontAwesome.Sharp.IconButton();
             this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,6 +61,7 @@
             this.cb_MostrarContrasenia.Name = "cb_MostrarContrasenia";
             this.cb_MostrarContrasenia.Size = new System.Drawing.Size(15, 14);
             this.cb_MostrarContrasenia.TabIndex = 11;
+            this.cb_MostrarContrasenia.TabStop = false;
             this.cb_MostrarContrasenia.UseVisualStyleBackColor = true;
             this.cb_MostrarContrasenia.CheckedChanged += new System.EventHandler(this.cb_MostrarContrasenia_CheckedChanged);
             // 
@@ -93,6 +93,7 @@
             this.btn_regresar.Name = "btn_regresar";
             this.btn_regresar.Size = new System.Drawing.Size(15, 15);
             this.btn_regresar.TabIndex = 24;
+            this.btn_regresar.TabStop = false;
             this.btn_regresar.UseVisualStyleBackColor = false;
             this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
             // 
@@ -185,7 +186,7 @@
             this.txt_Correo.Location = new System.Drawing.Point(314, 77);
             this.txt_Correo.Name = "txt_Correo";
             this.txt_Correo.Size = new System.Drawing.Size(401, 20);
-            this.txt_Correo.TabIndex = 2;
+            this.txt_Correo.TabIndex = 1;
             this.txt_Correo.Text = "CORREO";
             this.txt_Correo.Enter += new System.EventHandler(this.txt_Correo_Enter_1);
             this.txt_Correo.Leave += new System.EventHandler(this.txt_Correo_Leave_1);
@@ -199,7 +200,7 @@
             this.txt_Contrasenia.Location = new System.Drawing.Point(310, 140);
             this.txt_Contrasenia.Name = "txt_Contrasenia";
             this.txt_Contrasenia.Size = new System.Drawing.Size(401, 20);
-            this.txt_Contrasenia.TabIndex = 3;
+            this.txt_Contrasenia.TabIndex = 2;
             this.txt_Contrasenia.Text = "CONTRASEÑA";
             this.txt_Contrasenia.Enter += new System.EventHandler(this.txt_Contrasenia_Enter_1);
             this.txt_Contrasenia.Leave += new System.EventHandler(this.txt_Contrasenia_Leave_1);
@@ -216,23 +217,10 @@
             this.btn_InicioSesion.Location = new System.Drawing.Point(309, 211);
             this.btn_InicioSesion.Name = "btn_InicioSesion";
             this.btn_InicioSesion.Size = new System.Drawing.Size(409, 40);
-            this.btn_InicioSesion.TabIndex = 21;
+            this.btn_InicioSesion.TabIndex = 3;
             this.btn_InicioSesion.Text = "INICIAR SESIÓN";
             this.btn_InicioSesion.UseVisualStyleBackColor = false;
             this.btn_InicioSesion.Click += new System.EventHandler(this.btn_InicioSesion_Click_1);
-            // 
-            // Lnk_LostPassword
-            // 
-            this.Lnk_LostPassword.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Lnk_LostPassword.AutoSize = true;
-            this.Lnk_LostPassword.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lnk_LostPassword.LinkColor = System.Drawing.Color.DimGray;
-            this.Lnk_LostPassword.Location = new System.Drawing.Point(429, 263);
-            this.Lnk_LostPassword.Name = "Lnk_LostPassword";
-            this.Lnk_LostPassword.Size = new System.Drawing.Size(168, 16);
-            this.Lnk_LostPassword.TabIndex = 1;
-            this.Lnk_LostPassword.TabStop = true;
-            this.Lnk_LostPassword.Text = "¿Ha olvidado la contraseña?";
             // 
             // btn_minisize
             // 
@@ -248,6 +236,7 @@
             this.btn_minisize.Name = "btn_minisize";
             this.btn_minisize.Size = new System.Drawing.Size(15, 15);
             this.btn_minisize.TabIndex = 17;
+            this.btn_minisize.TabStop = false;
             this.btn_minisize.UseVisualStyleBackColor = false;
             this.btn_minisize.Click += new System.EventHandler(this.btn_minisize_Click);
             // 
@@ -265,6 +254,7 @@
             this.Btn_Salir.Name = "Btn_Salir";
             this.Btn_Salir.Size = new System.Drawing.Size(15, 15);
             this.Btn_Salir.TabIndex = 16;
+            this.Btn_Salir.TabStop = false;
             this.Btn_Salir.UseVisualStyleBackColor = false;
             this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
             // 
@@ -327,7 +317,6 @@
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.cb_MostrarContrasenia);
-            this.Controls.Add(this.Lnk_LostPassword);
             this.Controls.Add(this.btn_InicioSesion);
             this.Controls.Add(this.txt_Contrasenia);
             this.Controls.Add(this.txt_Correo);
@@ -366,7 +355,6 @@
         private System.Windows.Forms.TextBox txt_Correo;
         private System.Windows.Forms.TextBox txt_Contrasenia;
         private System.Windows.Forms.Button btn_InicioSesion;
-        private System.Windows.Forms.LinkLabel Lnk_LostPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;

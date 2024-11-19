@@ -80,7 +80,7 @@
             this.Btn_Us.Name = "Btn_Us";
             this.Btn_Us.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.Btn_Us.Size = new System.Drawing.Size(220, 30);
-            this.Btn_Us.TabIndex = 4;
+            this.Btn_Us.TabIndex = 3;
             this.Btn_Us.Text = "Sobre Nosotros";
             this.Btn_Us.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_Us.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -102,7 +102,7 @@
             this.Btn_Help.Name = "Btn_Help";
             this.Btn_Help.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.Btn_Help.Size = new System.Drawing.Size(220, 30);
-            this.Btn_Help.TabIndex = 3;
+            this.Btn_Help.TabIndex = 4;
             this.Btn_Help.Text = "Ayuda";
             this.Btn_Help.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_Help.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -186,7 +186,8 @@
             this.btn_minisize.Location = new System.Drawing.Point(662, 3);
             this.btn_minisize.Name = "btn_minisize";
             this.btn_minisize.Size = new System.Drawing.Size(15, 15);
-            this.btn_minisize.TabIndex = 19;
+            this.btn_minisize.TabIndex = 0;
+            this.btn_minisize.TabStop = false;
             this.btn_minisize.UseVisualStyleBackColor = false;
             this.btn_minisize.Click += new System.EventHandler(this.btn_minisize_Click);
             // 
@@ -203,7 +204,8 @@
             this.Btn_Salir.Location = new System.Drawing.Point(683, 3);
             this.Btn_Salir.Name = "Btn_Salir";
             this.Btn_Salir.Size = new System.Drawing.Size(15, 15);
-            this.Btn_Salir.TabIndex = 18;
+            this.Btn_Salir.TabIndex = 0;
+            this.Btn_Salir.TabStop = false;
             this.Btn_Salir.UseVisualStyleBackColor = false;
             this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
             // 
@@ -240,7 +242,7 @@
             this.lbl_form_tittle.Location = new System.Drawing.Point(53, 31);
             this.lbl_form_tittle.Name = "lbl_form_tittle";
             this.lbl_form_tittle.Size = new System.Drawing.Size(39, 16);
-            this.lbl_form_tittle.TabIndex = 1;
+            this.lbl_form_tittle.TabIndex = 0;
             this.lbl_form_tittle.Text = "Home";
             // 
             // Panel_Tittle

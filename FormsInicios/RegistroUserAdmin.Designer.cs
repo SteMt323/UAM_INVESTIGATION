@@ -63,6 +63,7 @@
             this.show_Password.Name = "show_Password";
             this.show_Password.Size = new System.Drawing.Size(15, 14);
             this.show_Password.TabIndex = 21;
+            this.show_Password.TabStop = false;
             this.show_Password.UseVisualStyleBackColor = true;
             this.show_Password.CheckedChanged += new System.EventHandler(this.show_Password_CheckedChanged);
             // 
@@ -73,6 +74,7 @@
             this.show_code.Name = "show_code";
             this.show_code.Size = new System.Drawing.Size(15, 14);
             this.show_code.TabIndex = 24;
+            this.show_code.TabStop = false;
             this.show_code.UseVisualStyleBackColor = true;
             this.show_code.CheckedChanged += new System.EventHandler(this.show_code_CheckedChanged);
             // 
@@ -104,6 +106,7 @@
             this.btn_regresar.Name = "btn_regresar";
             this.btn_regresar.Size = new System.Drawing.Size(15, 15);
             this.btn_regresar.TabIndex = 25;
+            this.btn_regresar.TabStop = false;
             this.btn_regresar.UseVisualStyleBackColor = false;
             this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
             // 
@@ -140,7 +143,7 @@
             this.Lnk_Sesion.Location = new System.Drawing.Point(156, 396);
             this.Lnk_Sesion.Name = "Lnk_Sesion";
             this.Lnk_Sesion.Size = new System.Drawing.Size(72, 16);
-            this.Lnk_Sesion.TabIndex = 4;
+            this.Lnk_Sesion.TabIndex = 6;
             this.Lnk_Sesion.TabStop = true;
             this.Lnk_Sesion.Text = "Inicia Sesión";
             this.Lnk_Sesion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Lnk_Sesion_LinkClicked);
@@ -192,6 +195,7 @@
             this.Btn_Salir.Name = "Btn_Salir";
             this.Btn_Salir.Size = new System.Drawing.Size(15, 15);
             this.Btn_Salir.TabIndex = 14;
+            this.Btn_Salir.TabStop = false;
             this.Btn_Salir.UseVisualStyleBackColor = false;
             this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
             // 
@@ -209,6 +213,7 @@
             this.btn_minisize.Name = "btn_minisize";
             this.btn_minisize.Size = new System.Drawing.Size(15, 15);
             this.btn_minisize.TabIndex = 15;
+            this.btn_minisize.TabStop = false;
             this.btn_minisize.UseVisualStyleBackColor = false;
             this.btn_minisize.Click += new System.EventHandler(this.btn_minisize_Click);
             // 
@@ -221,7 +226,7 @@
             this.txt_Correo.Location = new System.Drawing.Point(315, 166);
             this.txt_Correo.Name = "txt_Correo";
             this.txt_Correo.Size = new System.Drawing.Size(401, 20);
-            this.txt_Correo.TabIndex = 30;
+            this.txt_Correo.TabIndex = 2;
             this.txt_Correo.Text = "CORREO";
             this.txt_Correo.Enter += new System.EventHandler(this.txt_Correo_Enter);
             this.txt_Correo.Leave += new System.EventHandler(this.txt_Correo_Leave);
@@ -289,7 +294,7 @@
             this.txt_code_access.Location = new System.Drawing.Point(315, 114);
             this.txt_code_access.Name = "txt_code_access";
             this.txt_code_access.Size = new System.Drawing.Size(401, 20);
-            this.txt_code_access.TabIndex = 32;
+            this.txt_code_access.TabIndex = 1;
             this.txt_code_access.Text = "CODIGO DE ACCESO";
             this.txt_code_access.Enter += new System.EventHandler(this.txt_code_access_Enter);
             this.txt_code_access.Leave += new System.EventHandler(this.txt_code_access_Leave);
@@ -303,7 +308,7 @@
             this.txt_Contrasenia.Location = new System.Drawing.Point(315, 224);
             this.txt_Contrasenia.Name = "txt_Contrasenia";
             this.txt_Contrasenia.Size = new System.Drawing.Size(401, 20);
-            this.txt_Contrasenia.TabIndex = 33;
+            this.txt_Contrasenia.TabIndex = 3;
             this.txt_Contrasenia.Text = "CONTRASEÑA";
             this.txt_Contrasenia.Enter += new System.EventHandler(this.txt_Contrasenia_Enter);
             this.txt_Contrasenia.Leave += new System.EventHandler(this.txt_Contrasenia_Leave);
@@ -317,7 +322,7 @@
             this.txt_Nombre.Location = new System.Drawing.Point(315, 288);
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(401, 20);
-            this.txt_Nombre.TabIndex = 34;
+            this.txt_Nombre.TabIndex = 4;
             this.txt_Nombre.Text = "NOMBRE COMPLETO";
             this.txt_Nombre.Enter += new System.EventHandler(this.txt_Nombre_Enter);
             this.txt_Nombre.Leave += new System.EventHandler(this.txt_Nombre_Leave);
@@ -334,7 +339,7 @@
             this.btn_registrarse.Location = new System.Drawing.Point(315, 350);
             this.btn_registrarse.Name = "btn_registrarse";
             this.btn_registrarse.Size = new System.Drawing.Size(409, 40);
-            this.btn_registrarse.TabIndex = 35;
+            this.btn_registrarse.TabIndex = 5;
             this.btn_registrarse.Text = "REGISTRARSE";
             this.btn_registrarse.UseVisualStyleBackColor = false;
             this.btn_registrarse.Click += new System.EventHandler(this.btn_registrarse_Click_1);

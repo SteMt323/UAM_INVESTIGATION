@@ -1,6 +1,6 @@
-﻿namespace UAM_INVESTIGATION.FormAdmin
+﻿namespace UAM_INVESTIGATION.FormEstudiantes
 {
-    partial class PrincipalAdmin
+    partial class PrincipalEst
     {
         /// <summary>
         /// Required designer variable.
@@ -33,11 +33,12 @@
             this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Btn_GestionarUser = new FontAwesome.Sharp.IconButton();
-            this.Btn_Reportes = new FontAwesome.Sharp.IconButton();
+            this.Btn_TrabajosPer = new FontAwesome.Sharp.IconButton();
+            this.Btn_NovInvest = new FontAwesome.Sharp.IconButton();
             this.Btn_Perfil = new FontAwesome.Sharp.IconButton();
             this.Btn_LogOut = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblCif = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,7 +60,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1090, 34);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
             // btn_minisize
             // 
@@ -111,62 +112,60 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(75)))));
-            this.panel2.Controls.Add(this.Btn_GestionarUser);
-            this.panel2.Controls.Add(this.Btn_Reportes);
+            this.panel2.Controls.Add(this.Btn_TrabajosPer);
+            this.panel2.Controls.Add(this.Btn_NovInvest);
             this.panel2.Controls.Add(this.Btn_Perfil);
             this.panel2.Controls.Add(this.Btn_LogOut);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 34);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 427);
-            this.panel2.TabIndex = 1;
+            this.panel2.Size = new System.Drawing.Size(200, 477);
+            this.panel2.TabIndex = 2;
             // 
-            // Btn_GestionarUser
+            // Btn_TrabajosPer
             // 
-            this.Btn_GestionarUser.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_GestionarUser.FlatAppearance.BorderSize = 0;
-            this.Btn_GestionarUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_GestionarUser.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_GestionarUser.ForeColor = System.Drawing.Color.Gainsboro;
-            this.Btn_GestionarUser.IconChar = FontAwesome.Sharp.IconChar.UsersRectangle;
-            this.Btn_GestionarUser.IconColor = System.Drawing.Color.MediumPurple;
-            this.Btn_GestionarUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btn_GestionarUser.IconSize = 30;
-            this.Btn_GestionarUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_GestionarUser.Location = new System.Drawing.Point(0, 201);
-            this.Btn_GestionarUser.Name = "Btn_GestionarUser";
-            this.Btn_GestionarUser.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.Btn_GestionarUser.Size = new System.Drawing.Size(200, 60);
-            this.Btn_GestionarUser.TabIndex = 3;
-            this.Btn_GestionarUser.Text = "Monitorear Usuarios";
-            this.Btn_GestionarUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_GestionarUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Btn_GestionarUser.UseVisualStyleBackColor = true;
-            this.Btn_GestionarUser.Click += new System.EventHandler(this.btn_GestionarUsuarios);
+            this.Btn_TrabajosPer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_TrabajosPer.FlatAppearance.BorderSize = 0;
+            this.Btn_TrabajosPer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_TrabajosPer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_TrabajosPer.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Btn_TrabajosPer.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.Btn_TrabajosPer.IconColor = System.Drawing.Color.MediumPurple;
+            this.Btn_TrabajosPer.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_TrabajosPer.IconSize = 30;
+            this.Btn_TrabajosPer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_TrabajosPer.Location = new System.Drawing.Point(0, 201);
+            this.Btn_TrabajosPer.Name = "Btn_TrabajosPer";
+            this.Btn_TrabajosPer.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.Btn_TrabajosPer.Size = new System.Drawing.Size(200, 60);
+            this.Btn_TrabajosPer.TabIndex = 3;
+            this.Btn_TrabajosPer.Text = "Trabajos Propios";
+            this.Btn_TrabajosPer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_TrabajosPer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_TrabajosPer.UseVisualStyleBackColor = true;
             // 
-            // Btn_Reportes
+            // Btn_NovInvest
             // 
-            this.Btn_Reportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_Reportes.FlatAppearance.BorderSize = 0;
-            this.Btn_Reportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Reportes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Reportes.ForeColor = System.Drawing.Color.Gainsboro;
-            this.Btn_Reportes.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
-            this.Btn_Reportes.IconColor = System.Drawing.Color.MediumPurple;
-            this.Btn_Reportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btn_Reportes.IconSize = 30;
-            this.Btn_Reportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_Reportes.Location = new System.Drawing.Point(0, 141);
-            this.Btn_Reportes.Name = "Btn_Reportes";
-            this.Btn_Reportes.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.Btn_Reportes.Size = new System.Drawing.Size(200, 60);
-            this.Btn_Reportes.TabIndex = 2;
-            this.Btn_Reportes.Text = "Reportes";
-            this.Btn_Reportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_Reportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Btn_Reportes.UseVisualStyleBackColor = true;
-            this.Btn_Reportes.Click += new System.EventHandler(this.Btn_Reportes_Click);
+            this.Btn_NovInvest.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_NovInvest.FlatAppearance.BorderSize = 0;
+            this.Btn_NovInvest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_NovInvest.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_NovInvest.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Btn_NovInvest.IconChar = FontAwesome.Sharp.IconChar.BookOpenReader;
+            this.Btn_NovInvest.IconColor = System.Drawing.Color.MediumPurple;
+            this.Btn_NovInvest.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_NovInvest.IconSize = 30;
+            this.Btn_NovInvest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_NovInvest.Location = new System.Drawing.Point(0, 141);
+            this.Btn_NovInvest.Name = "Btn_NovInvest";
+            this.Btn_NovInvest.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.Btn_NovInvest.Size = new System.Drawing.Size(200, 60);
+            this.Btn_NovInvest.TabIndex = 2;
+            this.Btn_NovInvest.Text = "Novedades Investigativas";
+            this.Btn_NovInvest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_NovInvest.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_NovInvest.UseVisualStyleBackColor = true;
             // 
             // Btn_Perfil
             // 
@@ -203,7 +202,7 @@
             this.Btn_LogOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btn_LogOut.IconSize = 30;
             this.Btn_LogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_LogOut.Location = new System.Drawing.Point(0, 391);
+            this.Btn_LogOut.Location = new System.Drawing.Point(0, 441);
             this.Btn_LogOut.Name = "Btn_LogOut";
             this.Btn_LogOut.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.Btn_LogOut.Size = new System.Drawing.Size(200, 36);
@@ -217,6 +216,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panel3.Controls.Add(this.lblCif);
             this.panel3.Controls.Add(this.lblCorreo);
             this.panel3.Controls.Add(this.lblNombre);
             this.panel3.Controls.Add(this.label3);
@@ -227,12 +227,23 @@
             this.panel3.Size = new System.Drawing.Size(200, 81);
             this.panel3.TabIndex = 0;
             // 
+            // lblCif
+            // 
+            this.lblCif.AutoSize = true;
+            this.lblCif.Font = new System.Drawing.Font("Century", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCif.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblCif.Location = new System.Drawing.Point(47, 56);
+            this.lblCif.Name = "lblCif";
+            this.lblCif.Size = new System.Drawing.Size(22, 15);
+            this.lblCif.TabIndex = 7;
+            this.lblCif.Text = "Cif";
+            // 
             // lblCorreo
             // 
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Font = new System.Drawing.Font("Century", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCorreo.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblCorreo.Location = new System.Drawing.Point(47, 47);
+            this.lblCorreo.Location = new System.Drawing.Point(47, 41);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(43, 15);
             this.lblCorreo.TabIndex = 6;
@@ -243,7 +254,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Century", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblNombre.Location = new System.Drawing.Point(47, 32);
+            this.lblNombre.Location = new System.Drawing.Point(47, 26);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(38, 15);
             this.lblNombre.TabIndex = 5;
@@ -254,11 +265,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(47, 17);
+            this.label3.Location = new System.Drawing.Point(47, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 15);
+            this.label3.Size = new System.Drawing.Size(63, 15);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Administrador";
+            this.label3.Text = "Estudiante";
             // 
             // iconPictureBox1
             // 
@@ -284,24 +295,24 @@
             this.pnl_Content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Content.Location = new System.Drawing.Point(200, 34);
             this.pnl_Content.Name = "pnl_Content";
-            this.pnl_Content.Size = new System.Drawing.Size(890, 427);
-            this.pnl_Content.TabIndex = 2;
+            this.pnl_Content.Size = new System.Drawing.Size(890, 477);
+            this.pnl_Content.TabIndex = 3;
             // 
-            // PrincipalAdmin
+            // PrincipalEst
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(1090, 461);
+            this.ClientSize = new System.Drawing.Size(1090, 511);
             this.Controls.Add(this.pnl_Content);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "PrincipalAdmin";
+            this.Name = "PrincipalEst";
             this.Opacity = 0.99D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PrincipalAdmin";
-            this.Load += new System.EventHandler(this.PrincipalAdmin_Load);
+            this.Text = "PrincipalEst";
+            this.Load += new System.EventHandler(this.PrincipalEst_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -315,19 +326,20 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private FontAwesome.Sharp.IconButton btn_minisize;
+        private FontAwesome.Sharp.IconButton Btn_Salir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
+        private FontAwesome.Sharp.IconButton Btn_TrabajosPer;
+        private FontAwesome.Sharp.IconButton Btn_NovInvest;
+        private FontAwesome.Sharp.IconButton Btn_Perfil;
+        private FontAwesome.Sharp.IconButton Btn_LogOut;
         private System.Windows.Forms.Panel panel3;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private FontAwesome.Sharp.IconButton Btn_Salir;
-        private FontAwesome.Sharp.IconButton btn_minisize;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label label3;
-        private FontAwesome.Sharp.IconButton Btn_Reportes;
-        private FontAwesome.Sharp.IconButton Btn_Perfil;
-        private FontAwesome.Sharp.IconButton Btn_LogOut;
-        private FontAwesome.Sharp.IconButton Btn_GestionarUser;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Panel pnl_Content;
+        private System.Windows.Forms.Label lblCif;
     }
 }

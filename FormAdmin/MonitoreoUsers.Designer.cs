@@ -51,19 +51,19 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.txt_CorreoBusqueda = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.Btn_Salir = new FontAwesome.Sharp.IconButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cif = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_CorreoBusqueda = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.Btn_Salir = new FontAwesome.Sharp.IconButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btn_DeshacerFiltrado = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.panel2.SuspendLayout();
@@ -222,7 +222,7 @@
             this.btn_DarDeBaja.Location = new System.Drawing.Point(164, 344);
             this.btn_DarDeBaja.Name = "btn_DarDeBaja";
             this.btn_DarDeBaja.Size = new System.Drawing.Size(98, 40);
-            this.btn_DarDeBaja.TabIndex = 25;
+            this.btn_DarDeBaja.TabIndex = 4;
             this.btn_DarDeBaja.Text = "Dar de Baja";
             this.btn_DarDeBaja.UseVisualStyleBackColor = false;
             this.btn_DarDeBaja.Click += new System.EventHandler(this.btn_DarDeBaja_Click);
@@ -239,7 +239,7 @@
             this.btn_Cancelar.Location = new System.Drawing.Point(24, 344);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(98, 40);
-            this.btn_Cancelar.TabIndex = 24;
+            this.btn_Cancelar.TabIndex = 5;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = false;
             this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
@@ -341,92 +341,8 @@
             this.dgvUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvUsuarios.Size = new System.Drawing.Size(548, 213);
             this.dgvUsuarios.TabIndex = 2;
+            this.dgvUsuarios.TabStop = false;
             this.dgvUsuarios.SelectionChanged += new System.EventHandler(this.dgvUsuarios_SelectionChanged);
-            // 
-            // txt_CorreoBusqueda
-            // 
-            this.txt_CorreoBusqueda.BackColor = System.Drawing.Color.Gainsboro;
-            this.txt_CorreoBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_CorreoBusqueda.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_CorreoBusqueda.ForeColor = System.Drawing.Color.Black;
-            this.txt_CorreoBusqueda.Location = new System.Drawing.Point(87, 318);
-            this.txt_CorreoBusqueda.Name = "txt_CorreoBusqueda";
-            this.txt_CorreoBusqueda.Size = new System.Drawing.Size(270, 20);
-            this.txt_CorreoBusqueda.TabIndex = 16;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label6.Location = new System.Drawing.Point(46, 295);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(149, 20);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Buscar Por Correo:";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnBuscar.Location = new System.Drawing.Point(230, 344);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(98, 40);
-            this.btnBuscar.TabIndex = 26;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // Btn_Salir
-            // 
-            this.Btn_Salir.BackColor = System.Drawing.Color.Transparent;
-            this.Btn_Salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Btn_Salir.FlatAppearance.BorderSize = 0;
-            this.Btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Salir.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.Btn_Salir.IconColor = System.Drawing.Color.Gainsboro;
-            this.Btn_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btn_Salir.IconSize = 15;
-            this.Btn_Salir.Location = new System.Drawing.Point(0, 3);
-            this.Btn_Salir.Name = "Btn_Salir";
-            this.Btn_Salir.Size = new System.Drawing.Size(15, 15);
-            this.Btn_Salir.TabIndex = 27;
-            this.Btn_Salir.UseVisualStyleBackColor = false;
-            this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(75)))));
-            this.panel2.Controls.Add(this.btn_DeshacerFiltrado);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.btnBuscar);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.dgvUsuarios);
-            this.panel2.Controls.Add(this.Btn_Salir);
-            this.panel2.Controls.Add(this.txt_CorreoBusqueda);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(556, 427);
-            this.panel2.TabIndex = 28;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label7.Location = new System.Drawing.Point(34, 23);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(323, 27);
-            this.label7.TabIndex = 28;
-            this.label7.Text = "Tabla de Usuarios del Sistema";
             // 
             // Id
             // 
@@ -462,6 +378,80 @@
             this.Estado.Name = "Estado";
             this.Estado.Width = 75;
             // 
+            // txt_CorreoBusqueda
+            // 
+            this.txt_CorreoBusqueda.BackColor = System.Drawing.Color.Gainsboro;
+            this.txt_CorreoBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_CorreoBusqueda.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_CorreoBusqueda.ForeColor = System.Drawing.Color.Black;
+            this.txt_CorreoBusqueda.Location = new System.Drawing.Point(87, 318);
+            this.txt_CorreoBusqueda.Name = "txt_CorreoBusqueda";
+            this.txt_CorreoBusqueda.Size = new System.Drawing.Size(270, 20);
+            this.txt_CorreoBusqueda.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label6.Location = new System.Drawing.Point(46, 295);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(149, 20);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Buscar Por Correo:";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.LightGray;
+            this.btnBuscar.Location = new System.Drawing.Point(230, 344);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(98, 40);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // Btn_Salir
+            // 
+            this.Btn_Salir.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_Salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_Salir.FlatAppearance.BorderSize = 0;
+            this.Btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Salir.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.Btn_Salir.IconColor = System.Drawing.Color.Gainsboro;
+            this.Btn_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_Salir.IconSize = 15;
+            this.Btn_Salir.Location = new System.Drawing.Point(0, 3);
+            this.Btn_Salir.Name = "Btn_Salir";
+            this.Btn_Salir.Size = new System.Drawing.Size(15, 15);
+            this.Btn_Salir.TabIndex = 27;
+            this.Btn_Salir.TabStop = false;
+            this.Btn_Salir.UseVisualStyleBackColor = false;
+            this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(75)))));
+            this.panel2.Controls.Add(this.btn_DeshacerFiltrado);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.btnBuscar);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.dgvUsuarios);
+            this.panel2.Controls.Add(this.Btn_Salir);
+            this.panel2.Controls.Add(this.txt_CorreoBusqueda);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(556, 427);
+            this.panel2.TabIndex = 28;
+            // 
             // btn_DeshacerFiltrado
             // 
             this.btn_DeshacerFiltrado.BackColor = System.Drawing.Color.DimGray;
@@ -474,10 +464,22 @@
             this.btn_DeshacerFiltrado.Location = new System.Drawing.Point(114, 344);
             this.btn_DeshacerFiltrado.Name = "btn_DeshacerFiltrado";
             this.btn_DeshacerFiltrado.Size = new System.Drawing.Size(98, 40);
-            this.btn_DeshacerFiltrado.TabIndex = 29;
+            this.btn_DeshacerFiltrado.TabIndex = 3;
             this.btn_DeshacerFiltrado.Text = "Deshacer";
             this.btn_DeshacerFiltrado.UseVisualStyleBackColor = false;
             this.btn_DeshacerFiltrado.Click += new System.EventHandler(this.btn_DeshacerFiltrado_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label7.Location = new System.Drawing.Point(34, 23);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(323, 27);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Tabla de Usuarios del Sistema";
             // 
             // MonitoreoUsers
             // 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UAM_INVESTIGATION.Helpers;
+using UAM_INVESTIGATION.FormEstudiantes;
 
 namespace UAM_INVESTIGATION.Forms
 {
@@ -27,6 +28,33 @@ namespace UAM_INVESTIGATION.Forms
                 if (est.Correo == entrada || est.Cif == entrada)
                 {
                     return est.Nombre;
+                }
+            }
+            return "";
+        }
+        private string ObtenerCif(string entrada)
+        {
+            InitRegis initRegis = new InitRegis();
+            var estudiantes = initRegis.LeerUsuariosEst();
+            foreach (var est in estudiantes)
+            {
+                if (est.Correo == entrada || est.Cif == entrada)
+                {
+                    return est.Cif;
+                }
+            }
+            return "";
+        }
+
+        private string ObtenerCorreo(string entrada)
+        {
+            InitRegis initRegis = new InitRegis();
+            var estudiantes = initRegis.LeerUsuariosEst();
+            foreach (var est in estudiantes)
+            {
+                if (est.Correo == entrada || est.Cif == entrada)
+                {
+                    return est.Correo;
                 }
             }
             return "";
@@ -94,11 +122,26 @@ namespace UAM_INVESTIGATION.Forms
                     if (inicioValido)
                     {
                         string nombreUsuario = ObtenerNombreUsuarioEst(correo ?? cif);
+                        string cifUsuario = ObtenerCif(correo ?? cif);
+                        string correoUsuario = ObtenerCorreo(correo ?? cif);
 
                         //Redirigir a la pantalla principal de Estudiantes
                         this.Hide();
                         Bienvenida bienvenida = new Bienvenida(nombreUsuario);
                         bienvenida.ShowDialog();
+
+                        if (type == 1)
+                        {
+                            PrincipalEst principalEst = new PrincipalEst(nombreUsuario, correo, cifUsuario);
+                            principalEst.Show();
+                        }
+                        if (type == 2)
+                        {
+                            PrincipalEst principalEst = new PrincipalEst(nombreUsuario, correoUsuario, cif);
+                            principalEst.Show();
+                        }
+                        
+                        
                     }
                     else
                     {
