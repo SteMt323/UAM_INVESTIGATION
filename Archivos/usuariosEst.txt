@@ -1,3 +1,4 @@
-5155|Fernando Jimenez|fjimenez@uamv.edu.ni|19011094|123456789|Ingienería en Sistemas|True
-3306|Yubelkis Rodriguez|yrodriguez@uamv.edu.ni|24011095|123456789|Sistemas|True
-9792|Johaneris Avalos|javalos@uamv.edu.ni|24011096|123456789|Sistemas|True
+7839|Johaneris Avalos|javalos@uamv.edu.ni|24011096|123456789|Sistemas|True
+8484|Fernando Jimenez|fjimenez@uamv.edu.ni|17011094|123456789|Sistemas|True
+3630|Yubelkis Rodriguez|yrodriguez@uamv.edu.ni|24011095|123456789|Sistemas|True
+5668|Glenny Guerrero|Gguerrero@uamv.edu.ni|24011097|123456789|Derecho|True

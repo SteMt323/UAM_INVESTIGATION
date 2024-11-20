@@ -83,30 +83,42 @@ namespace UAM_INVESTIGATION.Helpers
         // Iniciar Sesión Estudiantes (Correo y Contraseña)
         public bool IniciarSesionEstCorreo(string correo, string contrasenia)
         {
+            var usuarios = LeerUsuariosEst();
+            if (!usuarios.Any())
+            {
+                Console.WriteLine("No hay usuarios registrados en el sistema.");
+                return false;
+            }
             foreach (var usuario in LeerUsuariosEst())
             {
                 if (usuario.Correo == correo && usuario.Contrasenia == contrasenia)
                 {
                     return true;
                 }
-                Console.WriteLine("Las credenciales son incorrectas, por favor intente de nuevo...");
-                return false;
+                
             }
+            Console.WriteLine("Las credenciales son incorrectas, por favor intente de nuevo...");
             return false;
         }
 
         // Iniciar Sesión Estudiantes (CIF y Contraseña)
         public bool IniciarSesionEstCif(string cif, string contrasenia)
         {
+            var usuarios = LeerUsuariosEst();
+            if (!usuarios.Any())
+            {
+                Console.WriteLine("No hay usuarios registrados en el sistema.");
+                return false;
+            }
             foreach (var usuario in LeerUsuariosEst())
             {
                 if (usuario.Cif == cif && usuario.Contrasenia == contrasenia)
                 {
                     return true;
                 }
-                Console.WriteLine("Las credenciales son incorrectas, por favor intente de nuevo...");
-                return false;
+                
             }
+            Console.WriteLine("Las credenciales son incorrectas, por favor intente de nuevo...");
             return false;
         }
 
@@ -119,9 +131,9 @@ namespace UAM_INVESTIGATION.Helpers
                 {
                     return true;
                 }
-                Console.WriteLine("Las credenciales son incorrectas, por favor intente de nuevo...");
-                return false;
+                
             }
+            Console.WriteLine("Las credenciales son incorrectas, por favor intente de nuevo...");
             return false;
         }
 

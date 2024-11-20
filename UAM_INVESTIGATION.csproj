@@ -225,6 +225,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Archivos\" />
     <Folder Include="Packs\" />
   </ItemGroup>
   <ItemGroup>
