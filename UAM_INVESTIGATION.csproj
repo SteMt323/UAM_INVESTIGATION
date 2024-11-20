@@ -96,6 +96,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Estructuras\StrTrabajos.cs" />
     <Compile Include="Estructuras\StrUsuarioAdmin.cs" />
     <Compile Include="Estructuras\StrUsuarioEst.cs" />
     <Compile Include="FormAdmin\EditarPerfil.cs">
@@ -127,6 +128,12 @@
     </Compile>
     <Compile Include="FormEstudiantes\PrincipalEst.Designer.cs">
       <DependentUpon>PrincipalEst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEstudiantes\TrabajosPropios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormEstudiantes\TrabajosPropios.Designer.cs">
+      <DependentUpon>TrabajosPropios.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsInicios\Bienvenida.cs">
       <SubType>Form</SubType>
@@ -164,6 +171,7 @@
     <Compile Include="FormsInicios\RegistroUserEst.Designer.cs">
       <DependentUpon>RegistroUserEst.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ControlTrabajos.cs" />
     <Compile Include="Helpers\InitRegis.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -181,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEstudiantes\PrincipalEst.resx">
       <DependentUpon>PrincipalEst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEstudiantes\TrabajosPropios.resx">
+      <DependentUpon>TrabajosPropios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsInicios\Bienvenida.resx">
       <DependentUpon>Bienvenida.cs</DependentUpon>
@@ -227,6 +238,7 @@
   <ItemGroup>
     <Folder Include="Archivos\" />
     <Folder Include="Packs\" />
+    <Folder Include="Trabajos Investigativos\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo-uam-1png.png" />
