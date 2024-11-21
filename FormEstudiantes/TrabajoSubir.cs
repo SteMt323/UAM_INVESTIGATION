@@ -172,5 +172,10 @@ namespace UAM_INVESTIGATION.FormEstudiantes
             txt_TituloBusqueda.Clear();
             CargarTrabajos();
         }
+
+        private void Btn_Salir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

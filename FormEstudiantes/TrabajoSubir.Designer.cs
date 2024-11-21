@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lbl_ArchivoAdjunto = new MetroFramework.Controls.MetroLabel();
+            this.btn_AdjuntarArchivo = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_Descripcion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,19 +46,18 @@
             this.btn_SubirTrabajo = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_AdjuntarArchivo = new System.Windows.Forms.Button();
             this.btn_DeshacerFiltrado = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridViewTrabajos = new System.Windows.Forms.DataGridView();
-            this.txt_TituloBusqueda = new System.Windows.Forms.TextBox();
             this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_ArchivoAdjunto = new MetroFramework.Controls.MetroLabel();
+            this.txt_TituloBusqueda = new System.Windows.Forms.TextBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.lblErrorMessage = new System.Windows.Forms.Label();
+            this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -103,6 +104,31 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(324, 477);
             this.panel3.TabIndex = 30;
+            // 
+            // lbl_ArchivoAdjunto
+            // 
+            this.lbl_ArchivoAdjunto.BackColor = System.Drawing.Color.White;
+            this.lbl_ArchivoAdjunto.Location = new System.Drawing.Point(25, 366);
+            this.lbl_ArchivoAdjunto.Name = "lbl_ArchivoAdjunto";
+            this.lbl_ArchivoAdjunto.Size = new System.Drawing.Size(270, 19);
+            this.lbl_ArchivoAdjunto.TabIndex = 36;
+            // 
+            // btn_AdjuntarArchivo
+            // 
+            this.btn_AdjuntarArchivo.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btn_AdjuntarArchivo.FlatAppearance.BorderSize = 0;
+            this.btn_AdjuntarArchivo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btn_AdjuntarArchivo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_AdjuntarArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AdjuntarArchivo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AdjuntarArchivo.ForeColor = System.Drawing.Color.LightGray;
+            this.btn_AdjuntarArchivo.Location = new System.Drawing.Point(25, 319);
+            this.btn_AdjuntarArchivo.Name = "btn_AdjuntarArchivo";
+            this.btn_AdjuntarArchivo.Size = new System.Drawing.Size(270, 40);
+            this.btn_AdjuntarArchivo.TabIndex = 20;
+            this.btn_AdjuntarArchivo.Text = "Adjuntar";
+            this.btn_AdjuntarArchivo.UseVisualStyleBackColor = false;
+            this.btn_AdjuntarArchivo.Click += new System.EventHandler(this.btn_AdjuntarArchivo_Click);
             // 
             // label4
             // 
@@ -247,23 +273,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Subir Trabajo";
             // 
-            // btn_AdjuntarArchivo
-            // 
-            this.btn_AdjuntarArchivo.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.btn_AdjuntarArchivo.FlatAppearance.BorderSize = 0;
-            this.btn_AdjuntarArchivo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btn_AdjuntarArchivo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_AdjuntarArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_AdjuntarArchivo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AdjuntarArchivo.ForeColor = System.Drawing.Color.LightGray;
-            this.btn_AdjuntarArchivo.Location = new System.Drawing.Point(25, 319);
-            this.btn_AdjuntarArchivo.Name = "btn_AdjuntarArchivo";
-            this.btn_AdjuntarArchivo.Size = new System.Drawing.Size(270, 40);
-            this.btn_AdjuntarArchivo.TabIndex = 20;
-            this.btn_AdjuntarArchivo.Text = "Adjuntar";
-            this.btn_AdjuntarArchivo.UseVisualStyleBackColor = false;
-            this.btn_AdjuntarArchivo.Click += new System.EventHandler(this.btn_AdjuntarArchivo_Click);
-            // 
             // btn_DeshacerFiltrado
             // 
             this.btn_DeshacerFiltrado.BackColor = System.Drawing.Color.DimGray;
@@ -327,14 +336,14 @@
             this.dataGridViewTrabajos.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
             this.dataGridViewTrabajos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewTrabajos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTrabajos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTrabajos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTrabajos.ColumnHeadersHeight = 30;
             this.dataGridViewTrabajos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewTrabajos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -346,34 +355,23 @@
             this.dataGridViewTrabajos.Location = new System.Drawing.Point(6, 75);
             this.dataGridViewTrabajos.Name = "dataGridViewTrabajos";
             this.dataGridViewTrabajos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTrabajos.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewTrabajos.RowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTrabajos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewTrabajos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTrabajos.Size = new System.Drawing.Size(413, 213);
             this.dataGridViewTrabajos.TabIndex = 33;
             this.dataGridViewTrabajos.TabStop = false;
-            // 
-            // txt_TituloBusqueda
-            // 
-            this.txt_TituloBusqueda.BackColor = System.Drawing.Color.Gainsboro;
-            this.txt_TituloBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_TituloBusqueda.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TituloBusqueda.ForeColor = System.Drawing.Color.Black;
-            this.txt_TituloBusqueda.Location = new System.Drawing.Point(57, 365);
-            this.txt_TituloBusqueda.Name = "txt_TituloBusqueda";
-            this.txt_TituloBusqueda.Size = new System.Drawing.Size(270, 20);
-            this.txt_TituloBusqueda.TabIndex = 31;
             // 
             // Titulo
             // 
@@ -391,13 +389,16 @@
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.Width = 170;
             // 
-            // lbl_ArchivoAdjunto
+            // txt_TituloBusqueda
             // 
-            this.lbl_ArchivoAdjunto.BackColor = System.Drawing.Color.White;
-            this.lbl_ArchivoAdjunto.Location = new System.Drawing.Point(25, 366);
-            this.lbl_ArchivoAdjunto.Name = "lbl_ArchivoAdjunto";
-            this.lbl_ArchivoAdjunto.Size = new System.Drawing.Size(270, 19);
-            this.lbl_ArchivoAdjunto.TabIndex = 36;
+            this.txt_TituloBusqueda.BackColor = System.Drawing.Color.Gainsboro;
+            this.txt_TituloBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_TituloBusqueda.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TituloBusqueda.ForeColor = System.Drawing.Color.Black;
+            this.txt_TituloBusqueda.Location = new System.Drawing.Point(57, 365);
+            this.txt_TituloBusqueda.Name = "txt_TituloBusqueda";
+            this.txt_TituloBusqueda.Size = new System.Drawing.Size(270, 20);
+            this.txt_TituloBusqueda.TabIndex = 31;
             // 
             // iconPictureBox1
             // 
@@ -428,11 +429,30 @@
             this.lblErrorMessage.Text = "Error Message";
             this.lblErrorMessage.Visible = false;
             // 
+            // Btn_Salir
+            // 
+            this.Btn_Salir.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_Salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_Salir.FlatAppearance.BorderSize = 0;
+            this.Btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Salir.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.Btn_Salir.IconColor = System.Drawing.Color.Gainsboro;
+            this.Btn_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_Salir.IconSize = 15;
+            this.Btn_Salir.Location = new System.Drawing.Point(3, 3);
+            this.Btn_Salir.Name = "Btn_Salir";
+            this.Btn_Salir.Size = new System.Drawing.Size(15, 15);
+            this.Btn_Salir.TabIndex = 39;
+            this.Btn_Salir.TabStop = false;
+            this.Btn_Salir.UseVisualStyleBackColor = false;
+            this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
+            // 
             // TrabajoSubir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(75)))));
+            this.Controls.Add(this.Btn_Salir);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.btn_DeshacerFiltrado);
@@ -484,5 +504,6 @@
         private MetroFramework.Controls.MetroLabel lbl_ArchivoAdjunto;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label lblErrorMessage;
+        private FontAwesome.Sharp.IconButton Btn_Salir;
     }
 }
