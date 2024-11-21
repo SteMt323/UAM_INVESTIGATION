@@ -42,6 +42,10 @@
             this.lbl_Carrera = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_Carrera = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txt_Cif = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.lblErrorMessage = new System.Windows.Forms.Label();
             this.btn_Guardar = new System.Windows.Forms.Button();
@@ -60,10 +64,6 @@
             this.txt_Nombre = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txt_Cif = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txt_Carrera = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
@@ -264,6 +264,52 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(343, 477);
             this.panel1.TabIndex = 33;
+            // 
+            // txt_Carrera
+            // 
+            this.txt_Carrera.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.txt_Carrera.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Carrera.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Carrera.ForeColor = System.Drawing.Color.Gainsboro;
+            this.txt_Carrera.Location = new System.Drawing.Point(41, 211);
+            this.txt_Carrera.Name = "txt_Carrera";
+            this.txt_Carrera.Size = new System.Drawing.Size(270, 20);
+            this.txt_Carrera.TabIndex = 4;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Century", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label14.Location = new System.Drawing.Point(37, 188);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(59, 17);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "Carrera";
+            // 
+            // txt_Cif
+            // 
+            this.txt_Cif.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.txt_Cif.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Cif.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Cif.ForeColor = System.Drawing.Color.Gainsboro;
+            this.txt_Cif.Location = new System.Drawing.Point(41, 165);
+            this.txt_Cif.Name = "txt_Cif";
+            this.txt_Cif.Size = new System.Drawing.Size(270, 20);
+            this.txt_Cif.TabIndex = 3;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Century", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label13.Location = new System.Drawing.Point(37, 142);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(27, 17);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "Cif";
             // 
             // iconPictureBox2
             // 
@@ -490,52 +536,6 @@
             this.label8.Size = new System.Drawing.Size(142, 27);
             this.label8.TabIndex = 5;
             this.label8.Text = "Editar Perfil";
-            // 
-            // txt_Cif
-            // 
-            this.txt_Cif.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.txt_Cif.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_Cif.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Cif.ForeColor = System.Drawing.Color.Gainsboro;
-            this.txt_Cif.Location = new System.Drawing.Point(41, 165);
-            this.txt_Cif.Name = "txt_Cif";
-            this.txt_Cif.Size = new System.Drawing.Size(270, 20);
-            this.txt_Cif.TabIndex = 3;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Century", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label13.Location = new System.Drawing.Point(37, 142);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(27, 17);
-            this.label13.TabIndex = 29;
-            this.label13.Text = "Cif";
-            // 
-            // txt_Carrera
-            // 
-            this.txt_Carrera.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.txt_Carrera.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_Carrera.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Carrera.ForeColor = System.Drawing.Color.Gainsboro;
-            this.txt_Carrera.Location = new System.Drawing.Point(41, 211);
-            this.txt_Carrera.Name = "txt_Carrera";
-            this.txt_Carrera.Size = new System.Drawing.Size(270, 20);
-            this.txt_Carrera.TabIndex = 4;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Century", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label14.Location = new System.Drawing.Point(37, 188);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 17);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "Carrera";
             // 
             // EditarPerfilEst
             // 

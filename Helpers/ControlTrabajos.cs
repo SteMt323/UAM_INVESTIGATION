@@ -1,59 +1,70 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.IO;
+using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using UAM_INVESTIGATION.Estructuras;
 
 namespace UAM_INVESTIGATION.Helpers
 {
     internal class ControlTrabajos
     {
-        // Carpeta donde se guardan los archivos de los trabajos
-        private readonly string carpetaDestino = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Trabajos Investigativos");
+        private readonly string carpetaDestinoPdf = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName, "Trabajos Investigativos");
+        private readonly string carpetaArchivosTxt = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName, "Archivos");
+        private readonly string archivoTrabajos = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName, "Archivos", "Trabajos.txt");
 
-        // Lista de trabajos (en un escenario real, esto podría estar conectado a una base de datos)
         private List<StrTrabajos> trabajos;
 
         public ControlTrabajos()
         {
-            // Si la carpeta no existe, la crea
-            if (!Directory.Exists(carpetaDestino))
-            {
-                Directory.CreateDirectory(carpetaDestino);
-            }
+            // Crear las carpetas necesarias si no existen
+            if (!Directory.Exists(carpetaDestinoPdf))
+                Directory.CreateDirectory(carpetaDestinoPdf);
+
+            if (!Directory.Exists(carpetaArchivosTxt))
+                Directory.CreateDirectory(carpetaArchivosTxt);
+
+            // Crear el archivo de texto si no existe
+            if (!File.Exists(archivoTrabajos))
+                File.Create(archivoTrabajos).Close();
 
             trabajos = new List<StrTrabajos>();
         }
 
-        //Método para guardar un nuevo registro/trabajo
         public bool GuardarTrabajo(int idUsuario, string titulo, string descripcion, string categoria, string archivoPdf)
         {
             try
             {
+                // Generar un nuevo ID basado en la cantidad de trabajos registrados
                 int idTrabajo = trabajos.Count + 1;
 
-                // Generar el nombre del archivo con el IdTrabajo
-                string archivoDestino = Path.Combine(carpetaDestino, $"{idTrabajo}.pdf");
+                // Generar el nombre del archivo PDF basado en el ID del trabajo
+                string archivoDestinoPdf = Path.Combine(carpetaDestinoPdf, $"{idTrabajo}.pdf");
 
-                //Copiar el archivo PDF a la carpeta de destino
-                File.Copy(archivoPdf, archivoDestino);
+                // Copiar el archivo PDF a la carpeta "Trabajos Investigativos"
+                File.Copy(archivoPdf, archivoDestinoPdf, overwrite: true);
 
-                //Crear un nuevo objeto StrTrabajos
+                // Crear el objeto del nuevo trabajo
                 StrTrabajos nuevoTrabajo = new StrTrabajos
-                    (
+                (
                     idTrabajo,
                     idUsuario,
                     titulo,
                     descripcion,
                     categoria,
                     DateTime.Now,
-                    new Comentario(),  // Comentarios vacíos al principio
-                    new Valoracion(),  // Calificación vacía al principio
-                    archivoDestino  // Ruta del archivo PDF guardado
-                    );
+                    new Comentario(),
+                    new Valoracion(),
+                    archivoDestinoPdf
+                );
+
+                // Agregar el nuevo trabajo a la lista
                 trabajos.Add(nuevoTrabajo);
+
+                // Guardar el registro en el archivo "Trabajos.txt"
+                string registro = $"{idTrabajo}|{idUsuario}|{titulo}|{descripcion}|{categoria}|{DateTime.Now}|{archivoDestinoPdf}";
+                File.AppendAllText(archivoTrabajos, registro + Environment.NewLine);
+
                 return true;
             }
             catch (Exception ex)
@@ -63,13 +74,40 @@ namespace UAM_INVESTIGATION.Helpers
             }
         }
 
-        //Método para leer 
         public List<StrTrabajos> ObtenerTrabajos()
         {
-            return trabajos;
+            try
+            {
+                // Leer los registros desde el archivo "Trabajos.txt"
+                if (File.Exists(archivoTrabajos))
+                {
+                    string[] lineas = File.ReadAllLines(archivoTrabajos);
+
+                    trabajos = lineas.Select(linea =>
+                    {
+                        var campos = linea.Split('|');
+                        return new StrTrabajos(
+                            int.Parse(campos[0]),
+                            int.Parse(campos[1]),
+                            campos[2],
+                            campos[3],
+                            campos[4],
+                            DateTime.Parse(campos[5]),
+                            new Comentario(), // Asumimos que los comentarios y valoraciones se cargan luego
+                            new Valoracion(),
+                            campos[6]
+                        );
+                    }).ToList();
+                }
+                return trabajos;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al obtener trabajos: {ex.Message}");
+                return new List<StrTrabajos>();
+            }
         }
 
-        //Método para buscar un trabajo por id
         public StrTrabajos BuscarTrabajo(int idTrabajo)
         {
             return trabajos.FirstOrDefault(t => t.IdTrabajo == idTrabajo);
@@ -81,16 +119,16 @@ namespace UAM_INVESTIGATION.Helpers
             {
                 var trabajo = trabajos.FirstOrDefault(t => t.IdTrabajo == idTrabajo);
                 if (trabajo.Equals(default(StrTrabajos)))
-                {
                     return false;
-                }
-                //Actualizamos los campos del trabajo encontrado
+
                 trabajo.Titulo = titulo;
                 trabajo.Descripcion = descripcion;
                 trabajo.Categoria = categoria;
 
-                return true;
+                // Actualizar el archivo "Trabajos.txt"
+                ActualizarArchivoTxt();
 
+                return true;
             }
             catch (Exception ex)
             {
@@ -103,36 +141,38 @@ namespace UAM_INVESTIGATION.Helpers
         {
             try
             {
-                var trabajo = trabajos.FirstOrDefault(t => t.IdTrabajo==idTrabajo);
+                var trabajo = trabajos.FirstOrDefault(t => t.IdTrabajo == idTrabajo);
                 if (trabajo.Equals(default(StrTrabajos)))
-                {
                     return false;
-                }
 
                 trabajos.Remove(trabajo);
-                return true;
 
-            }catch (Exception ex)
+                // Actualizar el archivo "Trabajos.txt"
+                ActualizarArchivoTxt();
+
+                return true;
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine($"Error al eliminar el trabajo: {ex.Message}");
                 return false;
             }
         }
 
-        // Método para obtener la ruta de un archivo
-        public string ObtenerRutaArchivo(int idTrabajo)
+        private void ActualizarArchivoTxt()
         {
-            //Buscamos el trabajo por su ID
-            var trabajo = trabajos.FirstOrDefault(t => t.IdTrabajo == idTrabajo);
-
-            //Verificamos si el trabajo se encontró y devolvemos la RutaArchivo si existe
-            if (trabajo.Equals(default(StrTrabajos)))
+            try
             {
-                return null; //El trabajo no se encontró
+                var registros = trabajos.Select(t =>
+                    $"{t.IdTrabajo}|{t.IdUsuario}|{t.Titulo}|{t.Descripcion}|{t.Categoria}|{t.FechaSubida}|{t.RutaArchivo}"
+                );
+                File.WriteAllLines(archivoTrabajos, registros);
             }
-
-            return trabajo.RutaArchivo; //Devolvemos la ruta del archivo
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al actualizar el archivo de texto: {ex.Message}");
+            }
         }
-
     }
 }
+

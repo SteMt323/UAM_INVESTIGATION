@@ -16,12 +16,14 @@ namespace UAM_INVESTIGATION.FormEstudiantes
         private string nombreUsuario;
         private string correoUsuario;
         private string cifUsuario;
-        public PrincipalEst(string nombreUsuario, string correoUsuario, string cifUsuario)
+        private int idUsuario;
+        public PrincipalEst(string nombreUsuario, string correoUsuario, string cifUsuario, int idUsuario)
         {
             InitializeComponent();
             this.nombreUsuario = nombreUsuario;
             this.correoUsuario = correoUsuario;
             this.cifUsuario = cifUsuario;
+            this.idUsuario = idUsuario;
         }
 
         private void btn_minisize_Click(object sender, EventArgs e)
@@ -57,6 +59,15 @@ namespace UAM_INVESTIGATION.FormEstudiantes
             //Agregar el UserControl al Panel
             editarPerfilEst.Dock = DockStyle.Fill;
             pnl_Content.Controls.Add(editarPerfilEst);
+        }
+
+        private void Btn_SubirTrabajos_Click(object sender, EventArgs e)
+        {
+            TrabajoSubir trabajoSubir = new TrabajoSubir(idUsuario);
+            pnl_Content.Controls.Clear();
+
+            trabajoSubir.Dock = DockStyle.Fill;
+            pnl_Content.Controls.Add(trabajoSubir);
         }
     }
 }

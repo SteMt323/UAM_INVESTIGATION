@@ -135,6 +135,12 @@
     <Compile Include="FormEstudiantes\TrabajosPropios.Designer.cs">
       <DependentUpon>TrabajosPropios.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEstudiantes\TrabajoSubir.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormEstudiantes\TrabajoSubir.Designer.cs">
+      <DependentUpon>TrabajoSubir.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsInicios\Bienvenida.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEstudiantes\TrabajosPropios.resx">
       <DependentUpon>TrabajosPropios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEstudiantes\TrabajoSubir.resx">
+      <DependentUpon>TrabajoSubir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsInicios\Bienvenida.resx">
       <DependentUpon>Bienvenida.cs</DependentUpon>
