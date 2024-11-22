@@ -42,16 +42,14 @@ namespace UAM_INVESTIGATION.Estructuras
     {
         public int IdTrabajo { get; set; }
         public int IdUsuario { get; set; }
-        public string Titulo
-        { get; set; }
+        public string Titulo { get; set; }
         public string Descripcion { get; set; }
         public string Categoria { get; set; }
         public DateTime FechaSubida { get; set; }
-        public Comentario Comentarios { get; set; } 
-        public Valoracion Calificacion { get; set; }
         public string RutaArchivo { get; set; }
+        public bool Estado { get; set; }
 
-        public StrTrabajos(int idTrabajo, int idUsuario, string nombreTitulo, string descripcion, string categoria, DateTime fechaSubida, Comentario comentarios, Valoracion calificacion, string rutaArchivo)
+        public StrTrabajos(int idTrabajo, int idUsuario, string nombreTitulo, string descripcion, string categoria, DateTime fechaSubida, string rutaArchivo, bool estado)
         {
             IdTrabajo = idTrabajo;
             IdUsuario = idUsuario;
@@ -59,9 +57,8 @@ namespace UAM_INVESTIGATION.Estructuras
             Descripcion = descripcion;
             Categoria = categoria;
             FechaSubida = fechaSubida;
-            Comentarios = comentarios;
-            Calificacion = calificacion;
             RutaArchivo = rutaArchivo;
+            Estado = estado;
         }
     }
 

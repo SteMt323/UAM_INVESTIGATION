@@ -146,7 +146,7 @@
             // 
             this.txt_Descripcion.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.txt_Descripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_Descripcion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Descripcion.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Descripcion.ForeColor = System.Drawing.Color.Gainsboro;
             this.txt_Descripcion.Location = new System.Drawing.Point(25, 182);
             this.txt_Descripcion.Multiline = true;
@@ -171,6 +171,7 @@
             this.cmb_Categoria.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.cmb_Categoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb_Categoria.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Categoria.ForeColor = System.Drawing.Color.Gainsboro;
             this.cmb_Categoria.FormattingEnabled = true;
             this.cmb_Categoria.Items.AddRange(new object[] {
             "Tecnología e Innovación",

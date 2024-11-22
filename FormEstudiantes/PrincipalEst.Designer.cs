@@ -33,6 +33,7 @@
             this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Btn_SubirTrabajos = new FontAwesome.Sharp.IconButton();
             this.Btn_EditarTrabajos = new FontAwesome.Sharp.IconButton();
             this.Btn_NovInvest = new FontAwesome.Sharp.IconButton();
             this.Btn_Perfil = new FontAwesome.Sharp.IconButton();
@@ -44,7 +45,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.pnl_Content = new System.Windows.Forms.Panel();
-            this.Btn_SubirTrabajos = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -125,6 +125,29 @@
             this.panel2.Size = new System.Drawing.Size(200, 477);
             this.panel2.TabIndex = 2;
             // 
+            // Btn_SubirTrabajos
+            // 
+            this.Btn_SubirTrabajos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_SubirTrabajos.FlatAppearance.BorderSize = 0;
+            this.Btn_SubirTrabajos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_SubirTrabajos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_SubirTrabajos.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Btn_SubirTrabajos.IconChar = FontAwesome.Sharp.IconChar.Upload;
+            this.Btn_SubirTrabajos.IconColor = System.Drawing.Color.MediumPurple;
+            this.Btn_SubirTrabajos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_SubirTrabajos.IconSize = 30;
+            this.Btn_SubirTrabajos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_SubirTrabajos.Location = new System.Drawing.Point(0, 261);
+            this.Btn_SubirTrabajos.Name = "Btn_SubirTrabajos";
+            this.Btn_SubirTrabajos.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.Btn_SubirTrabajos.Size = new System.Drawing.Size(200, 60);
+            this.Btn_SubirTrabajos.TabIndex = 5;
+            this.Btn_SubirTrabajos.Text = "Subir Trabajos";
+            this.Btn_SubirTrabajos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_SubirTrabajos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_SubirTrabajos.UseVisualStyleBackColor = true;
+            this.Btn_SubirTrabajos.Click += new System.EventHandler(this.Btn_SubirTrabajos_Click);
+            // 
             // Btn_EditarTrabajos
             // 
             this.Btn_EditarTrabajos.Dock = System.Windows.Forms.DockStyle.Top;
@@ -146,6 +169,7 @@
             this.Btn_EditarTrabajos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_EditarTrabajos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_EditarTrabajos.UseVisualStyleBackColor = true;
+            this.Btn_EditarTrabajos.Click += new System.EventHandler(this.Btn_EditarTrabajos_Click);
             // 
             // Btn_NovInvest
             // 
@@ -299,29 +323,6 @@
             this.pnl_Content.Name = "pnl_Content";
             this.pnl_Content.Size = new System.Drawing.Size(890, 477);
             this.pnl_Content.TabIndex = 3;
-            // 
-            // Btn_SubirTrabajos
-            // 
-            this.Btn_SubirTrabajos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_SubirTrabajos.FlatAppearance.BorderSize = 0;
-            this.Btn_SubirTrabajos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_SubirTrabajos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_SubirTrabajos.ForeColor = System.Drawing.Color.Gainsboro;
-            this.Btn_SubirTrabajos.IconChar = FontAwesome.Sharp.IconChar.Upload;
-            this.Btn_SubirTrabajos.IconColor = System.Drawing.Color.MediumPurple;
-            this.Btn_SubirTrabajos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btn_SubirTrabajos.IconSize = 30;
-            this.Btn_SubirTrabajos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_SubirTrabajos.Location = new System.Drawing.Point(0, 261);
-            this.Btn_SubirTrabajos.Name = "Btn_SubirTrabajos";
-            this.Btn_SubirTrabajos.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.Btn_SubirTrabajos.Size = new System.Drawing.Size(200, 60);
-            this.Btn_SubirTrabajos.TabIndex = 5;
-            this.Btn_SubirTrabajos.Text = "Subir Trabajos";
-            this.Btn_SubirTrabajos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_SubirTrabajos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Btn_SubirTrabajos.UseVisualStyleBackColor = true;
-            this.Btn_SubirTrabajos.Click += new System.EventHandler(this.Btn_SubirTrabajos_Click);
             // 
             // PrincipalEst
             // 

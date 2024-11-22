@@ -35,11 +35,14 @@ namespace UAM_INVESTIGATION.Helpers
         {
             try
             {
-                // Generar un nuevo ID basado en la cantidad de trabajos registrados
+                //Generar un nuevo ID basado en la cantidad de trabajos registrados
                 int idTrabajo = trabajos.Count + 1;
 
-                // Generar el nombre del archivo PDF basado en el ID del trabajo
+                //Generar el nombre del archivo PDF basado en el ID del trabajo
                 string archivoDestinoPdf = Path.Combine(carpetaDestinoPdf, $"{idTrabajo}.pdf");
+
+                //Guardar Estado en Vigente
+                bool estado = true;
 
                 // Copiar el archivo PDF a la carpeta "Trabajos Investigativos"
                 File.Copy(archivoPdf, archivoDestinoPdf, overwrite: true);
@@ -53,16 +56,15 @@ namespace UAM_INVESTIGATION.Helpers
                     descripcion,
                     categoria,
                     DateTime.Now,
-                    new Comentario(),
-                    new Valoracion(),
-                    archivoDestinoPdf
+                    archivoDestinoPdf,
+                    estado
                 );
 
                 // Agregar el nuevo trabajo a la lista
                 trabajos.Add(nuevoTrabajo);
 
                 // Guardar el registro en el archivo "Trabajos.txt"
-                string registro = $"{idTrabajo}|{idUsuario}|{titulo}|{descripcion}|{categoria}|{DateTime.Now}|{archivoDestinoPdf}";
+                string registro = $"{idTrabajo}|{idUsuario}|{titulo}|{descripcion}|{categoria}|{DateTime.Now}|{archivoDestinoPdf}|{estado}";
                 File.AppendAllText(archivoTrabajos, registro + Environment.NewLine);
 
                 return true;
@@ -93,9 +95,8 @@ namespace UAM_INVESTIGATION.Helpers
                             campos[3],
                             campos[4],
                             DateTime.Parse(campos[5]),
-                            new Comentario(), // Asumimos que los comentarios y valoraciones se cargan luego
-                            new Valoracion(),
-                            campos[6]
+                            campos[6],
+                            bool.Parse(campos[7])
                         );
                     }).ToList();
                 }
@@ -110,67 +111,86 @@ namespace UAM_INVESTIGATION.Helpers
 
         public StrTrabajos BuscarTrabajo(int idTrabajo)
         {
-            return trabajos.FirstOrDefault(t => t.IdTrabajo == idTrabajo);
+            return trabajos.FirstOrDefault(t => t.IdTrabajo == idTrabajo && t.Estado);
         }
 
-        public bool ActualizarTrabajo(int idTrabajo, string titulo, string descripcion, string categoria)
+        public void ActualizarTrabajo(int idTrabajo, string titulo, string descripcion, string categoria)
         {
+            var trabajos = ObtenerTrabajos();
+            for (int i = 0; i < trabajos.Count; i++)
+            {
+                if (trabajos[i].IdTrabajo == idTrabajo)
+                {
+                    // Reemplazar el trabajo encontrado con los nuevos datos
+                    trabajos[i] = new StrTrabajos
+                    {
+                        IdTrabajo = idTrabajo,
+                        IdUsuario = trabajos[i].IdUsuario, // Mantener el mismo IdUsuario
+                        Titulo = titulo,
+                        Descripcion = descripcion,
+                        Categoria = categoria,
+                        FechaSubida = trabajos[i].FechaSubida, // Mantener la fecha original
+                        RutaArchivo = trabajos[i].RutaArchivo, // Mantener la ruta original
+                        Estado = trabajos[i].Estado
+                    };
+                    break;
+                }
+            }
+
+            // Guardar los cambios en el archivo
             try
             {
-                var trabajo = trabajos.FirstOrDefault(t => t.IdTrabajo == idTrabajo);
-                if (trabajo.Equals(default(StrTrabajos)))
-                    return false;
-
-                trabajo.Titulo = titulo;
-                trabajo.Descripcion = descripcion;
-                trabajo.Categoria = categoria;
-
-                // Actualizar el archivo "Trabajos.txt"
-                ActualizarArchivoTxt();
-
-                return true;
+                using (StreamWriter sw = new StreamWriter(archivoTrabajos))
+                {
+                    foreach (var trabajo in trabajos)
+                    {
+                        sw.WriteLine($"{trabajo.IdTrabajo}|{trabajo.IdUsuario}|{trabajo.Titulo}|{trabajo.Descripcion}|{trabajo.Categoria}|{trabajo.FechaSubida:O}|{trabajo.RutaArchivo}|{trabajo.Estado}");
+                    }
+                }
             }
-            catch (Exception ex)
+            catch (IOException ex)
             {
-                Console.WriteLine($"Error al actualizar el trabajo: {ex.Message}");
-                return false;
-            }
-        }
-
-        public bool EliminarTrabajo(int idTrabajo)
-        {
-            try
-            {
-                var trabajo = trabajos.FirstOrDefault(t => t.IdTrabajo == idTrabajo);
-                if (trabajo.Equals(default(StrTrabajos)))
-                    return false;
-
-                trabajos.Remove(trabajo);
-
-                // Actualizar el archivo "Trabajos.txt"
-                ActualizarArchivoTxt();
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error al eliminar el trabajo: {ex.Message}");
-                return false;
+                Console.WriteLine($"Error al escribir en el archivo: {ex.Message}");
             }
         }
 
-        private void ActualizarArchivoTxt()
+        public void EliminarTrabajo(int idTrabajo)
         {
+            var trabajos = ObtenerTrabajos();
+            for (int i = 0; i < trabajos.Count; i++)
+            {
+                if (trabajos[i].IdTrabajo == idTrabajo)
+                {
+                    // Cambiar el estado del trabajo a inactivo (Estado = false)
+                    trabajos[i] = new StrTrabajos
+                    {
+                        IdTrabajo = trabajos[i].IdTrabajo,
+                        IdUsuario = trabajos[i].IdUsuario,
+                        Titulo = trabajos[i].Titulo,
+                        Descripcion = trabajos[i].Descripcion,
+                        Categoria = trabajos[i].Categoria,
+                        FechaSubida = trabajos[i].FechaSubida,
+                        RutaArchivo = trabajos[i].RutaArchivo,
+                        Estado = false // Marcar como inactivo
+                    };
+                    break;
+                }
+            }
+
+            // Guardar los cambios en el archivo
             try
             {
-                var registros = trabajos.Select(t =>
-                    $"{t.IdTrabajo}|{t.IdUsuario}|{t.Titulo}|{t.Descripcion}|{t.Categoria}|{t.FechaSubida}|{t.RutaArchivo}"
-                );
-                File.WriteAllLines(archivoTrabajos, registros);
+                using (StreamWriter sw = new StreamWriter(archivoTrabajos))
+                {
+                    foreach (var trabajo in trabajos)
+                    {
+                        sw.WriteLine($"{trabajo.IdTrabajo}|{trabajo.IdUsuario}|{trabajo.Titulo}|{trabajo.Descripcion}|{trabajo.Categoria}|{trabajo.FechaSubida:O}|{trabajo.RutaArchivo}|{trabajo.Estado}");
+                    }
+                }
             }
-            catch (Exception ex)
+            catch (IOException ex)
             {
-                Console.WriteLine($"Error al actualizar el archivo de texto: {ex.Message}");
+                Console.WriteLine($"Error al escribir en el archivo: {ex.Message}");
             }
         }
     }

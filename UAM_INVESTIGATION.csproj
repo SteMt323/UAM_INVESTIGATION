@@ -129,11 +129,11 @@
     <Compile Include="FormEstudiantes\PrincipalEst.Designer.cs">
       <DependentUpon>PrincipalEst.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormEstudiantes\TrabajosPropios.cs">
+    <Compile Include="FormEstudiantes\TrabajoEditar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FormEstudiantes\TrabajosPropios.Designer.cs">
-      <DependentUpon>TrabajosPropios.cs</DependentUpon>
+    <Compile Include="FormEstudiantes\TrabajoEditar.Designer.cs">
+      <DependentUpon>TrabajoEditar.cs</DependentUpon>
     </Compile>
     <Compile Include="FormEstudiantes\TrabajoSubir.cs">
       <SubType>UserControl</SubType>
@@ -196,8 +196,8 @@
     <EmbeddedResource Include="FormEstudiantes\PrincipalEst.resx">
       <DependentUpon>PrincipalEst.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEstudiantes\TrabajosPropios.resx">
-      <DependentUpon>TrabajosPropios.cs</DependentUpon>
+    <EmbeddedResource Include="FormEstudiantes\TrabajoEditar.resx">
+      <DependentUpon>TrabajoEditar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEstudiantes\TrabajoSubir.resx">
       <DependentUpon>TrabajoSubir.cs</DependentUpon>
