@@ -162,7 +162,7 @@
             this.Btn_Reportes.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.Btn_Reportes.Size = new System.Drawing.Size(200, 60);
             this.Btn_Reportes.TabIndex = 2;
-            this.Btn_Reportes.Text = "Reportes";
+            this.Btn_Reportes.Text = "Monitorear Trabajos";
             this.Btn_Reportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_Reportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_Reportes.UseVisualStyleBackColor = true;

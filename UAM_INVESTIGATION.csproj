@@ -99,6 +99,12 @@
     <Compile Include="Estructuras\StrTrabajos.cs" />
     <Compile Include="Estructuras\StrUsuarioAdmin.cs" />
     <Compile Include="Estructuras\StrUsuarioEst.cs" />
+    <Compile Include="FormAdmin\DarBajaTrabajos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormAdmin\DarBajaTrabajos.Designer.cs">
+      <DependentUpon>DarBajaTrabajos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAdmin\EditarPerfil.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     <Compile Include="Helpers\InitRegis.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAdmin\DarBajaTrabajos.resx">
+      <DependentUpon>DarBajaTrabajos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAdmin\EditarPerfil.resx">
       <DependentUpon>EditarPerfil.cs</DependentUpon>
     </EmbeddedResource>

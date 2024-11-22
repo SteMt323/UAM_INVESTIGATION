@@ -42,7 +42,6 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.txt_Contrasenia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Lnk_LostPassword = new System.Windows.Forms.LinkLabel();
             this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.btn_minisize = new FontAwesome.Sharp.IconButton();
             this.cb_MostrarContrasenia = new System.Windows.Forms.CheckBox();
@@ -223,19 +222,6 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "INICIO DE SESIÓN\r\n";
             // 
-            // Lnk_LostPassword
-            // 
-            this.Lnk_LostPassword.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Lnk_LostPassword.AutoSize = true;
-            this.Lnk_LostPassword.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lnk_LostPassword.LinkColor = System.Drawing.Color.DimGray;
-            this.Lnk_LostPassword.Location = new System.Drawing.Point(429, 263);
-            this.Lnk_LostPassword.Name = "Lnk_LostPassword";
-            this.Lnk_LostPassword.Size = new System.Drawing.Size(168, 16);
-            this.Lnk_LostPassword.TabIndex = 4;
-            this.Lnk_LostPassword.TabStop = true;
-            this.Lnk_LostPassword.Text = "¿Ha olvidado la contraseña?";
-            // 
             // Btn_Salir
             // 
             this.Btn_Salir.BackColor = System.Drawing.Color.Transparent;
@@ -335,7 +321,6 @@
             this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.cb_MostrarContrasenia);
-            this.Controls.Add(this.Lnk_LostPassword);
             this.Controls.Add(this.btn_InicioSesion);
             this.Controls.Add(this.txt_Contrasenia);
             this.Controls.Add(this.txt_CorreoCif);
@@ -368,7 +353,6 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private System.Windows.Forms.TextBox txt_Contrasenia;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel Lnk_LostPassword;
         private FontAwesome.Sharp.IconButton Btn_Salir;
         private FontAwesome.Sharp.IconButton btn_minisize;
         private System.Windows.Forms.PictureBox pictureBox1;

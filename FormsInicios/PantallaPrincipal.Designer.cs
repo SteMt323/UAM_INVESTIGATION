@@ -269,7 +269,7 @@
             this.Controls.Add(this.PanelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "pantalla_Principal";
-            this.Opacity = 0.95D;
+            this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.PanelMenu.ResumeLayout(false);
             this.PanelLogo.ResumeLayout(false);
