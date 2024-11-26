@@ -35,6 +35,8 @@
             this.Btn_AdminRegis = new FontAwesome.Sharp.IconButton();
             this.Btn_UserRegis = new FontAwesome.Sharp.IconButton();
             this.PanelLogo = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.img_Home = new System.Windows.Forms.PictureBox();
             this.btn_minisize = new FontAwesome.Sharp.IconButton();
             this.Btn_Salir = new FontAwesome.Sharp.IconButton();
@@ -61,7 +63,7 @@
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(220, 550);
+            this.PanelMenu.Size = new System.Drawing.Size(238, 506);
             this.PanelMenu.TabIndex = 3;
             // 
             // Btn_Us
@@ -76,10 +78,10 @@
             this.Btn_Us.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btn_Us.IconSize = 20;
             this.Btn_Us.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_Us.Location = new System.Drawing.Point(0, 490);
+            this.Btn_Us.Location = new System.Drawing.Point(0, 446);
             this.Btn_Us.Name = "Btn_Us";
             this.Btn_Us.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.Btn_Us.Size = new System.Drawing.Size(220, 30);
+            this.Btn_Us.Size = new System.Drawing.Size(238, 30);
             this.Btn_Us.TabIndex = 3;
             this.Btn_Us.Text = "Sobre Nosotros";
             this.Btn_Us.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -98,10 +100,10 @@
             this.Btn_Help.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btn_Help.IconSize = 20;
             this.Btn_Help.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_Help.Location = new System.Drawing.Point(0, 520);
+            this.Btn_Help.Location = new System.Drawing.Point(0, 476);
             this.Btn_Help.Name = "Btn_Help";
             this.Btn_Help.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.Btn_Help.Size = new System.Drawing.Size(220, 30);
+            this.Btn_Help.Size = new System.Drawing.Size(238, 30);
             this.Btn_Help.TabIndex = 4;
             this.Btn_Help.Text = "Ayuda";
             this.Btn_Help.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -123,7 +125,7 @@
             this.Btn_AdminRegis.Location = new System.Drawing.Point(0, 280);
             this.Btn_AdminRegis.Name = "Btn_AdminRegis";
             this.Btn_AdminRegis.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.Btn_AdminRegis.Size = new System.Drawing.Size(220, 60);
+            this.Btn_AdminRegis.Size = new System.Drawing.Size(238, 60);
             this.Btn_AdminRegis.TabIndex = 2;
             this.Btn_AdminRegis.Text = "ADMIN";
             this.Btn_AdminRegis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -146,7 +148,7 @@
             this.Btn_UserRegis.Location = new System.Drawing.Point(0, 220);
             this.Btn_UserRegis.Name = "Btn_UserRegis";
             this.Btn_UserRegis.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.Btn_UserRegis.Size = new System.Drawing.Size(220, 60);
+            this.Btn_UserRegis.Size = new System.Drawing.Size(238, 60);
             this.Btn_UserRegis.TabIndex = 1;
             this.Btn_UserRegis.Text = "ESTUDIANTE";
             this.Btn_UserRegis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -156,19 +158,51 @@
             // 
             // PanelLogo
             // 
+            this.PanelLogo.Controls.Add(this.textBox2);
+            this.PanelLogo.Controls.Add(this.textBox1);
             this.PanelLogo.Controls.Add(this.img_Home);
             this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelLogo.Location = new System.Drawing.Point(0, 0);
             this.PanelLogo.Name = "PanelLogo";
-            this.PanelLogo.Size = new System.Drawing.Size(220, 220);
+            this.PanelLogo.Size = new System.Drawing.Size(238, 220);
             this.PanelLogo.TabIndex = 0;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Enabled = false;
+            this.textBox2.Font = new System.Drawing.Font("Century", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.White;
+            this.textBox2.Location = new System.Drawing.Point(-4, 153);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(247, 20);
+            this.textBox2.TabIndex = 32;
+            this.textBox2.Text = "\"Impulsando el conocimiento, compartiendo investigaciones\"";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(12, 135);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(215, 20);
+            this.textBox1.TabIndex = 31;
+            this.textBox1.Text = "UAM INVESTIGATIONS";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // img_Home
             // 
             this.img_Home.Image = ((System.Drawing.Image)(resources.GetObject("img_Home.Image")));
             this.img_Home.Location = new System.Drawing.Point(0, 0);
             this.img_Home.Name = "img_Home";
-            this.img_Home.Size = new System.Drawing.Size(220, 220);
+            this.img_Home.Size = new System.Drawing.Size(238, 220);
             this.img_Home.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_Home.TabIndex = 0;
             this.img_Home.TabStop = false;
@@ -183,7 +217,7 @@
             this.btn_minisize.IconColor = System.Drawing.Color.Gainsboro;
             this.btn_minisize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_minisize.IconSize = 20;
-            this.btn_minisize.Location = new System.Drawing.Point(662, 3);
+            this.btn_minisize.Location = new System.Drawing.Point(641, 3);
             this.btn_minisize.Name = "btn_minisize";
             this.btn_minisize.Size = new System.Drawing.Size(15, 15);
             this.btn_minisize.TabIndex = 0;
@@ -201,7 +235,7 @@
             this.Btn_Salir.IconColor = System.Drawing.Color.Gainsboro;
             this.Btn_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btn_Salir.IconSize = 15;
-            this.Btn_Salir.Location = new System.Drawing.Point(683, 3);
+            this.Btn_Salir.Location = new System.Drawing.Point(662, 3);
             this.Btn_Salir.Name = "Btn_Salir";
             this.Btn_Salir.Size = new System.Drawing.Size(15, 15);
             this.Btn_Salir.TabIndex = 0;
@@ -212,11 +246,12 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(62)))));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::UAM_INVESTIGATION.Properties.Resources.uam_internacional_portada;
-            this.pictureBox1.Location = new System.Drawing.Point(220, 75);
+            this.pictureBox1.Location = new System.Drawing.Point(238, 43);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(701, 475);
+            this.pictureBox1.Size = new System.Drawing.Size(680, 463);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
@@ -228,7 +263,7 @@
             this.icon_form_home.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
             this.icon_form_home.IconColor = System.Drawing.Color.MediumPurple;
             this.icon_form_home.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.icon_form_home.Location = new System.Drawing.Point(15, 22);
+            this.icon_form_home.Location = new System.Drawing.Point(15, 6);
             this.icon_form_home.Name = "icon_form_home";
             this.icon_form_home.Size = new System.Drawing.Size(32, 32);
             this.icon_form_home.TabIndex = 0;
@@ -239,7 +274,7 @@
             this.lbl_form_tittle.AutoSize = true;
             this.lbl_form_tittle.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_form_tittle.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lbl_form_tittle.Location = new System.Drawing.Point(53, 31);
+            this.lbl_form_tittle.Location = new System.Drawing.Point(53, 15);
             this.lbl_form_tittle.Name = "lbl_form_tittle";
             this.lbl_form_tittle.Size = new System.Drawing.Size(39, 16);
             this.lbl_form_tittle.TabIndex = 0;
@@ -253,9 +288,9 @@
             this.Panel_Tittle.Controls.Add(this.Btn_Salir);
             this.Panel_Tittle.Controls.Add(this.icon_form_home);
             this.Panel_Tittle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Panel_Tittle.Location = new System.Drawing.Point(220, 0);
+            this.Panel_Tittle.Location = new System.Drawing.Point(238, 0);
             this.Panel_Tittle.Name = "Panel_Tittle";
-            this.Panel_Tittle.Size = new System.Drawing.Size(701, 75);
+            this.Panel_Tittle.Size = new System.Drawing.Size(680, 43);
             this.Panel_Tittle.TabIndex = 20;
             // 
             // pantalla_Principal
@@ -263,7 +298,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(921, 550);
+            this.ClientSize = new System.Drawing.Size(918, 506);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Panel_Tittle);
             this.Controls.Add(this.PanelMenu);
@@ -273,6 +308,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.PanelMenu.ResumeLayout(false);
             this.PanelLogo.ResumeLayout(false);
+            this.PanelLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Home)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.icon_form_home)).EndInit();
@@ -296,6 +332,8 @@
         private FontAwesome.Sharp.IconPictureBox icon_form_home;
         private System.Windows.Forms.Label lbl_form_tittle;
         private System.Windows.Forms.Panel Panel_Tittle;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

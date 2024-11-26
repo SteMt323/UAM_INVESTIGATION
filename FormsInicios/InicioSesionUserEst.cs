@@ -109,7 +109,7 @@ namespace UAM_INVESTIGATION.Forms
                     if (type == 1)
                     {
                         var estudiante = initRegis.LeerUsuariosEst().FirstOrDefault(est => est.Correo == correo);
-                        if (!estudiante.Estado)
+                        if (estudiante.Estado == false)
                         {
                             msgError("El usuario está dado de baja y no puede iniciar sesión.");
                             return;
@@ -122,7 +122,7 @@ namespace UAM_INVESTIGATION.Forms
                     if (type == 2)
                     {
                         var estudiante = initRegis.LeerUsuariosEst().FirstOrDefault(est => est.Cif == cif);
-                        if (!estudiante.Estado)
+                        if (estudiante.Estado == false)
                         {
                             msgError("El usuario está dado de baja y no puede iniciar sesión.");
                             return;

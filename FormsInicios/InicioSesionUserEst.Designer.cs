@@ -34,6 +34,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Lnk_Registro = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_regresar = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -42,10 +44,10 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.txt_Contrasenia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.btn_minisize = new FontAwesome.Sharp.IconButton();
             this.cb_MostrarContrasenia = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.lblErrorMessage = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -114,6 +116,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.btn_regresar);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label4);
@@ -124,6 +128,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 330);
             this.panel1.TabIndex = 9;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Enabled = false;
+            this.textBox2.Font = new System.Drawing.Font("Century", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.White;
+            this.textBox2.Location = new System.Drawing.Point(0, 215);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(247, 20);
+            this.textBox2.TabIndex = 28;
+            this.textBox2.Text = "\"Impulsando el conocimiento, compartiendo investigaciones\"";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(17, 197);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(215, 20);
+            this.textBox1.TabIndex = 27;
+            this.textBox1.Text = "UAM INVESTIGATIONS";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btn_regresar
             // 
@@ -222,24 +256,6 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "INICIO DE SESIÓN\r\n";
             // 
-            // Btn_Salir
-            // 
-            this.Btn_Salir.BackColor = System.Drawing.Color.Transparent;
-            this.Btn_Salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Btn_Salir.FlatAppearance.BorderSize = 0;
-            this.Btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Salir.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.Btn_Salir.IconColor = System.Drawing.Color.Gainsboro;
-            this.Btn_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btn_Salir.IconSize = 15;
-            this.Btn_Salir.Location = new System.Drawing.Point(512, 3);
-            this.Btn_Salir.Name = "Btn_Salir";
-            this.Btn_Salir.Size = new System.Drawing.Size(15, 15);
-            this.Btn_Salir.TabIndex = 14;
-            this.Btn_Salir.TabStop = false;
-            this.Btn_Salir.UseVisualStyleBackColor = false;
-            this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
-            // 
             // btn_minisize
             // 
             this.btn_minisize.BackColor = System.Drawing.Color.Transparent;
@@ -281,6 +297,24 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(530, 50);
             this.panel2.TabIndex = 16;
+            // 
+            // Btn_Salir
+            // 
+            this.Btn_Salir.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_Salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_Salir.FlatAppearance.BorderSize = 0;
+            this.Btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Salir.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.Btn_Salir.IconColor = System.Drawing.Color.Gainsboro;
+            this.Btn_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_Salir.IconSize = 15;
+            this.Btn_Salir.Location = new System.Drawing.Point(512, 3);
+            this.Btn_Salir.Name = "Btn_Salir";
+            this.Btn_Salir.Size = new System.Drawing.Size(15, 15);
+            this.Btn_Salir.TabIndex = 14;
+            this.Btn_Salir.TabStop = false;
+            this.Btn_Salir.UseVisualStyleBackColor = false;
+            this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
             // 
             // iconPictureBox1
             // 
@@ -353,7 +387,6 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private System.Windows.Forms.TextBox txt_Contrasenia;
         private System.Windows.Forms.Label label1;
-        private FontAwesome.Sharp.IconButton Btn_Salir;
         private FontAwesome.Sharp.IconButton btn_minisize;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox cb_MostrarContrasenia;
@@ -362,5 +395,8 @@
         private FontAwesome.Sharp.IconButton btn_regresar;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label lblErrorMessage;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private FontAwesome.Sharp.IconButton Btn_Salir;
     }
 }

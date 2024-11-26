@@ -42,5 +42,10 @@ namespace UAM_INVESTIGATION
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
