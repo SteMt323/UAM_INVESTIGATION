@@ -255,6 +255,7 @@
             this.Btn_Comentar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_Comentar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_Comentar.UseVisualStyleBackColor = false;
+            this.Btn_Comentar.Click += new System.EventHandler(this.Btn_Comentar_Click);
             // 
             // lbl_Descripcion
             // 

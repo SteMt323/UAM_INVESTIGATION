@@ -149,7 +149,6 @@ namespace UAM_INVESTIGATION.FormEstudiantes
                         Calificacion = nuevaCalificacion
                     };
                     valorarTrabajos.AgregarValoracion(valoracionNueva);
-                    MessageBox.Show("Nueva valoración guardada correctamente.");
                 }
 
             }catch (Exception e)

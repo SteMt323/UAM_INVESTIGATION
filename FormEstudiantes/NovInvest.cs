@@ -43,5 +43,11 @@ namespace UAM_INVESTIGATION.FormEstudiantes
             Calificar calificar = new Calificar(idTrabajo, idUsuario);
             calificar.ShowDialog();
         }
+
+        private void Btn_Comentar_Click(object sender, EventArgs e)
+        {
+            Comentarios comentarios = new Comentarios(idTrabajo, idUsuario);
+            comentarios.ShowDialog();
+        }
     }
 }

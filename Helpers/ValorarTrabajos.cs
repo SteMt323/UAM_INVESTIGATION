@@ -101,7 +101,7 @@ namespace UAM_INVESTIGATION.Helpers
             }
             catch (IOException ex)
             {
-                throw new Exception($"Error al leer las valoraciones: {ex.Message}");
+                throw new Exception($"Error al actualizar las valoraciones: {ex.Message}");
             }
         }
     }

@@ -84,7 +84,7 @@ namespace UAM_INVESTIGATION.FormEstudiantes
 
         private void Btn_NovInvest_Click(object sender, EventArgs e)
         {
-            NovInvest novInvest  = new NovInvest();
+            NovInvest novInvest  = new NovInvest(idUsuario);
             pnl_Content.Controls.Clear();
 
             novInvest.Dock = DockStyle.Fill;

@@ -129,6 +129,12 @@
     <Compile Include="FormEstudiantes\Calificar.Designer.cs">
       <DependentUpon>Calificar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEstudiantes\Comentarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEstudiantes\Comentarios.Designer.cs">
+      <DependentUpon>Comentarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEstudiantes\EditarPerfilEst.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -195,6 +201,7 @@
     <Compile Include="FormsInicios\RegistroUserEst.Designer.cs">
       <DependentUpon>RegistroUserEst.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ComentarTrabajos.cs" />
     <Compile Include="Helpers\ControlTrabajos.cs" />
     <Compile Include="Helpers\InitRegis.cs" />
     <Compile Include="Helpers\ValorarTrabajos.cs" />
@@ -214,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEstudiantes\Calificar.resx">
       <DependentUpon>Calificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEstudiantes\Comentarios.resx">
+      <DependentUpon>Comentarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEstudiantes\EditarPerfilEst.resx">
       <DependentUpon>EditarPerfilEst.cs</DependentUpon>
