@@ -11,12 +11,14 @@ namespace UAM_INVESTIGATION.Estructuras
     {
         public int IdCalificacion { get; set; }
         public int IdTrabajo { get; set; }
+        public int IdUsuario { get; set; }
         public int Calificacion {  get; set; }
 
-        public Valoracion(int idCalificacion, int idTrabajo, int calificacion)
+        public Valoracion(int idCalificacion, int idTrabajo, int idUsuario, int calificacion)
         {
             IdCalificacion = idCalificacion;
             IdTrabajo = idTrabajo;
+            IdUsuario = idUsuario;
             Calificacion = calificacion;
         }
     }
@@ -26,15 +28,13 @@ namespace UAM_INVESTIGATION.Estructuras
         public int IdUsuario { get; set; }
         public int IdTrabajo { get; set; }
         public string TextoComentario { get; set; }
-        public DateTime FechaSubidaComentario { get; set; }
 
-        public Comentario(int idComentario, int idUsuario, int idTrabajo, string textoComentario, DateTime fechaSubidaComentario)
+        public Comentario(int idComentario, int idUsuario, int idTrabajo, string textoComentario)
         {
             IdComentario = idComentario;
             IdUsuario = idUsuario;
             IdTrabajo = idTrabajo;
             TextoComentario = textoComentario;
-            FechaSubidaComentario = fechaSubidaComentario;
         }
     }
 

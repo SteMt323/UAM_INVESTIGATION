@@ -123,11 +123,23 @@
     <Compile Include="FormAdmin\PrincipalAdmin.Designer.cs">
       <DependentUpon>PrincipalAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEstudiantes\Calificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEstudiantes\Calificar.Designer.cs">
+      <DependentUpon>Calificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEstudiantes\EditarPerfilEst.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="FormEstudiantes\EditarPerfilEst.Designer.cs">
       <DependentUpon>EditarPerfilEst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEstudiantes\NovInvest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormEstudiantes\NovInvest.Designer.cs">
+      <DependentUpon>NovInvest.cs</DependentUpon>
     </Compile>
     <Compile Include="FormEstudiantes\PrincipalEst.cs">
       <SubType>Form</SubType>
@@ -185,6 +197,7 @@
     </Compile>
     <Compile Include="Helpers\ControlTrabajos.cs" />
     <Compile Include="Helpers\InitRegis.cs" />
+    <Compile Include="Helpers\ValorarTrabajos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAdmin\DarBajaTrabajos.resx">
@@ -199,8 +212,14 @@
     <EmbeddedResource Include="FormAdmin\PrincipalAdmin.resx">
       <DependentUpon>PrincipalAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormEstudiantes\Calificar.resx">
+      <DependentUpon>Calificar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEstudiantes\EditarPerfilEst.resx">
       <DependentUpon>EditarPerfilEst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEstudiantes\NovInvest.resx">
+      <DependentUpon>NovInvest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEstudiantes\PrincipalEst.resx">
       <DependentUpon>PrincipalEst.cs</DependentUpon>

@@ -51,13 +51,13 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridViewTrabajos = new System.Windows.Forms.DataGridView();
+            this.txt_TituloBusqueda = new System.Windows.Forms.TextBox();
+            this.lblErrorMessage = new System.Windows.Forms.Label();
+            this.Btn_Salir = new FontAwesome.Sharp.IconButton();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_TituloBusqueda = new System.Windows.Forms.TextBox();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.lblErrorMessage = new System.Windows.Forms.Label();
-            this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -70,7 +70,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(25)))), ((int)(((byte)(80)))));
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(424, 0);
+            this.panel1.Location = new System.Drawing.Point(566, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(324, 477);
             this.panel1.TabIndex = 30;
@@ -353,7 +353,7 @@
             this.Descripcion});
             this.dataGridViewTrabajos.EnableHeadersVisualStyles = false;
             this.dataGridViewTrabajos.GridColor = System.Drawing.Color.SlateBlue;
-            this.dataGridViewTrabajos.Location = new System.Drawing.Point(6, 75);
+            this.dataGridViewTrabajos.Location = new System.Drawing.Point(13, 75);
             this.dataGridViewTrabajos.Name = "dataGridViewTrabajos";
             this.dataGridViewTrabajos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -370,25 +370,9 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SlateBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridViewTrabajos.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTrabajos.Size = new System.Drawing.Size(413, 213);
+            this.dataGridViewTrabajos.Size = new System.Drawing.Size(542, 213);
             this.dataGridViewTrabajos.TabIndex = 33;
             this.dataGridViewTrabajos.TabStop = false;
-            // 
-            // Titulo
-            // 
-            this.Titulo.HeaderText = "Titulo";
-            this.Titulo.Name = "Titulo";
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 170;
             // 
             // txt_TituloBusqueda
             // 
@@ -400,22 +384,6 @@
             this.txt_TituloBusqueda.Name = "txt_TituloBusqueda";
             this.txt_TituloBusqueda.Size = new System.Drawing.Size(270, 20);
             this.txt_TituloBusqueda.TabIndex = 31;
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox1.ForeColor = System.Drawing.Color.Red;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ExclamationTriangle;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.Red;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 26;
-            this.iconPictureBox1.Location = new System.Drawing.Point(27, 290);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(29, 26);
-            this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconPictureBox1.TabIndex = 38;
-            this.iconPictureBox1.TabStop = false;
-            this.iconPictureBox1.Visible = false;
             // 
             // lblErrorMessage
             // 
@@ -448,6 +416,38 @@
             this.Btn_Salir.UseVisualStyleBackColor = false;
             this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
             // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.Red;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ExclamationTriangle;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.Red;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 26;
+            this.iconPictureBox1.Location = new System.Drawing.Point(27, 290);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(29, 26);
+            this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconPictureBox1.TabIndex = 38;
+            this.iconPictureBox1.TabStop = false;
+            this.iconPictureBox1.Visible = false;
+            // 
+            // Titulo
+            // 
+            this.Titulo.HeaderText = "Titulo";
+            this.Titulo.Name = "Titulo";
+            // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Width = 300;
+            // 
             // TrabajoSubir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,7 +464,7 @@
             this.Controls.Add(this.txt_TituloBusqueda);
             this.Controls.Add(this.panel1);
             this.Name = "TrabajoSubir";
-            this.Size = new System.Drawing.Size(748, 477);
+            this.Size = new System.Drawing.Size(890, 477);
             this.Load += new System.EventHandler(this.TrabajoSubir_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -499,12 +499,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridViewTrabajos;
         private System.Windows.Forms.TextBox txt_TituloBusqueda;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private MetroFramework.Controls.MetroLabel lbl_ArchivoAdjunto;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label lblErrorMessage;
         private FontAwesome.Sharp.IconButton Btn_Salir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
     }
 }

@@ -192,6 +192,7 @@
             this.Btn_NovInvest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_NovInvest.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_NovInvest.UseVisualStyleBackColor = true;
+            this.Btn_NovInvest.Click += new System.EventHandler(this.Btn_NovInvest_Click);
             // 
             // Btn_Perfil
             // 

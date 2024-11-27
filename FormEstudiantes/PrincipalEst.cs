@@ -81,5 +81,14 @@ namespace UAM_INVESTIGATION.FormEstudiantes
             trabajoEditar.Dock = DockStyle.Fill;
             pnl_Content.Controls.Add(trabajoEditar);
         }
+
+        private void Btn_NovInvest_Click(object sender, EventArgs e)
+        {
+            NovInvest novInvest  = new NovInvest();
+            pnl_Content.Controls.Clear();
+
+            novInvest.Dock = DockStyle.Fill;
+            pnl_Content.Controls.Add(novInvest);
+        }
     }
 }
