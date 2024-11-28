@@ -51,13 +51,13 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridViewTrabajos = new System.Windows.Forms.DataGridView();
+            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_TituloBusqueda = new System.Windows.Forms.TextBox();
             this.lblErrorMessage = new System.Windows.Forms.Label();
             this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -174,21 +174,21 @@
             this.cmb_Categoria.ForeColor = System.Drawing.Color.Gainsboro;
             this.cmb_Categoria.FormattingEnabled = true;
             this.cmb_Categoria.Items.AddRange(new object[] {
-            "Tecnología e Innovación",
+            "Arte y Cultura",
+            "Agronomía y Ciencias Agropecuarias",
+            "Ciencias Computacionales",
+            "Ciencias de la Salud",
+            "Ciencias Espaciales",
             "Ciencias Naturales",
             "Ciencias Sociales",
-            "Ciencias de la Salud",
-            "Educación",
-            "Economía y Negocios",
-            "Ingeniería",
-            "Arte y Cultura",
-            "Derecho y Legislación",
             "Desarrollo Sostenible",
-            "Ciencias Computacionales",
-            "Ciencias Espaciales",
+            "Derecho y Legislación",
+            "Economía y Negocios",
+            "Educación",
             "Historia y Humanidades",
-            "Agronomía y Ciencias Agropecuarias",
-            "Transporte y Logística"});
+            "Ingeniería",
+            "Transporte y Logística",
+            "Tecnología e Innovación"});
             this.cmb_Categoria.Location = new System.Drawing.Point(25, 120);
             this.cmb_Categoria.Name = "cmb_Categoria";
             this.cmb_Categoria.Size = new System.Drawing.Size(270, 29);
@@ -374,6 +374,22 @@
             this.dataGridViewTrabajos.TabIndex = 33;
             this.dataGridViewTrabajos.TabStop = false;
             // 
+            // Titulo
+            // 
+            this.Titulo.HeaderText = "Titulo";
+            this.Titulo.Name = "Titulo";
+            // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Width = 300;
+            // 
             // txt_TituloBusqueda
             // 
             this.txt_TituloBusqueda.BackColor = System.Drawing.Color.Gainsboro;
@@ -431,22 +447,6 @@
             this.iconPictureBox1.TabIndex = 38;
             this.iconPictureBox1.TabStop = false;
             this.iconPictureBox1.Visible = false;
-            // 
-            // Titulo
-            // 
-            this.Titulo.HeaderText = "Titulo";
-            this.Titulo.Name = "Titulo";
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 300;
             // 
             // TrabajoSubir
             // 

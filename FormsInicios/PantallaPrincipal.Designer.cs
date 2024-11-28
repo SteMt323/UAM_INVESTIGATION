@@ -87,6 +87,7 @@
             this.Btn_Us.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_Us.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_Us.UseVisualStyleBackColor = true;
+            this.Btn_Us.Click += new System.EventHandler(this.Btn_Us_Click);
             // 
             // Btn_Help
             // 

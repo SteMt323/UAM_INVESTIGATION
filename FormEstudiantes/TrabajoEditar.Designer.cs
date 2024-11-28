@@ -48,11 +48,11 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridViewTrabajos = new System.Windows.Forms.DataGridView();
-            this.txt_TituloBusqueda = new System.Windows.Forms.TextBox();
-            this.Btn_Salir = new FontAwesome.Sharp.IconButton();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Btn_Salir = new FontAwesome.Sharp.IconButton();
+            this.txt_TituloBusqueda = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTrabajos)).BeginInit();
@@ -177,21 +177,21 @@
             this.cmb_Categoria.ForeColor = System.Drawing.Color.Gainsboro;
             this.cmb_Categoria.FormattingEnabled = true;
             this.cmb_Categoria.Items.AddRange(new object[] {
-            "Tecnología e Innovación",
+            "Arte y Cultura",
+            "Agronomía y Ciencias Agropecuarias",
+            "Ciencias Computacionales",
+            "Ciencias de la Salud",
+            "Ciencias Espaciales",
             "Ciencias Naturales",
             "Ciencias Sociales",
-            "Ciencias de la Salud",
-            "Educación",
-            "Economía y Negocios",
-            "Ingeniería",
-            "Arte y Cultura",
-            "Derecho y Legislación",
             "Desarrollo Sostenible",
-            "Ciencias Computacionales",
-            "Ciencias Espaciales",
+            "Derecho y Legislación",
+            "Economía y Negocios",
+            "Educación",
             "Historia y Humanidades",
-            "Agronomía y Ciencias Agropecuarias",
-            "Transporte y Logística"});
+            "Ingeniería",
+            "Transporte y Logística",
+            "Tecnología e Innovación"});
             this.cmb_Categoria.Location = new System.Drawing.Point(24, 180);
             this.cmb_Categoria.Name = "cmb_Categoria";
             this.cmb_Categoria.Size = new System.Drawing.Size(270, 29);
@@ -345,16 +345,22 @@
             this.dataGridViewTrabajos.TabStop = false;
             this.dataGridViewTrabajos.SelectionChanged += new System.EventHandler(this.dataGridViewTrabajos_SelectionChanged);
             // 
-            // txt_TituloBusqueda
+            // Titulo
             // 
-            this.txt_TituloBusqueda.BackColor = System.Drawing.Color.Gainsboro;
-            this.txt_TituloBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_TituloBusqueda.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TituloBusqueda.ForeColor = System.Drawing.Color.Black;
-            this.txt_TituloBusqueda.Location = new System.Drawing.Point(57, 356);
-            this.txt_TituloBusqueda.Name = "txt_TituloBusqueda";
-            this.txt_TituloBusqueda.Size = new System.Drawing.Size(270, 20);
-            this.txt_TituloBusqueda.TabIndex = 1;
+            this.Titulo.HeaderText = "Titulo";
+            this.Titulo.Name = "Titulo";
+            this.Titulo.Width = 120;
+            // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoría";
+            this.Categoria.Name = "Categoria";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Width = 280;
             // 
             // Btn_Salir
             // 
@@ -374,22 +380,16 @@
             this.Btn_Salir.UseVisualStyleBackColor = false;
             this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
             // 
-            // Descripcion
+            // txt_TituloBusqueda
             // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 280;
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoría";
-            this.Categoria.Name = "Categoria";
-            // 
-            // Titulo
-            // 
-            this.Titulo.HeaderText = "Titulo";
-            this.Titulo.Name = "Titulo";
-            this.Titulo.Width = 120;
+            this.txt_TituloBusqueda.BackColor = System.Drawing.Color.Gainsboro;
+            this.txt_TituloBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_TituloBusqueda.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TituloBusqueda.ForeColor = System.Drawing.Color.Black;
+            this.txt_TituloBusqueda.Location = new System.Drawing.Point(57, 356);
+            this.txt_TituloBusqueda.Name = "txt_TituloBusqueda";
+            this.txt_TituloBusqueda.Size = new System.Drawing.Size(270, 20);
+            this.txt_TituloBusqueda.TabIndex = 1;
             // 
             // TrabajoEditar
             // 

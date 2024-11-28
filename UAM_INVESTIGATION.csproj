@@ -75,8 +75,14 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="Spire.Pdf, Version=10.11.1.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
-      <HintPath>packages\Spire.PDF.10.11.1\lib\net40\Spire.Pdf.dll</HintPath>
+    <Reference Include="Spire.Pdf, Version=10.7.21.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>packages\Spire.PDFViewer.7.12.23\lib\net46\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.PdfViewer.Asp, Version=7.12.23.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>packages\Spire.PDFViewer.7.12.23\lib\net46\Spire.PdfViewer.Asp.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.PdfViewer.Forms, Version=7.12.23.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>packages\Spire.PDFViewer.7.12.23\lib\net46\Spire.PdfViewer.Forms.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -122,6 +128,12 @@
     </Compile>
     <Compile Include="FormAdmin\PrincipalAdmin.Designer.cs">
       <DependentUpon>PrincipalAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEstudiantes\ArchivosTrabajos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEstudiantes\ArchivosTrabajos.Designer.cs">
+      <DependentUpon>ArchivosTrabajos.cs</DependentUpon>
     </Compile>
     <Compile Include="FormEstudiantes\Calificar.cs">
       <SubType>Form</SubType>
@@ -218,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdmin\PrincipalAdmin.resx">
       <DependentUpon>PrincipalAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEstudiantes\ArchivosTrabajos.resx">
+      <DependentUpon>ArchivosTrabajos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEstudiantes\Calificar.resx">
       <DependentUpon>Calificar.cs</DependentUpon>

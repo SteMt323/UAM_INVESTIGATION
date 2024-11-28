@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +48,23 @@ namespace UAM_INVESTIGATION
         private void iconButton1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Btn_Us_Click(object sender, EventArgs e)
+        {
+            string rutaPDF = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName, "Info", "Sobre Nosotros.pdf");
+
+            // Verificar si el archivo existe
+            if (File.Exists(rutaPDF))
+            {
+                // Abrir el PDF con el programa predeterminado
+                Process.Start(rutaPDF);
+            }
+            else
+            {
+                // Mostrar mensaje de error si el archivo no se encuentra
+                MessageBox.Show("No se pudo encontrar el archivo 'Sobre Nosotros.pdf'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

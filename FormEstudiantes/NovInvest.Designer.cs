@@ -296,6 +296,7 @@
             this.btn_VerArchivo.TabIndex = 41;
             this.btn_VerArchivo.Text = "Ver Trabajo";
             this.btn_VerArchivo.UseVisualStyleBackColor = false;
+            this.btn_VerArchivo.Click += new System.EventHandler(this.btn_VerArchivo_Click);
             // 
             // btn_Valoracion
             // 

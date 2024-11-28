@@ -12,6 +12,7 @@ namespace UAM_INVESTIGATION.Helpers
         private readonly string carpetaDestinoPdf = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName, "Trabajos Investigativos");
         private readonly string carpetaArchivosTxt = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName, "Archivos");
         private readonly string archivoTrabajos = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName, "Archivos", "Trabajos.txt");
+        private readonly string carpetaTrabajos = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName, "Trabajos Investigativos");
 
         private List<StrTrabajos> trabajos;
 
@@ -192,6 +193,11 @@ namespace UAM_INVESTIGATION.Helpers
             {
                 Console.WriteLine($"Error al escribir en el archivo: {ex.Message}");
             }
+        }
+
+        public string ObtenerRutaArchivo(int idTrabajo)
+        {
+            return Path.Combine(carpetaTrabajos, $"{idTrabajo}.pdf");
         }
     }
 }

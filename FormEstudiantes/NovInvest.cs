@@ -171,5 +171,20 @@ namespace UAM_INVESTIGATION.FormEstudiantes
         {
             this.Hide();
         }
+
+        private void btn_VerArchivo_Click(object sender, EventArgs e)
+        {
+            if (idTrabajoCV != 0)  // Verifica si se ha seleccionado un trabajo
+            {
+                ArchivosTrabajos archivosTrabajos = new ArchivosTrabajos(idTrabajoCV);
+                archivosTrabajos.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un trabajo antes de visualizar el trabajo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
     }
 }
