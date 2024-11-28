@@ -40,10 +40,6 @@
             this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgv_NovInvest = new System.Windows.Forms.DataGridView();
-            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valoracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_Valoracion = new FontAwesome.Sharp.IconButton();
             this.Btn_Comentar = new FontAwesome.Sharp.IconButton();
@@ -53,6 +49,13 @@
             this.dgv_Comentarios = new System.Windows.Forms.DataGridView();
             this.UsuarioComentar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Comentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_VerArchivo = new System.Windows.Forms.Button();
+            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valoracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdTrab = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NovInvest)).BeginInit();
@@ -149,7 +152,9 @@
             this.Titulo,
             this.Descripcion,
             this.Autor,
-            this.Valoracion});
+            this.Valoracion,
+            this.Categoria,
+            this.IdTrab});
             this.dgv_NovInvest.EnableHeadersVisualStyles = false;
             this.dgv_NovInvest.GridColor = System.Drawing.Color.SlateBlue;
             this.dgv_NovInvest.Location = new System.Drawing.Point(4, 3);
@@ -173,34 +178,12 @@
             this.dgv_NovInvest.Size = new System.Drawing.Size(550, 398);
             this.dgv_NovInvest.TabIndex = 3;
             this.dgv_NovInvest.TabStop = false;
-            // 
-            // Titulo
-            // 
-            this.Titulo.HeaderText = "Titulo";
-            this.Titulo.Name = "Titulo";
-            this.Titulo.Width = 108;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 210;
-            // 
-            // Autor
-            // 
-            this.Autor.HeaderText = "Publicado Por";
-            this.Autor.Name = "Autor";
-            this.Autor.Width = 110;
-            // 
-            // Valoracion
-            // 
-            this.Valoracion.HeaderText = "Valoración";
-            this.Valoracion.Name = "Valoracion";
-            this.Valoracion.Width = 80;
+            this.dgv_NovInvest.SelectionChanged += new System.EventHandler(this.dgv_NovInvest_SelectionChanged);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(25)))), ((int)(((byte)(80)))));
+            this.panel3.Controls.Add(this.btn_VerArchivo);
             this.panel3.Controls.Add(this.btn_Valoracion);
             this.panel3.Controls.Add(this.Btn_Comentar);
             this.panel3.Controls.Add(this.lbl_Descripcion);
@@ -224,7 +207,7 @@
             this.btn_Valoracion.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btn_Valoracion.IconSize = 20;
             this.btn_Valoracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Valoracion.Location = new System.Drawing.Point(13, 354);
+            this.btn_Valoracion.Location = new System.Drawing.Point(13, 369);
             this.btn_Valoracion.Name = "btn_Valoracion";
             this.btn_Valoracion.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btn_Valoracion.Size = new System.Drawing.Size(138, 26);
@@ -246,7 +229,7 @@
             this.Btn_Comentar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btn_Comentar.IconSize = 20;
             this.Btn_Comentar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_Comentar.Location = new System.Drawing.Point(157, 354);
+            this.Btn_Comentar.Location = new System.Drawing.Point(157, 369);
             this.Btn_Comentar.Name = "Btn_Comentar";
             this.Btn_Comentar.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.Btn_Comentar.Size = new System.Drawing.Size(138, 26);
@@ -260,7 +243,7 @@
             // lbl_Descripcion
             // 
             this.lbl_Descripcion.BackColor = System.Drawing.Color.White;
-            this.lbl_Descripcion.Location = new System.Drawing.Point(14, 94);
+            this.lbl_Descripcion.Location = new System.Drawing.Point(14, 84);
             this.lbl_Descripcion.Name = "lbl_Descripcion";
             this.lbl_Descripcion.Size = new System.Drawing.Size(281, 84);
             this.lbl_Descripcion.TabIndex = 38;
@@ -269,7 +252,7 @@
             // lbl_Categoria
             // 
             this.lbl_Categoria.BackColor = System.Drawing.Color.White;
-            this.lbl_Categoria.Location = new System.Drawing.Point(14, 57);
+            this.lbl_Categoria.Location = new System.Drawing.Point(14, 51);
             this.lbl_Categoria.Name = "lbl_Categoria";
             this.lbl_Categoria.Size = new System.Drawing.Size(281, 20);
             this.lbl_Categoria.TabIndex = 37;
@@ -305,7 +288,7 @@
             this.Comentario});
             this.dgv_Comentarios.EnableHeadersVisualStyles = false;
             this.dgv_Comentarios.GridColor = System.Drawing.Color.SlateBlue;
-            this.dgv_Comentarios.Location = new System.Drawing.Point(14, 196);
+            this.dgv_Comentarios.Location = new System.Drawing.Point(14, 180);
             this.dgv_Comentarios.Name = "dgv_Comentarios";
             this.dgv_Comentarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -339,6 +322,58 @@
             this.Comentario.Name = "Comentario";
             this.Comentario.Width = 165;
             // 
+            // btn_VerArchivo
+            // 
+            this.btn_VerArchivo.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btn_VerArchivo.FlatAppearance.BorderSize = 0;
+            this.btn_VerArchivo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btn_VerArchivo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_VerArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_VerArchivo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_VerArchivo.ForeColor = System.Drawing.Color.LightGray;
+            this.btn_VerArchivo.Location = new System.Drawing.Point(18, 316);
+            this.btn_VerArchivo.Name = "btn_VerArchivo";
+            this.btn_VerArchivo.Size = new System.Drawing.Size(270, 40);
+            this.btn_VerArchivo.TabIndex = 41;
+            this.btn_VerArchivo.Text = "Ver Trabajo";
+            this.btn_VerArchivo.UseVisualStyleBackColor = false;
+            // 
+            // Titulo
+            // 
+            this.Titulo.HeaderText = "Titulo";
+            this.Titulo.Name = "Titulo";
+            this.Titulo.Width = 108;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Width = 210;
+            // 
+            // Autor
+            // 
+            this.Autor.HeaderText = "Publicado Por";
+            this.Autor.Name = "Autor";
+            this.Autor.Width = 110;
+            // 
+            // Valoracion
+            // 
+            this.Valoracion.HeaderText = "Valoración";
+            this.Valoracion.Name = "Valoracion";
+            this.Valoracion.Width = 80;
+            // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            this.Categoria.Visible = false;
+            // 
+            // IdTrab
+            // 
+            this.IdTrab.HeaderText = "IdTrab";
+            this.IdTrab.Name = "IdTrab";
+            this.IdTrab.Visible = false;
+            // 
             // NovInvest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,6 +384,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "NovInvest";
             this.Size = new System.Drawing.Size(890, 477);
+            this.Load += new System.EventHandler(this.NovInvest_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -368,10 +404,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgv_NovInvest;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Autor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valoracion;
         private System.Windows.Forms.DataGridView dgv_Comentarios;
         private System.Windows.Forms.DataGridViewTextBoxColumn UsuarioComentar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Comentario;
@@ -380,5 +412,12 @@
         private MetroFramework.Controls.MetroLabel lbl_Descripcion;
         private FontAwesome.Sharp.IconButton Btn_Comentar;
         private FontAwesome.Sharp.IconButton btn_Valoracion;
+        private System.Windows.Forms.Button btn_VerArchivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Autor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valoracion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdTrab;
     }
 }
