@@ -284,6 +284,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Archivos\" />
+    <Folder Include="Info\" />
     <Folder Include="Packs\" />
     <Folder Include="Trabajos Investigativos\" />
   </ItemGroup>

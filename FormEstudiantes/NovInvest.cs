@@ -51,14 +51,28 @@ namespace UAM_INVESTIGATION.FormEstudiantes
 
         private void btn_Valoracion_Click(object sender, EventArgs e)
         {
-            Calificar calificar = new Calificar(idTrabajoCV, idUsuarioCV);
-            calificar.ShowDialog();
+            if (idTrabajoCV != 0)  // Verifica si se ha seleccionado un trabajo
+            {
+                Calificar calificar = new Calificar(idTrabajoCV, idUsuarioCV);
+                calificar.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un trabajo antes de valorar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void Btn_Comentar_Click(object sender, EventArgs e)
         {
-            Comentarios comentarios = new Comentarios(idTrabajoCV, idUsuarioCV);
-            comentarios.ShowDialog();
+            if (idTrabajoCV != 0)  // Verifica si se ha seleccionado un trabajo
+            {
+                Comentarios comentarios = new Comentarios(idTrabajoCV, idUsuarioCV);
+                comentarios.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un trabajo antes de comentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void NovInvest_Load(object sender, EventArgs e)
@@ -122,9 +136,9 @@ namespace UAM_INVESTIGATION.FormEstudiantes
             if(dgv_NovInvest.SelectedRows.Count > 0)
             {
                 var filaSeleccionada = dgv_NovInvest.SelectedRows[0];
-                lbl_Titulo.Text = filaSeleccionada.Cells[0].Value != null ? filaSeleccionada.Cells[0].Value.ToString() : "N/A";
-                lbl_Descripcion.Text = filaSeleccionada.Cells[1].Value != null ? filaSeleccionada.Cells[1].Value.ToString() : "N/A";
-                lbl_Categoria.Text = filaSeleccionada.Cells["Categoria"].Value != null ? filaSeleccionada.Cells["Categoria"].Value.ToString() : "N/A";
+                txt_Titulo.Text = filaSeleccionada.Cells[0].Value != null ? filaSeleccionada.Cells[0].Value.ToString() : "N/A";
+                txt_Descripcion.Text = filaSeleccionada.Cells[1].Value != null ? filaSeleccionada.Cells[1].Value.ToString() : "N/A";
+                txt_Categoria.Text = filaSeleccionada.Cells["Categoria"].Value != null ? filaSeleccionada.Cells["Categoria"].Value.ToString() : "N/A";
                 //Validar IdUsuario e IdTrabajo antes de convertir
                 if (int.TryParse(filaSeleccionada.Cells["IdTrab"]?.Value?.ToString(), out int idTrabajo))
                 {
@@ -151,6 +165,11 @@ namespace UAM_INVESTIGATION.FormEstudiantes
                 string name = ObtenerUsuario(comentario.IdUsuario);
                 dgv_Comentarios.Rows.Add(name, comentario.TextoComentario);
             }
+        }
+
+        private void Btn_Salir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

@@ -71,10 +71,8 @@ namespace UAM_INVESTIGATION.Helpers
 
         public void ActualizarComentarios(int idUsuario, int idTrabajo, string nuevoComenatio)
         {
-            try
-            {
+            
                 var comentarios = LeerComenarios();
-                bool encontrado = false;
 
                 for (int i = 0; i < comentarios.Count; i++)
                 {
@@ -82,17 +80,18 @@ namespace UAM_INVESTIGATION.Helpers
                     if (comentarios[i].IdUsuario == idUsuario && comentarios[i].IdTrabajo == idTrabajo)
                     {
                         comentarios[i] = new Comentario(comentarios[i].IdComentario, comentarios[i].IdUsuario, comentarios[i].IdTrabajo, nuevoComenatio);
-                        encontrado = true;
                         break;
                     }
-                    if (!encontrado) throw new Exception("No se encontro el comentario con Id esperado");
+                }
 
-                    //Guardar los comentarios actualizados
-                    using (StreamWriter sw = new StreamWriter(comentariosFile, false)){
-                        foreach (var comentario in comentarios)
-                        {
-                            sw.WriteLine($"{comentario.IdComentario}|{comentario.IdUsuario}|{comentario.IdTrabajo}|{comentario.TextoComentario}");
-                        }
+            try
+            {
+                //Guardar los comentarios actualizados
+                using (StreamWriter sw = new StreamWriter(comentariosFile, false))
+                {
+                    foreach (var comentario in comentarios)
+                    {
+                        sw.WriteLine($"{comentario.IdComentario}|{comentario.IdUsuario}|{comentario.IdTrabajo}|{nuevoComenatio}");
                     }
                 }
             }catch(IOException ex)

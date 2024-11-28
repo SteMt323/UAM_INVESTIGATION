@@ -55,10 +55,10 @@ namespace UAM_INVESTIGATION.Helpers
                     foreach (var linea in File.ReadAllLines(valoracionesFile))
                     {
                         var datos = linea.Split('|');
-                        int idCalificacion = int.Parse(datos[0]);
-                        int idTrabajo = int.Parse(datos[1]);
-                        int idUsuario = int.Parse(datos[2]);
-                        int calificacion = int.Parse(datos[3]);
+                        int idCalificacion = int.Parse(datos[0].Trim());
+                        int idTrabajo = int.Parse(datos[1].Trim());
+                        int idUsuario = int.Parse(datos[2].Trim());
+                        int calificacion = int.Parse(datos[3].Trim());
                         valoraciones.Add(new Valoracion(idCalificacion, idTrabajo, idUsuario, calificacion));
                     }
                 }
@@ -73,29 +73,26 @@ namespace UAM_INVESTIGATION.Helpers
         //Actualizar Valoraciones
         public void ActualizarValoraciones(int idUsuario, int idTrabajo, int nuevaCalificacion)
         {
+            var valoraciones = LeerValoraciones();
+
+            for (int i = 0; i < valoraciones.Count; i++)
+            {
+                //Buscar la valoracion del usuario
+                if (valoraciones[i].IdUsuario == idUsuario && valoraciones[i].IdTrabajo == idTrabajo)
+                {
+                    valoraciones[i] = new Valoracion(valoraciones[i].IdCalificacion, idTrabajo, idUsuario, nuevaCalificacion);
+                    break;
+                }
+            }
             try
             {
-                var valoraciones = LeerValoraciones();
-                bool encontrado = false;
-
-                for (int i = 0; i < valoraciones.Count; i++)
-                {
-                    //Buscar la valoracion del usuario
-                    if (valoraciones[i].IdUsuario == idUsuario && valoraciones[i].IdTrabajo == idTrabajo)
-                    {
-                        valoraciones[i] = new Valoracion(valoraciones[i].IdCalificacion, valoraciones[i].IdTrabajo, valoraciones[i].IdUsuario, nuevaCalificacion);
-                        encontrado = true;
-                        break;
-                    }
-                }
-                if (!encontrado) throw new Exception("No se encontró la valoración con el ID especificado.");
 
                 //Guardar las valoraciones actualizadas en el archivo
                 using (StreamWriter sw = new StreamWriter(valoracionesFile, false))
                 {
                     foreach (var valoracion in valoraciones)
                     {
-                        sw.WriteLine($"{valoracion.IdCalificacion}|{valoracion.IdTrabajo}|{valoracion.IdUsuario}|{valoracion.Calificacion}");
+                        sw.WriteLine($"{valoracion.IdCalificacion}|{valoracion.IdTrabajo}|{valoracion.IdUsuario}|{nuevaCalificacion}");
                     }
                 }
             }

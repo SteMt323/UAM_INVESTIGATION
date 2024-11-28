@@ -34,28 +34,29 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Buscar = new FontAwesome.Sharp.IconButton();
             this.txt_Busqueda = new System.Windows.Forms.TextBox();
             this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgv_NovInvest = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_Valoracion = new FontAwesome.Sharp.IconButton();
-            this.Btn_Comentar = new FontAwesome.Sharp.IconButton();
-            this.lbl_Descripcion = new MetroFramework.Controls.MetroLabel();
-            this.lbl_Categoria = new MetroFramework.Controls.MetroLabel();
-            this.lbl_Titulo = new MetroFramework.Controls.MetroLabel();
-            this.dgv_Comentarios = new System.Windows.Forms.DataGridView();
-            this.UsuarioComentar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Comentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_VerArchivo = new System.Windows.Forms.Button();
             this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valoracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdTrab = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txt_Categoria = new System.Windows.Forms.TextBox();
+            this.txt_Titulo = new System.Windows.Forms.TextBox();
+            this.txt_Descripcion = new System.Windows.Forms.TextBox();
+            this.btn_VerArchivo = new System.Windows.Forms.Button();
+            this.btn_Valoracion = new FontAwesome.Sharp.IconButton();
+            this.Btn_Comentar = new FontAwesome.Sharp.IconButton();
+            this.dgv_Comentarios = new System.Windows.Forms.DataGridView();
+            this.UsuarioComentar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Comentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NovInvest)).BeginInit();
@@ -123,6 +124,7 @@
             this.Btn_Salir.TabIndex = 40;
             this.Btn_Salir.TabStop = false;
             this.Btn_Salir.UseVisualStyleBackColor = false;
+            this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
             // 
             // panel2
             // 
@@ -135,6 +137,7 @@
             // 
             // dgv_NovInvest
             // 
+            this.dgv_NovInvest.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgv_NovInvest.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
             this.dgv_NovInvest.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_NovInvest.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -155,45 +158,144 @@
             this.Valoracion,
             this.Categoria,
             this.IdTrab});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_NovInvest.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_NovInvest.EnableHeadersVisualStyles = false;
             this.dgv_NovInvest.GridColor = System.Drawing.Color.SlateBlue;
             this.dgv_NovInvest.Location = new System.Drawing.Point(4, 3);
             this.dgv_NovInvest.Name = "dgv_NovInvest";
             this.dgv_NovInvest.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_NovInvest.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SlateBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dgv_NovInvest.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_NovInvest.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgv_NovInvest.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_NovInvest.RowTemplate.Height = 60;
-            this.dgv_NovInvest.Size = new System.Drawing.Size(550, 398);
+            this.dgv_NovInvest.Size = new System.Drawing.Size(550, 353);
             this.dgv_NovInvest.TabIndex = 3;
             this.dgv_NovInvest.TabStop = false;
             this.dgv_NovInvest.SelectionChanged += new System.EventHandler(this.dgv_NovInvest_SelectionChanged);
             // 
+            // Titulo
+            // 
+            this.Titulo.HeaderText = "Titulo";
+            this.Titulo.Name = "Titulo";
+            this.Titulo.Width = 108;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Width = 210;
+            // 
+            // Autor
+            // 
+            this.Autor.HeaderText = "Publicado Por";
+            this.Autor.Name = "Autor";
+            this.Autor.Width = 110;
+            // 
+            // Valoracion
+            // 
+            this.Valoracion.HeaderText = "Valoración";
+            this.Valoracion.Name = "Valoracion";
+            this.Valoracion.Width = 80;
+            // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            this.Categoria.Visible = false;
+            // 
+            // IdTrab
+            // 
+            this.IdTrab.HeaderText = "IdTrab";
+            this.IdTrab.Name = "IdTrab";
+            this.IdTrab.Visible = false;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(25)))), ((int)(((byte)(80)))));
+            this.panel3.Controls.Add(this.txt_Categoria);
+            this.panel3.Controls.Add(this.txt_Titulo);
+            this.panel3.Controls.Add(this.txt_Descripcion);
             this.panel3.Controls.Add(this.btn_VerArchivo);
             this.panel3.Controls.Add(this.btn_Valoracion);
             this.panel3.Controls.Add(this.Btn_Comentar);
-            this.panel3.Controls.Add(this.lbl_Descripcion);
-            this.panel3.Controls.Add(this.lbl_Categoria);
-            this.panel3.Controls.Add(this.lbl_Titulo);
             this.panel3.Controls.Add(this.dgv_Comentarios);
             this.panel3.Location = new System.Drawing.Point(573, 55);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(309, 404);
             this.panel3.TabIndex = 2;
+            // 
+            // txt_Categoria
+            // 
+            this.txt_Categoria.BackColor = System.Drawing.Color.White;
+            this.txt_Categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Categoria.ForeColor = System.Drawing.Color.Black;
+            this.txt_Categoria.Location = new System.Drawing.Point(14, 50);
+            this.txt_Categoria.Multiline = true;
+            this.txt_Categoria.Name = "txt_Categoria";
+            this.txt_Categoria.ReadOnly = true;
+            this.txt_Categoria.Size = new System.Drawing.Size(281, 22);
+            this.txt_Categoria.TabIndex = 5;
+            this.txt_Categoria.Text = "Categoría...";
+            // 
+            // txt_Titulo
+            // 
+            this.txt_Titulo.BackColor = System.Drawing.Color.White;
+            this.txt_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Titulo.ForeColor = System.Drawing.Color.Black;
+            this.txt_Titulo.Location = new System.Drawing.Point(14, 17);
+            this.txt_Titulo.Multiline = true;
+            this.txt_Titulo.Name = "txt_Titulo";
+            this.txt_Titulo.ReadOnly = true;
+            this.txt_Titulo.Size = new System.Drawing.Size(281, 21);
+            this.txt_Titulo.TabIndex = 5;
+            this.txt_Titulo.Text = "Título...";
+            // 
+            // txt_Descripcion
+            // 
+            this.txt_Descripcion.BackColor = System.Drawing.Color.White;
+            this.txt_Descripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Descripcion.ForeColor = System.Drawing.Color.Black;
+            this.txt_Descripcion.Location = new System.Drawing.Point(14, 84);
+            this.txt_Descripcion.Multiline = true;
+            this.txt_Descripcion.Name = "txt_Descripcion";
+            this.txt_Descripcion.ReadOnly = true;
+            this.txt_Descripcion.Size = new System.Drawing.Size(281, 90);
+            this.txt_Descripcion.TabIndex = 4;
+            this.txt_Descripcion.Text = "Descripcion...";
+            // 
+            // btn_VerArchivo
+            // 
+            this.btn_VerArchivo.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btn_VerArchivo.FlatAppearance.BorderSize = 0;
+            this.btn_VerArchivo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btn_VerArchivo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_VerArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_VerArchivo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_VerArchivo.ForeColor = System.Drawing.Color.LightGray;
+            this.btn_VerArchivo.Location = new System.Drawing.Point(18, 316);
+            this.btn_VerArchivo.Name = "btn_VerArchivo";
+            this.btn_VerArchivo.Size = new System.Drawing.Size(270, 40);
+            this.btn_VerArchivo.TabIndex = 41;
+            this.btn_VerArchivo.Text = "Ver Trabajo";
+            this.btn_VerArchivo.UseVisualStyleBackColor = false;
             // 
             // btn_Valoracion
             // 
@@ -240,47 +342,20 @@
             this.Btn_Comentar.UseVisualStyleBackColor = false;
             this.Btn_Comentar.Click += new System.EventHandler(this.Btn_Comentar_Click);
             // 
-            // lbl_Descripcion
-            // 
-            this.lbl_Descripcion.BackColor = System.Drawing.Color.White;
-            this.lbl_Descripcion.Location = new System.Drawing.Point(14, 84);
-            this.lbl_Descripcion.Name = "lbl_Descripcion";
-            this.lbl_Descripcion.Size = new System.Drawing.Size(281, 84);
-            this.lbl_Descripcion.TabIndex = 38;
-            this.lbl_Descripcion.Text = "Descripción...";
-            // 
-            // lbl_Categoria
-            // 
-            this.lbl_Categoria.BackColor = System.Drawing.Color.White;
-            this.lbl_Categoria.Location = new System.Drawing.Point(14, 51);
-            this.lbl_Categoria.Name = "lbl_Categoria";
-            this.lbl_Categoria.Size = new System.Drawing.Size(281, 20);
-            this.lbl_Categoria.TabIndex = 37;
-            this.lbl_Categoria.Text = "Categoría...";
-            // 
-            // lbl_Titulo
-            // 
-            this.lbl_Titulo.BackColor = System.Drawing.Color.White;
-            this.lbl_Titulo.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lbl_Titulo.Location = new System.Drawing.Point(14, 12);
-            this.lbl_Titulo.Name = "lbl_Titulo";
-            this.lbl_Titulo.Size = new System.Drawing.Size(281, 26);
-            this.lbl_Titulo.TabIndex = 36;
-            this.lbl_Titulo.Text = "Título...";
-            // 
             // dgv_Comentarios
             // 
+            this.dgv_Comentarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgv_Comentarios.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_Comentarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Comentarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Comentarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Comentarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_Comentarios.ColumnHeadersHeight = 30;
             this.dgv_Comentarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_Comentarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -288,23 +363,24 @@
             this.Comentario});
             this.dgv_Comentarios.EnableHeadersVisualStyles = false;
             this.dgv_Comentarios.GridColor = System.Drawing.Color.SlateBlue;
-            this.dgv_Comentarios.Location = new System.Drawing.Point(14, 180);
+            this.dgv_Comentarios.Location = new System.Drawing.Point(14, 184);
             this.dgv_Comentarios.Name = "dgv_Comentarios";
             this.dgv_Comentarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Comentarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SlateBlue;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dgv_Comentarios.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Comentarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Comentarios.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_Comentarios.RowTemplate.Height = 60;
             this.dgv_Comentarios.Size = new System.Drawing.Size(281, 123);
             this.dgv_Comentarios.TabIndex = 4;
@@ -322,58 +398,6 @@
             this.Comentario.Name = "Comentario";
             this.Comentario.Width = 165;
             // 
-            // btn_VerArchivo
-            // 
-            this.btn_VerArchivo.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.btn_VerArchivo.FlatAppearance.BorderSize = 0;
-            this.btn_VerArchivo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btn_VerArchivo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_VerArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_VerArchivo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_VerArchivo.ForeColor = System.Drawing.Color.LightGray;
-            this.btn_VerArchivo.Location = new System.Drawing.Point(18, 316);
-            this.btn_VerArchivo.Name = "btn_VerArchivo";
-            this.btn_VerArchivo.Size = new System.Drawing.Size(270, 40);
-            this.btn_VerArchivo.TabIndex = 41;
-            this.btn_VerArchivo.Text = "Ver Trabajo";
-            this.btn_VerArchivo.UseVisualStyleBackColor = false;
-            // 
-            // Titulo
-            // 
-            this.Titulo.HeaderText = "Titulo";
-            this.Titulo.Name = "Titulo";
-            this.Titulo.Width = 108;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 210;
-            // 
-            // Autor
-            // 
-            this.Autor.HeaderText = "Publicado Por";
-            this.Autor.Name = "Autor";
-            this.Autor.Width = 110;
-            // 
-            // Valoracion
-            // 
-            this.Valoracion.HeaderText = "Valoración";
-            this.Valoracion.Name = "Valoracion";
-            this.Valoracion.Width = 80;
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            this.Categoria.Visible = false;
-            // 
-            // IdTrab
-            // 
-            this.IdTrab.HeaderText = "IdTrab";
-            this.IdTrab.Name = "IdTrab";
-            this.IdTrab.Visible = false;
-            // 
             // NovInvest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,6 +414,7 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NovInvest)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Comentarios)).EndInit();
             this.ResumeLayout(false);
 
@@ -407,9 +432,6 @@
         private System.Windows.Forms.DataGridView dgv_Comentarios;
         private System.Windows.Forms.DataGridViewTextBoxColumn UsuarioComentar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Comentario;
-        private MetroFramework.Controls.MetroLabel lbl_Categoria;
-        private MetroFramework.Controls.MetroLabel lbl_Titulo;
-        private MetroFramework.Controls.MetroLabel lbl_Descripcion;
         private FontAwesome.Sharp.IconButton Btn_Comentar;
         private FontAwesome.Sharp.IconButton btn_Valoracion;
         private System.Windows.Forms.Button btn_VerArchivo;
@@ -419,5 +441,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Valoracion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdTrab;
+        private System.Windows.Forms.TextBox txt_Descripcion;
+        private System.Windows.Forms.TextBox txt_Titulo;
+        private System.Windows.Forms.TextBox txt_Categoria;
     }
 }

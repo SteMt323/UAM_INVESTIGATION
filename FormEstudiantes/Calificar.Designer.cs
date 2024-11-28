@@ -29,18 +29,13 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_Star1 = new FontAwesome.Sharp.IconPictureBox();
-            this.btn_Star2 = new FontAwesome.Sharp.IconPictureBox();
-            this.btn_Star3 = new FontAwesome.Sharp.IconPictureBox();
-            this.btn_Star4 = new FontAwesome.Sharp.IconPictureBox();
-            this.btn_Star5 = new FontAwesome.Sharp.IconPictureBox();
             this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.Btn_Valorar = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Star1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Star2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Star3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Star4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Star5)).BeginInit();
+            this.btn_Star1 = new FontAwesome.Sharp.IconButton();
+            this.btn_Star2 = new FontAwesome.Sharp.IconButton();
+            this.btn_Star3 = new FontAwesome.Sharp.IconButton();
+            this.btn_Star4 = new FontAwesome.Sharp.IconButton();
+            this.btn_Star5 = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // label1
@@ -53,76 +48,6 @@
             this.label1.Size = new System.Drawing.Size(168, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Calificar este Trabajo";
-            // 
-            // btn_Star1
-            // 
-            this.btn_Star1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(75)))));
-            this.btn_Star1.ForeColor = System.Drawing.Color.MediumPurple;
-            this.btn_Star1.IconChar = FontAwesome.Sharp.IconChar.Star;
-            this.btn_Star1.IconColor = System.Drawing.Color.MediumPurple;
-            this.btn_Star1.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            this.btn_Star1.Location = new System.Drawing.Point(40, 47);
-            this.btn_Star1.Name = "btn_Star1";
-            this.btn_Star1.Size = new System.Drawing.Size(32, 32);
-            this.btn_Star1.TabIndex = 1;
-            this.btn_Star1.TabStop = false;
-            this.btn_Star1.Tag = "1";
-            // 
-            // btn_Star2
-            // 
-            this.btn_Star2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(75)))));
-            this.btn_Star2.ForeColor = System.Drawing.Color.MediumPurple;
-            this.btn_Star2.IconChar = FontAwesome.Sharp.IconChar.Star;
-            this.btn_Star2.IconColor = System.Drawing.Color.MediumPurple;
-            this.btn_Star2.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            this.btn_Star2.Location = new System.Drawing.Point(78, 47);
-            this.btn_Star2.Name = "btn_Star2";
-            this.btn_Star2.Size = new System.Drawing.Size(32, 32);
-            this.btn_Star2.TabIndex = 2;
-            this.btn_Star2.TabStop = false;
-            this.btn_Star2.Tag = "2";
-            // 
-            // btn_Star3
-            // 
-            this.btn_Star3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(75)))));
-            this.btn_Star3.ForeColor = System.Drawing.Color.MediumPurple;
-            this.btn_Star3.IconChar = FontAwesome.Sharp.IconChar.Star;
-            this.btn_Star3.IconColor = System.Drawing.Color.MediumPurple;
-            this.btn_Star3.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            this.btn_Star3.Location = new System.Drawing.Point(116, 47);
-            this.btn_Star3.Name = "btn_Star3";
-            this.btn_Star3.Size = new System.Drawing.Size(32, 32);
-            this.btn_Star3.TabIndex = 3;
-            this.btn_Star3.TabStop = false;
-            this.btn_Star3.Tag = "3";
-            // 
-            // btn_Star4
-            // 
-            this.btn_Star4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(75)))));
-            this.btn_Star4.ForeColor = System.Drawing.Color.MediumPurple;
-            this.btn_Star4.IconChar = FontAwesome.Sharp.IconChar.Star;
-            this.btn_Star4.IconColor = System.Drawing.Color.MediumPurple;
-            this.btn_Star4.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            this.btn_Star4.Location = new System.Drawing.Point(154, 47);
-            this.btn_Star4.Name = "btn_Star4";
-            this.btn_Star4.Size = new System.Drawing.Size(32, 32);
-            this.btn_Star4.TabIndex = 4;
-            this.btn_Star4.TabStop = false;
-            this.btn_Star4.Tag = "4";
-            // 
-            // btn_Star5
-            // 
-            this.btn_Star5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(75)))));
-            this.btn_Star5.ForeColor = System.Drawing.Color.MediumPurple;
-            this.btn_Star5.IconChar = FontAwesome.Sharp.IconChar.Star;
-            this.btn_Star5.IconColor = System.Drawing.Color.MediumPurple;
-            this.btn_Star5.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            this.btn_Star5.Location = new System.Drawing.Point(192, 47);
-            this.btn_Star5.Name = "btn_Star5";
-            this.btn_Star5.Size = new System.Drawing.Size(32, 32);
-            this.btn_Star5.TabIndex = 5;
-            this.btn_Star5.TabStop = false;
-            this.btn_Star5.Tag = "5";
             // 
             // Btn_Salir
             // 
@@ -165,30 +90,120 @@
             this.Btn_Valorar.UseVisualStyleBackColor = false;
             this.Btn_Valorar.Click += new System.EventHandler(this.Btn_Valorar_Click);
             // 
+            // btn_Star1
+            // 
+            this.btn_Star1.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Star1.FlatAppearance.BorderSize = 0;
+            this.btn_Star1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Star1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Star1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_Star1.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.btn_Star1.IconColor = System.Drawing.Color.MediumPurple;
+            this.btn_Star1.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            this.btn_Star1.IconSize = 32;
+            this.btn_Star1.Location = new System.Drawing.Point(41, 47);
+            this.btn_Star1.Name = "btn_Star1";
+            this.btn_Star1.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btn_Star1.Size = new System.Drawing.Size(41, 26);
+            this.btn_Star1.TabIndex = 43;
+            this.btn_Star1.Tag = "1";
+            this.btn_Star1.UseVisualStyleBackColor = false;
+            // 
+            // btn_Star2
+            // 
+            this.btn_Star2.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Star2.FlatAppearance.BorderSize = 0;
+            this.btn_Star2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Star2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Star2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_Star2.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.btn_Star2.IconColor = System.Drawing.Color.MediumPurple;
+            this.btn_Star2.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            this.btn_Star2.IconSize = 32;
+            this.btn_Star2.Location = new System.Drawing.Point(79, 47);
+            this.btn_Star2.Name = "btn_Star2";
+            this.btn_Star2.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btn_Star2.Size = new System.Drawing.Size(41, 26);
+            this.btn_Star2.TabIndex = 44;
+            this.btn_Star2.Tag = "2";
+            this.btn_Star2.UseVisualStyleBackColor = false;
+            // 
+            // btn_Star3
+            // 
+            this.btn_Star3.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Star3.FlatAppearance.BorderSize = 0;
+            this.btn_Star3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Star3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Star3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_Star3.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.btn_Star3.IconColor = System.Drawing.Color.MediumPurple;
+            this.btn_Star3.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            this.btn_Star3.IconSize = 32;
+            this.btn_Star3.Location = new System.Drawing.Point(117, 47);
+            this.btn_Star3.Name = "btn_Star3";
+            this.btn_Star3.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btn_Star3.Size = new System.Drawing.Size(41, 26);
+            this.btn_Star3.TabIndex = 45;
+            this.btn_Star3.Tag = "3";
+            this.btn_Star3.UseVisualStyleBackColor = false;
+            // 
+            // btn_Star4
+            // 
+            this.btn_Star4.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Star4.FlatAppearance.BorderSize = 0;
+            this.btn_Star4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Star4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Star4.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_Star4.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.btn_Star4.IconColor = System.Drawing.Color.MediumPurple;
+            this.btn_Star4.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            this.btn_Star4.IconSize = 32;
+            this.btn_Star4.Location = new System.Drawing.Point(155, 47);
+            this.btn_Star4.Name = "btn_Star4";
+            this.btn_Star4.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btn_Star4.Size = new System.Drawing.Size(41, 26);
+            this.btn_Star4.TabIndex = 46;
+            this.btn_Star4.Tag = "4";
+            this.btn_Star4.UseVisualStyleBackColor = false;
+            // 
+            // btn_Star5
+            // 
+            this.btn_Star5.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Star5.FlatAppearance.BorderSize = 0;
+            this.btn_Star5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Star5.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Star5.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_Star5.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.btn_Star5.IconColor = System.Drawing.Color.MediumPurple;
+            this.btn_Star5.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            this.btn_Star5.IconSize = 32;
+            this.btn_Star5.Location = new System.Drawing.Point(191, 47);
+            this.btn_Star5.Name = "btn_Star5";
+            this.btn_Star5.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btn_Star5.Size = new System.Drawing.Size(41, 26);
+            this.btn_Star5.TabIndex = 47;
+            this.btn_Star5.Tag = "5";
+            this.btn_Star5.UseVisualStyleBackColor = false;
+            // 
             // Calificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(263, 132);
-            this.Controls.Add(this.Btn_Valorar);
-            this.Controls.Add(this.Btn_Salir);
             this.Controls.Add(this.btn_Star5);
             this.Controls.Add(this.btn_Star4);
             this.Controls.Add(this.btn_Star3);
             this.Controls.Add(this.btn_Star2);
             this.Controls.Add(this.btn_Star1);
+            this.Controls.Add(this.Btn_Valorar);
+            this.Controls.Add(this.Btn_Salir);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Calificar";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calificar";
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Star1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Star2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Star3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Star4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Star5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,12 +212,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private FontAwesome.Sharp.IconPictureBox btn_Star1;
-        private FontAwesome.Sharp.IconPictureBox btn_Star2;
-        private FontAwesome.Sharp.IconPictureBox btn_Star3;
-        private FontAwesome.Sharp.IconPictureBox btn_Star4;
-        private FontAwesome.Sharp.IconPictureBox btn_Star5;
         private FontAwesome.Sharp.IconButton Btn_Salir;
         private FontAwesome.Sharp.IconButton Btn_Valorar;
+        private FontAwesome.Sharp.IconButton btn_Star1;
+        private FontAwesome.Sharp.IconButton btn_Star2;
+        private FontAwesome.Sharp.IconButton btn_Star3;
+        private FontAwesome.Sharp.IconButton btn_Star4;
+        private FontAwesome.Sharp.IconButton btn_Star5;
     }
 }

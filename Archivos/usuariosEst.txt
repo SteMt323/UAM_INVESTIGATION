@@ -1,4 +1,4 @@
 7839|Johaneris Salas|jsalas@uamv.edu.ni|24011096|123456789|Sistemas|True
 8484|Fernando Jimenez|fjimenez@uamv.edu.ni|17011094|123456789|Sistemas|True
 3630|Yubelkis Valle|yvalle@uamv.edu.ni|24011095|123456789|Sistemas|True
-5668|Glenny Guzman|gleguzman@uamv.edu.ni|24011097|987654321|Derecho|True
+5668|Glenny Guerrero|gleguerrero@uamv.edu.ni|24011097|123456789|Derecho|True
