@@ -110,6 +110,7 @@
             this.Btn_Help.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_Help.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_Help.UseVisualStyleBackColor = true;
+            this.Btn_Help.Click += new System.EventHandler(this.Btn_Help_Click);
             // 
             // Btn_AdminRegis
             // 

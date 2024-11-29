@@ -61,7 +61,7 @@
             // show_Password
             // 
             this.show_Password.AutoSize = true;
-            this.show_Password.Location = new System.Drawing.Point(701, 230);
+            this.show_Password.Location = new System.Drawing.Point(700, 295);
             this.show_Password.Name = "show_Password";
             this.show_Password.Size = new System.Drawing.Size(15, 14);
             this.show_Password.TabIndex = 21;
@@ -339,7 +339,7 @@
             this.txt_Contrasenia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Contrasenia.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Contrasenia.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_Contrasenia.Location = new System.Drawing.Point(315, 224);
+            this.txt_Contrasenia.Location = new System.Drawing.Point(314, 289);
             this.txt_Contrasenia.Name = "txt_Contrasenia";
             this.txt_Contrasenia.Size = new System.Drawing.Size(401, 20);
             this.txt_Contrasenia.TabIndex = 3;
@@ -353,7 +353,7 @@
             this.txt_Nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Nombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Nombre.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_Nombre.Location = new System.Drawing.Point(315, 288);
+            this.txt_Nombre.Location = new System.Drawing.Point(315, 224);
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(401, 20);
             this.txt_Nombre.TabIndex = 4;

@@ -151,7 +151,7 @@ namespace UAM_INVESTIGATION.FormEstudiantes
                 }
                 else
                 {
-                    MessageBox.Show("Error al obtener los IDs del trabajo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al obtener visualizar el trabajo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
