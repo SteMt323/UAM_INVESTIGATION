@@ -81,6 +81,7 @@ namespace UAM_INVESTIGATION.FormEstudiantes
             CargarDataTrabajos();
         }
 
+        //Buscamos el nombre del usuario atraves del id
         private string ObtenerUsuario(int id)
         {
             var usuario = gestionUsuarios.LeerUsuariosEst();
@@ -109,6 +110,7 @@ namespace UAM_INVESTIGATION.FormEstudiantes
             return listaValoraciones;
         }
 
+        //Calcula el promedio de las valoraciones
         private double CalcularPromedio(int idTrabajo)
         {
             var valoraciones = ObtenerValoraciones(idTrabajo);
@@ -119,6 +121,7 @@ namespace UAM_INVESTIGATION.FormEstudiantes
             return suma / valoraciones.Count();
         }
 
+        //Carga todos los trabajos
         private void CargarDataTrabajos()
         {
             var trabajos = controlTrabajos.ObtenerTrabajos();
@@ -131,6 +134,7 @@ namespace UAM_INVESTIGATION.FormEstudiantes
             }
         }
 
+        //Mostrar mas detallada la info del DataGridView
         private void dgv_NovInvest_SelectionChanged(object sender, EventArgs e)
         {
             if(dgv_NovInvest.SelectedRows.Count > 0)
@@ -172,9 +176,10 @@ namespace UAM_INVESTIGATION.FormEstudiantes
             this.Hide();
         }
 
+        //Ver archivo
         private void btn_VerArchivo_Click(object sender, EventArgs e)
         {
-            if (idTrabajoCV != 0)  // Verifica si se ha seleccionado un trabajo
+            if (idTrabajoCV != 0) 
             {
                 ArchivosTrabajos archivosTrabajos = new ArchivosTrabajos(idTrabajoCV);
                 archivosTrabajos.ShowDialog();
@@ -193,7 +198,7 @@ namespace UAM_INVESTIGATION.FormEstudiantes
             { "Arte y Cultura", new List<string> { "pintura", "escultura", "literatura", "música", "cine", "patrimonio", "danza", "teatro", "estética", "fotografía" } },
             { "Agronomía y Ciencias Agropecuarias", new List<string> { "agricultura", "agroecología", "cultivos", "fertilizantes", "ganadería", "irrigación", "biotecnología agrícola", "agroindustria", "sistemas de riego", "producción sostenible" } },
             { "Ciencias Computacionales", new List<string> { "algoritmos", "inteligencia artificial", "big data", "seguridad informática", "programación", "aprendizaje automático", "desarrollo web", "blockchain", "sistemas operativos", "redes" } },
-            { "Ciencias de la Salud", new List<string> { "medicina", "enfermería", "epidemiología", "salud pública", "farmacología", "nutrición", "psicología clínica", "biomedicina", "terapia física", "diagnóstico" } },
+            { "Ciencias de la Salud", new List<string> { "medicina", "enfermería", "epidemiología", "salud pública", "farmacología", "nutrición", "psicología clínica", "biomedicina", "terapia física", "diagnóstico", "pediatría" } },
             { "Ciencias Espaciales", new List<string> { "astronomía", "astrofísica", "exploración espacial", "satélites", "misiones espaciales", "telescopios", "meteoritos", "planetología", "cosmología", "colonización espacial" } },
             { "Ciencias Naturales", new List<string> { "biología", "química", "física", "ecología", "geología", "oceanografía", "botánica", "zoología", "genética", "energía renovable" } },
             { "Ciencias Sociales", new List<string> { "sociología", "antropología", "política", "comunicación", "psicología social", "demografía", "cultura popular", "economía social", "globalización", "conflictos sociales" } },
@@ -212,7 +217,7 @@ namespace UAM_INVESTIGATION.FormEstudiantes
         {
             if (palabrasClavePorCategoria.ContainsKey(categoria))
             {
-                // Buscamos si alguna palabra clave de la categoría coincide con la búsqueda
+                //Buscamos si alguna palabra clave de la categoría coincide con la búsqueda
                 return palabrasClavePorCategoria[categoria]
                         .Any(palabra => busquedaTexto.Contains(palabra.ToLower()));
             }
