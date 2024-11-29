@@ -92,6 +92,7 @@
             this.btn_Buscar.TabIndex = 42;
             this.btn_Buscar.TabStop = false;
             this.btn_Buscar.UseVisualStyleBackColor = false;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // txt_Busqueda
             // 

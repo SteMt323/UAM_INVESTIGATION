@@ -186,5 +186,67 @@ namespace UAM_INVESTIGATION.FormEstudiantes
             }
 
         }
+
+        //FILTROS
+        private Dictionary<string, List<string>> palabrasClavePorCategoria = new Dictionary<string, List<string>>()
+        {
+            { "Arte y Cultura", new List<string> { "pintura", "escultura", "literatura", "música", "cine", "patrimonio", "danza", "teatro", "estética", "fotografía" } },
+            { "Agronomía y Ciencias Agropecuarias", new List<string> { "agricultura", "agroecología", "cultivos", "fertilizantes", "ganadería", "irrigación", "biotecnología agrícola", "agroindustria", "sistemas de riego", "producción sostenible" } },
+            { "Ciencias Computacionales", new List<string> { "algoritmos", "inteligencia artificial", "big data", "seguridad informática", "programación", "aprendizaje automático", "desarrollo web", "blockchain", "sistemas operativos", "redes" } },
+            { "Ciencias de la Salud", new List<string> { "medicina", "enfermería", "epidemiología", "salud pública", "farmacología", "nutrición", "psicología clínica", "biomedicina", "terapia física", "diagnóstico" } },
+            { "Ciencias Espaciales", new List<string> { "astronomía", "astrofísica", "exploración espacial", "satélites", "misiones espaciales", "telescopios", "meteoritos", "planetología", "cosmología", "colonización espacial" } },
+            { "Ciencias Naturales", new List<string> { "biología", "química", "física", "ecología", "geología", "oceanografía", "botánica", "zoología", "genética", "energía renovable" } },
+            { "Ciencias Sociales", new List<string> { "sociología", "antropología", "política", "comunicación", "psicología social", "demografía", "cultura popular", "economía social", "globalización", "conflictos sociales" } },
+            { "Desarrollo Sostenible", new List<string> { "energías renovables", "economía circular", "cambio climático", "biodiversidad", "desarrollo comunitario", "responsabilidad social", "educación ambiental", "reciclaje", "conservación", "recursos hídricos" } },
+            { "Derecho y Legislación", new List<string> { "constitucional", "penal", "civil", "derechos humanos", "propiedad intelectual", "legislación ambiental", "arbitraje", "contratos", "derecho internacional", "normas jurídicas" } },
+            { "Economía y Negocios", new List<string> { "finanzas", "mercados", "marketing", "comercio internacional", "emprendimiento", "macroeconomía", "microeconomía", "innovación empresarial", "recursos humanos", "gestión de proyectos" } },
+            { "Educación", new List<string> { "pedagogía", "didáctica", "innovación educativa", "educación inclusiva", "tecnología educativa", "metodología", "evaluación", "alfabetización digital", "políticas educativas", "formación docente" } },
+            { "Historia y Humanidades", new List<string> { "historia antigua", "filosofía", "arqueología", "arte clásico", "historia moderna", "lingüística", "religión", "cultura popular", "ética", "literatura histórica" } },
+            { "Ingeniería", new List<string> { "diseño estructural", "mecánica", "energía", "robótica", "automatización", "innovación tecnológica", "ingeniería eléctrica", "ingeniería civil", "nanotecnología", "materiales" } },
+            { "Transporte y Logística", new List<string> { "transporte marítimo", "logística inversa", "cadena de suministro", "movilidad urbana", "infraestructura", "transporte sostenible", "automatización logística", "transporte aéreo", "comercio internacional", "sistemas ferroviarios" } },
+            { "Tecnología e Innovación", new List<string> { "internet de las cosas", "realidad aumentada", "inteligencia artificial", "impresión 3D", "ciberseguridad", "innovación digital", "tecnología verde", "automatización", "computación cuántica", "startups" } }
+
+        };
+
+        private bool PalabraClaveEnCategoria(string busquedaTexto, string categoria)
+        {
+            if (palabrasClavePorCategoria.ContainsKey(categoria))
+            {
+                // Buscamos si alguna palabra clave de la categoría coincide con la búsqueda
+                return palabrasClavePorCategoria[categoria]
+                        .Any(palabra => busquedaTexto.Contains(palabra.ToLower()));
+            }
+            return false;
+        }
+
+        private void btn_Buscar_Click(object sender, EventArgs e)
+        {
+            string busquedaTexto = txt_Busqueda.Text.ToLower(); //Convertir a minúsculas para hacer una búsqueda insensible
+
+            var trabajos = controlTrabajos.ObtenerTrabajos();  
+
+            var trabajosFiltrados = trabajos.Where(t =>
+                //Filtro por título
+                t.Titulo.ToLower().Contains(busquedaTexto) ||
+
+                //Filtro por nombre de usuario (usamos el método ObtenerUsuario para obtener el nombre)
+                ObtenerUsuario(t.IdUsuario).ToLower().Contains(busquedaTexto) ||
+
+                //Filtro por categoría (se verifica si el texto de búsqueda está contenido en la categoría)
+                t.Categoria.ToLower().Contains(busquedaTexto) ||
+
+                //Filtro por palabras clave asociadas a la categoría
+                PalabraClaveEnCategoria(busquedaTexto, t.Categoria)
+            ).ToList();
+
+            //Actualizamos la vista con los trabajos filtrados
+            dgv_NovInvest.Rows.Clear();
+            foreach (var trabajo in trabajosFiltrados)
+            {
+                string nombreUsuario = ObtenerUsuario(trabajo.IdUsuario);
+                double valoracion = CalcularPromedio(trabajo.IdTrabajo);
+                dgv_NovInvest.Rows.Add(trabajo.Titulo, trabajo.Descripcion, nombreUsuario, valoracion.ToString("N1"), trabajo.Categoria, trabajo.IdTrabajo);
+            }
+        }
     }
 }
